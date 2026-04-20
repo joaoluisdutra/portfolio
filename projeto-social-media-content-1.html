@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Content - Projeto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --off-white: #fafafa;
+            --accent-color: #b0d411;
+            --text-color: #0e1111;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: var(--accent-color); }
+        h1 { 
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            margin: 0 0 25px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 800;
+        }
+        
+        .description { font-size: 1.1rem; max-width: 1200px; margin: 0 auto 80px 0; color: var(--text-color); text-align: left; }
+        .desc-row { display: grid; grid-template-columns: 300px 1fr; gap: 80px; padding: 50px 0; border-top: 1px solid #eee; }
+        .desc-row:first-child { border-top: none; padding-top: 0; }
+        .description h3 { font-size: 0.7rem; color: var(--text-color); margin: 0; letter-spacing: 2.5px; font-weight: 800; text-transform: uppercase; padding-top: 10px; opacity: 0.6; }
+        .description p { margin-bottom: 20px; line-height: 1.8; max-width: 750px; }
+        
+        .media-stack { border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid #f0f0f0; }
+        .main-image { width: 100%; height: 450px; object-fit: cover; display: block; }
+
+        .project-meta { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+        .meta-badge { font-size: 0.7rem; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; padding: 6px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 50px; display: flex; align-items: center; gap: 6px; }
+        .meta-badge svg { width: 12px; height: 12px; }
+
+        .project-header-panel { background-color: var(--off-white); padding: 60px 40px; text-align: center; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 40px; }
+        .skill-item { display: flex; flex-direction: column; align-items: center; gap: 18px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0e1111; transition: transform 0.3s ease; }
+        .skill-item:hover { transform: translateY(-5px); }
+        .icon-circle { width: 72px; height: 72px; background-color: #ffffff; border: 1px solid #ececec; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .skill-item:hover .icon-circle { background-color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 10px 25px rgba(176, 212, 17, 0.2); }
+        .skill-item svg { width: 30px; height: 30px; stroke-width: 1.5; }
+
+        .image-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .demo-image { width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: block; transition: transform 0.3s ease; }
+        .demo-image:hover { transform: scale(1.02); }
+
+        @media (max-width: 768px) { .container { padding: 60px 20px; } .desc-row { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; } .image-gallery { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a href="index.html" class="back-link">← Homepage</a>
+        
+        <div class="media-stack">
+            <img src="assets/thumb_projeto_social_media_content_1.png" alt="Social Media Content Preview" class="main-image">
+            
+            <div class="project-header-panel">
+                <h1>Social Media Content</h1>
+                <div class="project-meta">
+                    <div class="meta-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                        Design Gráfico
+                    </div>
+                    <div class="meta-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        2022
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <div class="desc-row">
+                <h3>O que foi desenvolvido</h3>
+                <div class="desc-content">
+                    <p>O projeto consistiu na criação da identidade visual para as redes sociais de uma marca do setor de Home Decor. O desafio central foi transformar fotografias de produtos tiradas no ambiente interno da loja em imagens com qualidade de estúdio profissional, elevando o posicionamento digital da marca.</p>
+                    <p>As fotos tratadas foram a base para a curadoria de conteúdo, garantindo uma estética coesa e sofisticada que destaca a qualidade das peças de decoração em um ambiente digital competitivo.</p>
+                </div>
+            </div>
+
+            <div class="desc-row">
+                <h3>Aprendizados e Técnicas</h3>
+                <div class="desc-content">
+                    <p>Para alcançar o resultado de "foto de estúdio" a partir de capturas simples em ambiente fechado, foram aplicadas técnicas avançadas de manipulação de imagem. O processo envolveu o recorte preciso dos produtos para isolá-los do fundo original, seguido de um tratamento minucioso de luz e cor.</p>
+                    <p>A aplicação estratégica de sombras projetadas e reflexos realistas foi fundamental para dar profundidade e naturalidade aos objetos. Esse fluxo de trabalho consolidou conhecimentos em composição visual e acabamento técnico de alta fidelidade para o mercado de luxo e decoração.</p>
+                </div>
+            </div>
+
+            <div class="desc-row">
+                <h3>Habilidades</h3>
+                <div class="desc-content">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="icon-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                            </div>
+                            <span>Adobe Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="desc-row">
+                <h3>Galeria de Tratamento</h3>
+                <div class="desc-content">
+                    <div class="image-gallery">
+                        <img src="assets/apresentacao_projeto_social_media_content_1.png" alt="Edição 01" class="demo-image">
+                        <img src="assets/apresentacao_projeto_social_media_content_2.png" alt="Edição 02" class="demo-image">
+                        <img src="assets/apresentacao_projeto_social_media_content_3.png" alt="Edição 03" class="demo-image">
+                        <img src="assets/apresentacao_projeto_social_media_content_4.png" alt="Edição 04" class="demo-image">
+                        <img src="assets/apresentacao_projeto_social_media_content_5.png" alt="Edição 05" class="demo-image">
+                        <img src="assets/apresentacao_projeto_social_media_content_6.png" alt="Edição 06" class="demo-image">
+                        <img src="assets/apresentacao_projeto_social_media_content_7.png" alt="Edição 07" class="demo-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
