@@ -1,5 +1,6 @@
 document.addEventListener('mousemove', (e) => {
     const star = document.querySelector('.star-shape');
+    if (!star) return;
     const x = (window.innerWidth / 2 - e.pageX) / 30;
     const y = (window.innerHeight / 2 - e.pageY) / 30;
 
@@ -8,6 +9,7 @@ document.addEventListener('mousemove', (e) => {
 
 window.addEventListener('load', () => {
     const hero = document.querySelector('.hero');
+    if (!hero) return;
     hero.style.opacity = '0';
     hero.style.transition = 'opacity 1.5s ease-in-out';
 
