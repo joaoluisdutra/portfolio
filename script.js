@@ -227,14 +227,13 @@ const animateNumbers = (entries, observer) => {
 
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
-                const duration = 2000; // 2 segundos, igual à animação do CSS
+                const duration = 2000;
                 const startTime = performance.now();
 
                 const updateCount = (currentTime) => {
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / duration, 1);
                     
-                    // Easing suave (outQuad)
                     const easedProgress = progress * (2 - progress);
                     const currentCount = Math.floor(easedProgress * target);
                     

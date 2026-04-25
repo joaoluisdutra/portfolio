@@ -60,7 +60,6 @@ body {
     color: var(--accent-color);
 }
 
-/* Links de Retorno Padronizados */
 .back-link {
     text-decoration: none;
     color: var(--text-color);
@@ -392,7 +391,6 @@ body {
 
 .intro-bio {
     width: 100%;
-    padding: 150px 10%;
     padding: 150px 10% 60px;
     background-color: var(--bg-color);
     display: flex;
@@ -616,7 +614,7 @@ body {
     stroke-width: 8;
     stroke-linecap: round;
     stroke-dasharray: 283;
-    stroke-dashoffset: 283; /* Começa vazio */
+    stroke-dashoffset: 283;
     transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .gauge-percent-text {
@@ -757,10 +755,10 @@ body {
 }
 
 .cert-access-minimal-link {
-    font-size: 1.2rem;
+    font-size: 1.1addrem;
     opacity: 0.6;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color);
     transition: all 0.3s ease;
     display: inline-block;
 }
@@ -806,7 +804,7 @@ body {
     font-size: 1.2rem;
     opacity: 0.6;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color);
     transition: all 0.3s ease;
     display: inline-block;
 }
@@ -815,7 +813,7 @@ body {
        font-size: 1.2rem;
     opacity: 0.6;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color);
     transition: all 0.3s ease;
     display: inline-block;
 }
