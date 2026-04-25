@@ -756,6 +756,20 @@ body {
     color: var(--text-color);
 }
 
+.cert-access-minimal-link {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cert-access-minimal-link:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
 .contact-footer {
     width: 100%;
     padding: 100px 5% 40px;
@@ -795,6 +809,20 @@ body {
     color: inherit;
     transition: all 0.3s ease;
     display: inline-block;
+}
+
+.footer-number {
+       font-size: 1.2rem;
+    opacity: 0.6;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-number:hover {
+    opacity: 1;
+    color: var(--accent-color);
 }
 
 .footer-email:hover {
