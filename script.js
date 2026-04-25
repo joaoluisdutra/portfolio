@@ -217,6 +217,14 @@ const animateNumbers = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const counters = entry.target.querySelectorAll('.gauge-percent-text');
+            const circles = entry.target.querySelectorAll('.gauge-progress');
+
+            // Inicia a animação dos círculos junto com os números
+            circles.forEach(circle => {
+                const offset = circle.getAttribute('data-offset');
+                circle.style.strokeDashoffset = offset;
+            });
+
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
                 const duration = 2000; // 2 segundos, igual à animação do CSS
