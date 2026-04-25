@@ -211,3 +211,38 @@ if (markerSi && siPopup) {
         }, 400);
     });
 }
+
+// Animação dos números das habilidades
+const animateNumbers = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.gauge-percent-text');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 2 segundos, igual à animação do CSS
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Easing suave (outQuad)
+                    const easedProgress = progress * (2 - progress);
+                    const currentCount = Math.floor(easedProgress * target);
+                    
+                    counter.innerText = `${currentCount}%`;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    }
+                };
+                requestAnimationFrame(updateCount);
+            });
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const skillObserver = new IntersectionObserver(animateNumbers, { threshold: 0.5 });
+const skillsSection = document.querySelector('.skills-dashboard');
+if (skillsSection) skillObserver.observe(skillsSection);

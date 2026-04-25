@@ -60,6 +60,18 @@ body {
     color: var(--accent-color);
 }
 
+/* Links de Retorno Padronizados */
+.back-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+.back-link:hover { color: var(--accent-color); transform: translateX(-3px); }
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -562,6 +574,70 @@ body {
     z-index: 10;
 }
 
+/* Skills Dashboard */
+.skills-dashboard {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 60px 40px;
+    background-color: var(--off-white);
+    border-radius: 32px;
+    text-align: center;
+}
+.skills-gauges {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Mantido conforme original, considere alterar para repeat(3, 1fr) se desejar 3 colunas */
+    gap: 60px 40px;
+    margin-top: 50px;
+}
+.skill-gauge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.gauge-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+.gauge-svg {
+    transform: rotate(-90deg);
+    width: 120px;
+    height: 120px;
+}
+.gauge-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 8;
+}
+.gauge-progress {
+    fill: none;
+    stroke: var(--accent-color);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    transition: stroke-dashoffset 1.5s ease-in-out;
+    animation: fillGauge 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes fillGauge {
+    from { stroke-dashoffset: 283; }
+}
+.gauge-percent-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+.skill-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.6;
+}
+
 .photo-placeholder {
     display: inline-block;
     width: 1.5em;
@@ -897,4 +973,8 @@ body {
     .submit-btn {
         width: 100%;
     }
+
+        .skills-gauges {
+            grid-template-columns: repeat(2, 1fr);
+        }
 }
