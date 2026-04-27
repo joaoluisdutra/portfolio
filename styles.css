@@ -974,7 +974,19 @@ body {
     }
 
     .footer-title {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
+    }
+
+    .footer-email,
+    .footer-number,
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.7rem;
+        padding-top: 30px;
     }
 
     .submit-btn {
@@ -987,5 +999,18 @@ body {
         .intro-text img {
             max-width: 40px !important;
             margin: 0 4px;
+        }
+
+        .skills-strip {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .badge.top {
+            font-size: 0.8rem;
+        }
+
+        .typing-text .word-experiences {
+            white-space: nowrap;
         }
 }
