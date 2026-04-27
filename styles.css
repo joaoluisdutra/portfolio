@@ -574,9 +574,10 @@ body {
 
 
 .skills-gauges {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
     margin-top: 30px;
 }
 .skill-gauge {
@@ -600,8 +601,8 @@ body {
     width: 40%;
     height: 40%;
     color: var(--text-color);
-    opacity: 0;
-    transform: translateY(10px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.6s ease;
 }
 .skill-icon.animate {
@@ -888,12 +889,6 @@ body {
     }
 }
 
-@media (max-width: 1100px) {
-    .skills-gauges {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     .top-nav {
         top: 20px;
@@ -987,7 +982,6 @@ body {
     }
 
         .skills-gauges {
-            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
         .intro-text img {
