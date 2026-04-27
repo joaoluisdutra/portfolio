@@ -8,6 +8,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Be+Vietnam+Pro:wght@800&family=Plus+Jakarta+Sans:wght@800&family=Outfit:wght@800&family=Archivo:wght@800&family=Epilogue:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            /* 1. Skills section margins */
+            .skills-strip {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            /* 2. "Website Portfolio" font size */
+            .badge.top {
+                font-size: 0.7rem; /* Adjust as needed for better fit */
+            }
+
+            /* 3. "Designing Web Experiences" line break */
+            /* Ensure the word "Experiences" does not break */
+            .typing-text .word-experiences {
+                white-space: nowrap;
+            }
+            /* The h1 is text-align: center. With white-space: nowrap on "Experiences",
+               if "Designing Web" fits on one line, "Experiences" will wrap as a whole word to the next line. */
+        }
+    </style>
 </head>
 <body>
 
@@ -63,9 +86,7 @@
         <div class="hero">
             <div class="star-shape"></div>
             <h1 class="title">
-                <span class="icon-crown"></span>
-                <span class="typing-text">Designing Web Experienc<span class="font-swap">e</span>s</span>
-                <span class="icon-cursor"></span>
+                <span class="icon-crown"></span><span class="typing-text">Designing Web <span class="word-experiences">Experienc<span class="font-swap">e</span>s</span></span><span class="icon-cursor"></span>
             </h1>
         </div>
 
