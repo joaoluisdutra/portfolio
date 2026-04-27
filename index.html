@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Be+Vietnam+Pro:wght@800&family=Plus+Jakarta+Sans:wght@800&family=Outfit:wght@800&family=Archivo:wght@800&family=Epilogue:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .skills-gauges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+    </style>
 </head>
 <body>
 
@@ -355,82 +363,69 @@
             </p>
         </div>
     </section>
-
-<section class="skills-dashboard">
-    <h2 class="section-label">Habilidades em desenvolvimento</h2>
-    <div class="skills-gauges">
-        <div class="skill-gauge">
-            <div class="gauge-container">
-                <svg class="gauge-svg" viewBox="0 0 100 100">
-                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="gauge-progress" cx="50" cy="50" r="45" data-offset="57"></circle>
-                </svg>
-                <span class="gauge-percent-text" data-target="80">0%</span>
+    
+    <section class="skills-dashboard">
+        <div class="skills-strip">
+            <h2 class="section-label"></h2>
+            <div class="skills-gauges">
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <span class="skill-label">HTML</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <span class="skill-label">CSS</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><path d="M3 3h18v18H3z"></path><path d="M15 9h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"></path></svg>
+                    </div>
+                    <span class="skill-label">JavaScript</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path></svg>
+                    </div>
+                    <span class="skill-label">Figma</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    </div>
+                    <span class="skill-label">Photoshop</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+                    </div>
+                    <span class="skill-label">Illustrator</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <span class="skill-label">Inglês</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="3" height="9" rx="1"></rect><rect x="14" y="7" width="3" height="5" rx="1"></rect></svg>
+                    </div>
+                    <span class="skill-label">Trello</span>
+                </div>
+                <div class="skill-gauge">
+                    <div class="skill-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="skill-icon"><path d="M12 3v18"></path><path d="M3 12h18"></path><path d="M3 3h9v9H3z"></path><path d="M12 12h9v9h-9z"></path></svg>
+                    </div>
+                    <span class="skill-label">Notion</span>
+                </div>
             </div>
-            <span class="skill-label">HTML</span>
         </div>
-        <div class="skill-gauge">
-            <div class="gauge-container">
-                <svg class="gauge-svg" viewBox="0 0 100 100">
-                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="gauge-progress" cx="50" cy="50" r="45" data-offset="57"></circle>
-                </svg>
-                <span class="gauge-percent-text" data-target="80">0%</span>
-            </div>
-            <span class="skill-label">CSS</span>
-        </div>
-        <div class="skill-gauge">
-            <div class="gauge-container">
-                <svg class="gauge-svg" viewBox="0 0 100 100">
-                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="gauge-progress" cx="50" cy="50" r="45" data-offset="99"></circle>
-                </svg>
-                <span class="gauge-percent-text" data-target="65">0%</span>
-            </div>
-            <span class="skill-label">JavaScript</span>
-        </div>
-        <div class="skill-gauge">
-            <div class="gauge-container">
-                <svg class="gauge-svg" viewBox="0 0 100 100">
-                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="gauge-progress" cx="50" cy="50" r="45" data-offset="57"></circle>
-                </svg>
-                <span class="gauge-percent-text" data-target="80">0%</span>
-            </div>
-            <span class="skill-label">Figma</span>
-        </div>
-        <div class="skill-gauge">
-            <div class="gauge-container">
-                <svg class="gauge-svg" viewBox="0 0 100 100">
-                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="gauge-progress" cx="50" cy="50" r="45" data-offset="14"></circle>
-                </svg>
-                <span class="gauge-percent-text" data-target="95">0%</span>
-            </div>
-            <span class="skill-label">Photoshop</span>
-        </div>
-        <div class="skill-gauge">
-            <div class="gauge-container">
-                <svg class="gauge-svg" viewBox="0 0 100 100">
-                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="gauge-progress" cx="50" cy="50" r="45" data-offset="85"></circle>
-                </svg>
-                <span class="gauge-percent-text" data-target="70">0%</span>
-            </div>
-            <span class="skill-label">Illustrator</span>
-        </div>
-        <div class="skill-gauge">
-            <div class="gauge-container">
-                <svg class="gauge-svg" viewBox="0 0 100 100">
-                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="gauge-progress" cx="50" cy="50" r="45" data-offset="71"></circle>
-                </svg>
-                <span class="gauge-percent-text" data-target="75">0%</span>
-            </div>
-            <span class="skill-label">Inglês</span>
-        </div>
-    </div>
-</section>
+        <br><br>
+    </section>
 
     <section class="certificates-section">
         <div class="certificates-header">

@@ -212,44 +212,18 @@ if (markerSi && siPopup) {
     });
 }
 
-// Animação dos números das habilidades
-const animateNumbers = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('.gauge-percent-text');
-            const circles = entry.target.querySelectorAll('.gauge-progress');
-
-            // Inicia a animação dos círculos junto com os números
-            circles.forEach(circle => {
-                const offset = circle.getAttribute('data-offset');
-                circle.style.strokeDashoffset = offset;
-            });
-
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 2000;
-                const startTime = performance.now();
-
-                const updateCount = (currentTime) => {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    const easedProgress = progress * (2 - progress);
-                    const currentCount = Math.floor(easedProgress * target);
-                    
-                    counter.innerText = `${currentCount}%`;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCount);
-                    }
-                };
-                requestAnimationFrame(updateCount);
-            });
-            observer.unobserve(entry.target);
-        }
+const skillIcons = document.querySelectorAll('.skill-icon');
+if (skillIcons.length > 0) {
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
     });
-};
 
-const skillObserver = new IntersectionObserver(animateNumbers, { threshold: 0.5 });
-const skillsSection = document.querySelector('.skills-dashboard');
-if (skillsSection) skillObserver.observe(skillsSection);
+    skillIcons.forEach(icon => skillObserver.observe(icon));
+}

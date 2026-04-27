@@ -169,7 +169,7 @@ body {
 }
 
 .title {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(1.8rem, 8vw, 5rem);
     font-weight: 900;
     color: var(--text-color);
     z-index: 2;
@@ -404,9 +404,9 @@ body {
 }
 
 .intro-text {
-    font-size: clamp(1.5rem, 4.5vw, 3.5rem);
+    font-size: clamp(1.2rem, 4.5vw, 3rem);
     font-weight: 600;
-    line-height: 1.8;
+    line-height: 1.4;
     color: var(--text-color);
     letter-spacing: -2px;
     word-wrap: break-word;
@@ -572,61 +572,44 @@ body {
     z-index: 10;
 }
 
-/* Skills Dashboard */
-.skills-dashboard {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 60px 40px;
-    background-color: var(--off-white);
-    border-radius: 32px;
-    text-align: center;
-}
+
 .skills-gauges {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 20px;
-    margin-top: 50px;
+    gap: 15px;
+    margin-top: 30px;
 }
 .skill-gauge {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
-.gauge-container {
-    position: relative;
-    width: 120px;
-    height: 120px;
+.skill-icon-container {
+    width: clamp(50px, 10vw, 80px);
+    height: clamp(50px, 10vw, 80px);
+    background: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
 }
-.gauge-svg {
-    transform: rotate(-90deg);
-    width: 120px;
-    height: 120px;
+.skill-icon {
+    width: 40%;
+    height: 40%;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.6s ease;
 }
-.gauge-bg {
-    fill: none;
-    stroke: #eee;
-    stroke-width: 8;
-}
-.gauge-progress {
-    fill: none;
-    stroke: var(--accent-color);
-    stroke-width: 8;
-    stroke-linecap: round;
-    stroke-dasharray: 283;
-    stroke-dashoffset: 283;
-    transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.gauge-percent-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.3rem;
-    font-weight: 800;
+.skill-icon.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 .skill-label {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -755,7 +738,7 @@ body {
 }
 
 .cert-access-minimal-link {
-    font-size: 1.1addrem;
+    font-size: 1.1rem;
     opacity: 0.6;
     text-decoration: none;
     color: var(--text-color);
@@ -1004,6 +987,11 @@ body {
     }
 
         .skills-gauges {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .intro-text img {
+            max-width: 40px !important;
+            margin: 0 4px;
         }
 }
