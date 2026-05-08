@@ -18,12 +18,12 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
- const slider = document.querySelector('.project-gallery');
+ const slider = document.querySelector('.project-gallery.is-slider');
 const track = document.querySelector('.gallery-track');
 const btnLeft = document.querySelector('.btn-left');
 const btnRight = document.querySelector('.btn-right');
 
-if (slider && track) {
+if (slider && track && slider.classList.contains('is-slider')) {
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -162,7 +162,15 @@ menuTrigger?.addEventListener('click', () => sidebar.classList.add('open'));
 closeMenu?.addEventListener('click', () => sidebar.classList.remove('open'));
 
 sidebar?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => sidebar.classList.remove('open'));
+    link.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        if (link.classList.contains('grade-link')) {
+            setTimeout(() => {
+                document.querySelector('.marker-si')?.classList.add('marker-highlight');
+                setTimeout(() => document.querySelector('.marker-si')?.classList.remove('marker-highlight'), 3000);
+            }, 600);
+        }
+    });
 });
 
 document.addEventListener('mousedown', (e) => {
