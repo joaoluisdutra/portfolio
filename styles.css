@@ -2,6 +2,31 @@ html {
     scroll-behavior: smooth;
 }
 
+h3 {
+    color: var(--text-color);
+}
+
+.project-card {
+    color: var(--text-color);
+}
+
+.cert-main-title {
+    color: var(--text-color);
+}
+
+.col {
+    color: var(--text-color);
+}
+
+.certificates-list {
+    color: var(--text-color);
+}
+
+.project-image {
+    color: var(--text-color);
+
+}
+
 :root {
     --bg-color: #ffffff;
     --off-white: #fafafa;
@@ -409,7 +434,7 @@ body {
 
 .intro-bio {
     width: 100%;
-    padding: 150px 10% 75px;
+    padding: 100px 10%;
     background-color: var(--bg-color);
     display: flex;
     justify-content: center;
