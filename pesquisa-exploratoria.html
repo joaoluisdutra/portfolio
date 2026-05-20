@@ -205,7 +205,10 @@ Estou estudando como desenvolver uma rede focada em conectar leitores que estão
 
 Quero entender como os clubes se organizam hoje para entregar ferramentas que centralizem enquetes, sorteios, painéis de progresso (sem a pressão do ritmo alheio) e roteiros de encontros locais, resolvendo de vez a "colcha de retalhos" que é usar vários apps diferentes.
 
-<br><br><b>Garantia de Privacidade: Suas respostas são estritamente para fins de análise acadêmica e mapeamento de demandas de software. Não há qualquer intuito de autopromoção.</b></p>
+<br><br><b>Garantia de Privacidade: Suas respostas são estritamente para fins de análise acadêmica e mapeamento de demandas de software. Não há qualquer intuito de autopromoção.</b>
+
+<br><br>Ficou com alguma dúvida sobre a proposta do projeto? joaoluisdutrra@gmail.com
+</p>
         </header>
 
         <form id="clubeForm" action="https://formspree.io/f/xnjlbdoa" method="POST">
@@ -214,13 +217,21 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
             <div class="form-section active" id="section-triagem">
                 <span class="badge">Identificação</span>
                 <div class="question-group">
-                    <label class="question-label" for="nome">Nome Completo: *</label>
+                    <label class="question-label" for="nome">Nome: *</label>
                     <input type="text" id="nome" name="Nome Completo" placeholder="Digite seu nome" required>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label" for="email">E-mail: *</label>
-                    <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
+                    <label class="question-label" for="contato">Contato (E-mail, WhatsApp, Instagram ou Telegram):</label>
+                    <input type="text" id="contato" name="Meio de Contato" placeholder="Opcional: Deixe seu contato se desejar">
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Você permite que seja feito um novo contato caso surjam novos formulários, testes de usabilidade ou outras etapas durante o desenvolvimento deste projeto?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Permissao Contato Futuro" value="Sem problemas"> Sem problemas</label>
+                        <label class="option-item"><input type="radio" name="Permissao Contato Futuro" value="Melhor nao"> Melhor não</label>
+                    </div>
                 </div>
 
                 <div class="question-group">
