@@ -309,7 +309,7 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="submit-btn" onclick="showFinal()">Continuar</button>
+                    <button type="submit" class="submit-btn">Finalizar Pesquisa</button>
                 </div>
             </div>
 
@@ -364,7 +364,7 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="submit-btn" onclick="showFinal()">Continuar</button>
+                    <button type="submit" class="submit-btn">Finalizar Pesquisa</button>
                 </div>
             </div>
 
@@ -437,43 +437,15 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="submit-btn" onclick="showFinal()">Continuar</button>
-                </div>
-            </div>
-
-            <!-- SEÇÃO 4: Validação de Mercado -->
-            <div class="form-section" id="section-final">
-                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
-                <br>
-                <span class="badge">Validação Final</span>
-                
-                <div class="question-group">
-                    <label class="question-label">Se um app centralizasse enquetes, painel de progresso anônimo, ranking de leituras, integração com Skoob/Goodreads e roteiro de locais, você faria o download?</label>
-                    <div class="options-list">
-                        <label class="option-item"><input type="radio" name="FINAL - Faria o download do App" value="Sim" required> Sim, com certeza absoluta!</label>
-                        <label class="option-item"><input type="radio" name="FINAL - Faria o download do App" value="Talvez"> Talvez, baixaria para testar com o grupo.</label>
-                        <label class="option-item"><input type="radio" name="FINAL - Faria o download do App" value="Nao"> Não, as ferramentas gratuitas atuais já resolvem meu problema.</label>
-                    </div>
-                </div>
-
-                <div class="question-group">
-                    <label class="question-label">Aceitaria participar de uma breve entrevista online (10-15 min)?</label>
-                    <div class="options-list">
-                        <label class="option-item"><input type="radio" name="FINAL - Aceita participar de entrevista" value="Sim"> Sim, pode entrar em contato!</label>
-                        <label class="option-item"><input type="radio" name="FINAL - Aceita participar de entrevista" value="Nao"> Não, prefiro não participar.</label>
-                    </div>
-                </div>
-
-                <div class="btn-group">
                     <button type="submit" class="submit-btn">Finalizar Pesquisa</button>
                 </div>
             </div>
+
         </form>
     </main>
 
     <script>
         let userRole = '';
-
         function showPart(role) {
             userRole = role;
             hideAllSections();
@@ -485,11 +457,6 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
             } else if(role === 'habit_leitura') {
                 document.getElementById('section-habit-leitura').classList.add('active');
             }
-        }
-
-        function showFinal() {
-            hideAllSections();
-            document.getElementById('section-final').classList.add('active');
         }
 
         function goBackToTriagem() {
