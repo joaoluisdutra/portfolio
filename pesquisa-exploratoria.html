@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Exploratória - Clube do Livro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --off-white: #fafafa;
+            --accent-color: #6511d4;
+            --text-color: #212427;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: var(--accent-color); }
+
+        h1 { 
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 10px;
+            letter-spacing: -1.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .intro-text {
+            margin-bottom: 50px;
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .form-section {
+            background: var(--off-white);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+            display: none; /* Escondido por padrão para a triagem */
+        }
+
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-group {
+            margin-bottom: 35px;
+        }
+
+        .question-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            accent-color: var(--accent-color);
+            width: 18px;
+            height: 18px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background-color: var(--text-color);
+            color: white;
+            border: 1px solid var(--text-color);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            margin-top: 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .back-btn-step {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .back-btn-step:hover {
+            background-color: #eee;
+            transform: scale(1.02);
+        }
+
+        .back-step-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 15px;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .back-step-link:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            transform: scale(1.05);
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a href="index.html" class="back-link">← Voltar ao Início</a>
+        
+        <header>
+            <h1>Pesquisa de Viabilidade e Validação de Mercado</h1>
+            <p class="intro-text">Ajude-nos a construir a melhor experiência para clubes do livro virtuais.</p>
+        </header>
+
+        <form id="clubeForm" action="https://formspree.io/f/xnjlbdoa" method="POST">
+            
+            <!-- SEÇÃO 1: Identificação e Triagem -->
+            <div class="form-section active" id="section-triagem">
+                <span class="badge">Identificação</span>
+                <div class="question-group">
+                    <label class="question-label" for="nome">Nome Completo: *</label>
+                    <input type="text" id="nome" name="Nome Completo" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label" for="email">E-mail: *</label>
+                    <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Qual é o seu papel no clube do livro atual ou no que você deseja criar?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Papel Principal" value="Moderador" onclick="showPart('moderador')" required> Sou Moderador / Organizador (Gerencio a logística)</label>
+                        <label class="option-item"><input type="radio" name="Papel Principal" value="Leitor" onclick="showPart('leitor')"> Sou Leitor / Membro (Participo das leituras)</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 2: Exclusiva para Moderadores -->
+            <div class="form-section" id="section-moderador">
+                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
+                <br><br>
+                <span class="badge">Seção 2: Visão do Gestor</span>
+                
+                <div class="question-group">
+                    <label class="question-label">Em qual modalidade o seu clube opera atualmente?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="100% Presencial"> 100% Presencial</label>
+                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="100% Online"> 100% Online</label>
+                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="Hibrido"> Híbrido</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Como organizador, qual dessas tarefas toma mais o seu tempo ou gera mais bagunça hoje? (Selecione todas as que se aplicam)</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Sugestoes Livros"> Coletar sugestões de livros para as próximas leituras.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Enquetes"> Criar e gerenciar enquetes de votação de títulos.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Sorteios"> Realizar sorteios de livros, gêneros ou dinâmicas.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Progresso"> Cobrar e acompanhar o progresso de leitura dos membros.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Logistica"> Encontrar locais físicos ou gerenciar links de reuniões online.</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Se o aplicativo oferecesse um "Roteiro de Locais Parceiros" (com cafés/restaurantes mapeados e cupons de desconto), você utilizaria essa curadoria para agendar os encontros presenciais?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Sim"> Sim, com certeza.</label>
+                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Talvez"> Talvez.</label>
+                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Nao"> Não, meu clube é online ou já temos local fixo.</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Para manter um clube organizado e livre de anúncios, você aceitaria pagar uma assinatura mensal acessível (Ex: R$ 15 a R$ 30) que liberasse ferramentas avançadas para TODOS os membros? (Custo centralizado no organizador para rateio).</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Sim"> Sim, centralizar o pagamento em mim e dividir com o grupo facilita muito.</label>
+                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Talvez"> Talvez, dependeria estritamente do valor por membro.</label>
+                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Nao"> Não, só utilizaria o aplicativo se ele fosse 100% gratuito (mesmo com anúncios).</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Caso optasse pela versão gratuita (Básica), o que seria essencial para você conseguir gerenciar o clube, mesmo sem recursos avançados?</label>
+                    <textarea name="Essencial Versao Gratuita" rows="3" placeholder="Sua resposta..."></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Você centralizaria a gestão do clube em um app exclusivo?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="App Centralizado" value="Sim"> Com certeza, resolveria a bagunça.</label>
+                        <label class="option-item"><input type="radio" name="App Centralizado" value="Depende"> Depende do engajamento do grupo.</label>
+                        <label class="option-item"><input type="radio" name="App Centralizado" value="Nao"> Não, prefiro o WhatsApp/Redes Sociais.</label>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="submit-btn" onclick="showFinal()">Continuar</button>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 3: Exclusiva para Leitores -->
+            <div class="form-section" id="section-leitor">
+                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
+                <br><br>
+                <span class="badge">Seção 3: Experiência do Leitor</span>
+                
+                <div class="question-group">
+                    <label class="question-label">Como se sente ao ver colegas lendo mais rápido que você?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Tranquilo"> Tranquilo(a), cada um tem seu ritmo.</label>
+                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Pressionado"> Um pouco pressionado(a) ou ansioso(a).</label>
+                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Desmotivado"> Desmotivado(a), sinto que estou ficando para trás.</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Você se sentiria mais confortável com um painel de progresso de leitura se ele fosse anônimo?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Sim"> Sim, sem a pressão do julgamento.</label>
+                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Indiferente"> Indiferente.</label>
+                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Nao"> Não, prefiro que saibam que sou eu.</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Um ambiente virtual exclusivo incentivaria você a ler mais?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Incentivo App" value="Sim"> Sim, traria mais foco e comunidade.</label>
+                        <label class="option-item"><input type="radio" name="Incentivo App" value="So Organizacao"> Ajudaria na organização, mas não no hábito.</label>
+                        <label class="option-item"><input type="radio" name="Incentivo App" value="Nao"> Não mudaria nada.</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Quais características são essenciais em um local presencial? (Até 3)</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Silencioso" class="limit-3"> Ambiente reservado/silencioso.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Cardapio" class="limit-3"> Cardápio variado.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Mesas Grandes" class="limit-3"> Mesas grandes que acomodem o grupo.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Acesso" class="limit-3"> Facilidade de acesso (estacionamento/ônibus).</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Descontos" class="limit-3"> Descontos ou vantagens exclusivas.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="N/A" class="limit-3"> Não se aplica (100% online).</label>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="submit-btn" onclick="showFinal()">Continuar</button>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 4: Validação de Mercado -->
+            <div class="form-section" id="section-final">
+                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
+                <br>
+                <span class="badge">Validação Final</span>
+                
+                <div class="question-group">
+                    <label class="question-label">Se um app centralizasse enquetes, painel de progresso anônimo, ranking de leituras, integração com Skoob/Goodreads e roteiro de locais, você faria o download?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Intencao Download" value="Sim" required> Sim, com certeza absoluta!</label>
+                        <label class="option-item"><input type="radio" name="Intencao Download" value="Talvez"> Talvez, baixaria para testar com o grupo.</label>
+                        <label class="option-item"><input type="radio" name="Intencao Download" value="Nao"> Não, as ferramentas gratuitas atuais já resolvem meu problema.</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Aceitaria participar de uma breve entrevista online (10-15 min)?</label>
+                    <div class="options-list">
+                        <label class="option-item"><input type="radio" name="Aceita Entrevista" value="Sim"> Sim, pode entrar em contato!</label>
+                        <label class="option-item"><input type="radio" name="Aceita Entrevista" value="Nao"> Não, prefiro não participar.</label>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" class="submit-btn">Finalizar Pesquisa</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        let userRole = '';
+
+        function showPart(role) {
+            userRole = role;
+            hideAllSections();
+            
+            if(role === 'moderador') {
+                document.getElementById('section-moderador').classList.add('active');
+            } else {
+                document.getElementById('section-leitor').classList.add('active');
+            }
+        }
+
+        function showFinal() {
+            hideAllSections();
+            document.getElementById('section-final').classList.add('active');
+        }
+
+        function goBackToTriagem() {
+            hideAllSections();
+            document.getElementById('section-triagem').classList.add('active');
+        }
+
+        function goBackToRoleSection() {
+            hideAllSections();
+            if(userRole === 'moderador') {
+                document.getElementById('section-moderador').classList.add('active');
+            } else {
+                document.getElementById('section-leitor').classList.add('active');
+            }
+        }
+
+        function hideAllSections() {
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+        }
+
+        // Lógica para limitar a seleção de checkboxes (máximo 3)
+        document.querySelectorAll('.limit-3').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkedCount = document.querySelectorAll('.limit-3:checked').length;
+                if (checkedCount > 3) {
+                    this.checked = false;
+                    alert('Por favor, selecione no máximo 3 opções.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
