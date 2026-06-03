@@ -237,17 +237,9 @@ body {
     position: relative;
     transition: all 0.2s ease;
     animation: 
-        highlight-letter 4s 4s infinite,
         cycle-fonts 4s 4s infinite;
     padding: 0 2px;
     margin: 0 -2px;
-}
-
-@keyframes highlight-letter {
-    0%, 10% { background-color: transparent; color: inherit; }
-    15%, 85% { background-color: #ff6b00; color: var(--bg-color); }
-    15%, 85% { background-color: #ff2d55; color: var(--bg-color); }
-    90%, 100% { background-color: transparent; color: inherit; }
 }
 
 @keyframes cycle-fonts {

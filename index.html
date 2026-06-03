@@ -23,7 +23,7 @@
         }
 
         .project-gallery {
-            padding: 10px 0 20px;
+            padding: 10px 0 100px;
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
@@ -125,6 +125,112 @@
             .project-image {
                 height: 220px;
             }
+        }
+
+        .intro-bio {
+            padding: 0;
+        }
+
+        /* Seção de Últimas Leituras - Inspiração Letterboxd */
+        .latest-reads {
+            padding: 100px 0;
+            background-color: var(--bg-color);
+        }
+
+        .reads-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 50px auto 0;
+            padding: 0 40px;
+        }
+
+        .read-card {
+            position: relative;
+            aspect-ratio: 2 / 3;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .read-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-color: #d1d1d1;
+        }
+
+        .read-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .read-more-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .read-more-link:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .read-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .read-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .read-card:hover .read-card-overlay {
+            opacity: 1;
+        }
+
+        .read-card-overlay h4 {
+            color: white;
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .read-card-overlay p {
+            color: rgba(255,255,255,0.7);
+            margin: 8px 0 0;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .reads-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 0 20px; }
+        }
+        @media (max-width: 480px) {
+            .reads-grid { grid-template-columns: 1fr; max-width: 280px; margin: 40px auto 0; }
         }
     </style>
 </head>
@@ -446,6 +552,46 @@
                     alt="Foto de João"> <b class="marker-web">Web</b> e <b class="marker-ux">UX Design</b> de <img
                     src="assets/mouse.png" alt="Mouse" style="max-width: 70px;"> forma paralela.
             </p>
+        </div>
+    </section>
+
+    <section class="latest-reads">
+        <div class="footer-container">
+            <h2 class="section-label">Últimas Leituras de Pesquisa</h2>
+            <div class="reads-grid">
+                <div class="read-item">
+                    <a href="https://www.goodreads.com/en/book/show/18197267-don-t-make-me-think-revisited" target="_blank" class="read-card">
+                        <img src="assets/book-dont-make-me-think.png" alt="Don't Make Me Think, Revisited - Steve Krug">
+                        <div class="read-card-overlay">
+                            <h4>Don't Make Me Think, Revisited</h4>
+                            <p>Steve Krug</p>
+                        </div>
+                    </a>
+                    <a href="https://www.goodreads.com/en/book/show/18197267-don-t-make-me-think-revisited" target="_blank" class="read-more-link">Saiba mais →</a>
+                </div>
+
+                <div class="read-item">
+                    <a href="https://www.goodreads.com/book/show/213997136-o-design-do-dia-a-dia" target="_blank" class="read-card">
+                        <img src="assets/book-design-dia-a-dia.png" alt="O design do dia a dia - Don Norman">
+                        <div class="read-card-overlay">
+                            <h4>O design do dia a dia</h4>
+                            <p>Don Norman</p>
+                        </div>
+                    </a>
+                    <a href="https://www.goodreads.com/book/show/213997136-o-design-do-dia-a-dia" target="_blank" class="read-more-link">Saiba mais →</a>
+                </div>
+
+                <div class="read-item">
+                    <a href="https://www.goodreads.com/en/book/show/63889612-enviesados" target="_blank" class="read-card">
+                        <img src="assets/book-enviesados.png" alt="Enviesados - Rian Dutra">
+                        <div class="read-card-overlay">
+                            <h4>Enviesados</h4>
+                            <p>Rian Dutra</p>
+                        </div>
+                    </a>
+                    <a href="https://www.goodreads.com/en/book/show/63889612-enviesados" target="_blank" class="read-more-link">Saiba mais →</a>
+                </div>
+            </div>
         </div>
     </section>
 
