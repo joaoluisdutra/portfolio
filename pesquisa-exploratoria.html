@@ -58,7 +58,7 @@
             border-radius: 24px;
             border: 1px solid #eee;
             margin-bottom: 30px;
-            display: none; /* Escondido por padrão para a triagem */
+            display: none;
         }
 
         .form-section.active {
@@ -215,8 +215,6 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
         </header>
 
         <form id="clubeForm" action="https://formspree.io/f/xnjlbdoa" method="POST">
-            
-            <!-- SEÇÃO 1: Identificação e Triagem -->
             <div class="form-section active" id="section-triagem">
                 <span class="badge">Identificação</span>
                 <div class="question-group">
@@ -247,7 +245,6 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
             </div>
 
-            <!-- SEÇÃO 2: Exclusiva para Moderadores -->
             <div class="form-section" id="section-moderador">
                 <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
                 <br><br>
@@ -315,7 +312,6 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
             </div>
 
-            <!-- SEÇÃO 3: Exclusiva para Leitores -->
             <div class="form-section" id="section-leitor">
                 <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
                 <br><br>
@@ -370,7 +366,6 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
             </div>
 
-            <!-- SEÇÃO 4: Perfil de Leitor (Não Membro) -->
             <div class="form-section" id="section-habit-leitura">
                 <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
                 <br><br>
@@ -483,7 +478,6 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
             });
         }
 
-        // Lógica para limitar a seleção de checkboxes (máximo 3)
         document.querySelectorAll('.limit-3').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const checkedCount = document.querySelectorAll('.limit-3:checked').length;
