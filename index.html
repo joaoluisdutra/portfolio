@@ -23,6 +23,25 @@
             padding-left: 5vw;
             padding-right: 5vw;
         }
+
+        /* Ajuste de margens para dispositivos móveis */
+        @media (max-width: 768px) {
+            .latest-reads .footer-container,
+            .featured-video-section .footer-container,
+            .contact-footer .footer-container {
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+            }
+
+            /* Espaçamento entre os itens de leitura no mobile */
+            .read-item {
+                margin-bottom: 40px;
+            }
+            .read-item:last-child {
+                margin-bottom: 0;
+            }
+        }
     </style>
 </head>
 
