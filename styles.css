@@ -179,11 +179,11 @@ body {
     text-align: center;
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 10vh 0;
+    min-height: 60vh;
+    padding: 1vh 0 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -731,6 +731,16 @@ body {
     max-height: 30px;
 }
 
+.logo-acafe {
+    max-width: 170px;
+    max-height:55px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+}
+
 .logo-unibave {
     max-width: 120px;
     max-height: 40px;
@@ -930,6 +940,21 @@ body {
     }
 }
 
+@media (max-width: 600px) {
+    :root {
+        --section-spacing: 50px;
+    }
+    
+    .intro-text {
+        font-size: 1.3rem;
+    }
+    
+    .project-card {
+        flex: 0 0 88vw;
+        height: 60vh;
+    }
+}
+
 @media (max-width: 768px) {
     .top-nav {
         top: 20px;
@@ -1074,7 +1099,7 @@ body {
 }
 
 .project-gallery {
-    padding: var(--section-spacing) 0;
+    padding: 0;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -1191,6 +1216,7 @@ body {
 .skills-dashboard {
     width: 100%;
     padding: var(--section-spacing) 0;
+    background-color: var(--off-white);
 }
 
 .reads-grid {
@@ -1287,4 +1313,103 @@ body {
 }
 @media (max-width: 480px) {
     .reads-grid { grid-template-columns: 1fr; max-width: 280px; margin: 40px auto 0; }
+    
+    :root {
+        --section-spacing: 40px;
+    }
+    
+    .title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    
+    .container {
+        min-height: 50vh;
+        padding: 0;
+    }
+    
+    .hero {
+        padding: 20px;
+    }
+    
+    .star-shape {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .project-gallery {
+        padding: 20px 0;
+    }
+    
+    .gallery-track {
+        padding: 0 20px;
+        gap: 15px;
+    }
+    
+    .project-card {
+        flex: 0 0 90vw;
+        height: 55vh;
+    }
+    
+    .intro-bio {
+        padding: 40px 20px;
+    }
+    
+    .intro-text {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+    
+    .skills-dashboard {
+        padding: 40px 20px;
+    }
+    
+    .skills-gauges {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .certificates-section {
+        padding: 40px 20px;
+    }
+    
+    .certificate-row {
+        padding: 20px 5px;
+        font-size: 0.75rem;
+    }
+    
+    .cert-link {
+        padding: 8px 15px;
+        font-size: 0.6rem;
+    }
+    
+    .contact-footer {
+        padding: 40px 20px;
+    }
+    
+    .footer-content {
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-title {
+        font-size: 1.5rem;
+    }
+    
+    .footer-email, .footer-number {
+        font-size: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+    
+    .contact-form {
+        gap: 20px;
+    }
+    
+    .cert-access-minimal-link {
+        font-size: 0.95rem;
+    }
 }
