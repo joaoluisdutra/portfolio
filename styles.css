@@ -985,7 +985,28 @@ body {
     .title {
         line-height: 1;
         padding: 0 20px;
-        text-align: center;
+        text-align: left !important;
+        margin: 0 0 0.75rem !important;
+    }
+
+    .section-label,
+    .category-title,
+    .project-title,
+    .project-subtitle,
+    .badge,
+    .project-header-panel {
+        text-align: left !important;
+    }
+
+    .section-label { margin-bottom: 0.25rem !important; }
+    .category-title { margin-bottom: 0.5rem !important; }
+    .badge { margin-bottom: 0.75rem; }
+
+    .si-container,
+    .cert-page-container,
+    .projects-page-container,
+    .container {
+        padding-top: 180px;
     }
 
     .typing-text {

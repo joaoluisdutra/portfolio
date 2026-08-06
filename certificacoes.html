@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .cert-page-container { max-width: 1200px; margin: 0 auto; padding: 120px 20px; }
-        .category-group { margin-bottom: 80px; }
+        .category-group { margin: 40px 0 80px; }
         .category-title { 
             font-size: 1.5rem; 
             font-weight: 800; 
@@ -33,6 +33,10 @@
             margin-top: 4px; 
         }
         .cert-description { font-size: 0.85rem; opacity: 0.8; line-height: 1.5; }
+        .title, .section-label, .category-title { text-align: left; }
+        .cert-page-container .title { padding: 0; display: inline-block; width: auto; }
+        .title { margin: 0.25rem 0 1rem; }
+        .section-label { margin-bottom: 0.25rem; }
 
         @media (max-width: 1024px) {
             .certificate-row { grid-template-columns: 1.5fr 1fr 1fr 2fr !important; }
@@ -41,6 +45,19 @@
 
         @media (max-width: 768px) {
             .cert-page-container { padding: 80px 20px; }
+            .section-label,
+            .title,
+            .category-title {
+                text-align: left !important;
+                margin-left: 0 !important;
+            }
+            .title {
+                margin-top: 0 !important;
+                margin-bottom: 0.5rem !important;
+                text-align: left !important;
+                display: block;
+            }
+            .section-label { margin-bottom: 0.25rem !important; }
             .certificate-row { 
                 grid-template-columns: 1fr !important; 
                 text-align: center;
@@ -56,7 +73,7 @@
 
     <main class="cert-page-container">
         <h2 class="section-label">Lista completa de certificados</h2>
-        <h1 class="title" style="font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 60px;">Formação Complementar</h1>
+        <h1 class="title" style="font-size: clamp(2.5rem, 8vw, 4.5rem);">Formação Complementar</h1>
 
         <section class="category-group">
             <h3 class="category-title">Design</h3>
