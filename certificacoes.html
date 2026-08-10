@@ -58,7 +58,13 @@
 
         @media (max-width: 768px) {
             .cert-page-container { padding: 88px 20px; }
-            .cert-page-header { margin-bottom: 50px; }
+            /* On small screens, give each reading block room to breathe. */
+            .cert-page-header { margin-bottom: 76px; }
+            .category-group { margin: 0 0 104px; }
+            .category-title {
+                margin-bottom: 32px !important;
+                padding-bottom: 14px;
+            }
             .section-label,
             .title,
             .category-title {
@@ -76,7 +82,8 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
                 text-align: center;
                 column-gap: 18px;
-                row-gap: 20px;
+                row-gap: 28px;
+                padding: 42px 8px 46px;
             }
             .certificate-row .col:nth-child(1),
             .certificate-row .col:nth-child(4) {
