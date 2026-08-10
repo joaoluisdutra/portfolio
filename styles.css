@@ -1236,6 +1236,30 @@ body {
     padding-top: 20px;
 }
 
+/* ProporÃ§Ã£o mais arejada para telas amplas, equivalente Ã  composiÃ§Ã£o em 80%. */
+@media (min-width: 1101px) {
+    .project-gallery {
+        max-width: 1120px;
+    }
+
+    .gallery-track {
+        gap: 32px;
+        padding: 0 32px !important;
+    }
+
+    .project-image {
+        height: 208px;
+    }
+
+    .project-info {
+        padding: 24px;
+    }
+
+    .project-tags {
+        padding-top: 16px;
+    }
+}
+
 @media (max-width: 1100px) {
     .gallery-track {
         grid-template-columns: repeat(2, 1fr);
