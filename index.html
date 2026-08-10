@@ -24,6 +24,12 @@
             padding-right: 5vw;
         }
 
+        @media (min-width: 1101px) {
+            .project-gallery .gallery-track {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         /* Ajuste de margens para dispositivos móveis */
         @media (max-width: 768px) {
             .latest-reads .footer-container,
@@ -40,6 +46,11 @@
             }
             .read-item:last-child {
                 margin-bottom: 0;
+            }
+
+            .certificate-row .col img {
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     </style>
