@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
- const slider = document.querySelector('.project-gallery.is-slider');
+const slider = document.querySelector('.project-gallery.is-slider');
 const track = document.querySelector('.gallery-track');
 const btnLeft = document.querySelector('.btn-left');
 const btnRight = document.querySelector('.btn-right');
@@ -174,8 +174,8 @@ sidebar?.querySelectorAll('a').forEach(link => {
 });
 
 document.addEventListener('mousedown', (e) => {
-    if (sidebar?.classList.contains('open') && 
-        !sidebar.contains(e.target) && 
+    if (sidebar?.classList.contains('open') &&
+        !sidebar.contains(e.target) &&
         !menuTrigger?.contains(e.target)) {
         sidebar.classList.remove('open');
     }

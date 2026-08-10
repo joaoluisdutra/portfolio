@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,11 +22,13 @@
             color: var(--text-color);
             line-height: 1.6;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 20px;
         }
+
         .back-link {
             text-decoration: none;
             color: var(--text-color);
@@ -34,10 +37,12 @@
             margin-bottom: 40px;
             transition: color 0.3s ease;
         }
+
         .back-link:hover {
             color: var(--accent-color);
         }
-        h1 { 
+
+        h1 {
             font-size: clamp(1.6rem, 5vw, 2.2rem);
             margin: 0 0 25px;
             letter-spacing: -1px;
@@ -46,14 +51,15 @@
             text-align: center;
             font-weight: 800;
         }
-        
-        .description { 
-            font-size: 1.1rem; 
-            max-width: 1200px; 
-            margin: 0 auto 80px 0; 
-            color: var(--text-color); 
+
+        .description {
+            font-size: 1.1rem;
+            max-width: 1200px;
+            margin: 0 auto 80px 0;
+            color: var(--text-color);
             text-align: left;
         }
+
         .desc-row {
             display: grid;
             grid-template-columns: 300px 1fr;
@@ -61,6 +67,7 @@
             padding: 50px 0;
             border-top: 1px solid #eee;
         }
+
         .desc-row:first-child {
             border-top: none;
             padding-top: 0;
@@ -82,17 +89,20 @@
             line-height: 1.8;
             max-width: 750px;
         }
+
         .description ul {
             list-style: none;
             padding: 10px 0;
             margin: 30px 0;
         }
+
         .description li {
             margin-bottom: 18px;
             padding-left: 28px;
             position: relative;
             text-align: justify;
         }
+
         .description li::before {
             content: "→";
             position: absolute;
@@ -100,6 +110,7 @@
             color: var(--accent-color);
             font-weight: bold;
         }
+
         .description strong {
             color: var(--text-color);
             font-weight: 700;
@@ -113,10 +124,10 @@
             border: 1px solid #f0f0f0;
         }
 
-        .main-image { 
-            width: 100%; 
-            height: 450px; 
-            object-fit: cover; 
+        .main-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
             display: block;
         }
 
@@ -126,6 +137,7 @@
             justify-content: center;
             margin-top: 20px;
         }
+
         .meta-badge {
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -138,7 +150,11 @@
             align-items: center;
             gap: 6px;
         }
-        .meta-badge svg { width: 12px; height: 12px; }
+
+        .meta-badge svg {
+            width: 12px;
+            height: 12px;
+        }
 
         .project-header-panel {
             background-color: var(--off-white);
@@ -151,6 +167,7 @@
             flex-wrap: wrap;
             gap: 40px;
         }
+
         .skill-item {
             display: flex;
             flex-direction: column;
@@ -163,7 +180,11 @@
             color: #212427;
             transition: transform 0.3s ease;
         }
-        .skill-item:hover { transform: translateY(-5px); }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
         .icon-circle {
             width: 72px;
             height: 72px;
@@ -176,12 +197,18 @@
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 4px 12px rgba(33, 36, 39, 0.03);
         }
+
         .skill-item:hover .icon-circle {
             background-color: var(--accent-color);
             border-color: var(--accent-color);
             box-shadow: 0 10px 25px rgba(176, 212, 17, 0.2);
         }
-        .skill-item svg { width: 30px; height: 30px; stroke-width: 1.5; }
+
+        .skill-item svg {
+            width: 30px;
+            height: 30px;
+            stroke-width: 1.5;
+        }
 
         .video-showcase {
             width: 100%;
@@ -190,7 +217,11 @@
             box-shadow: 0 15px 35px rgba(33, 36, 39, 0.1);
             line-height: 0;
         }
-        .video-showcase video { width: 100%; height: auto; }
+
+        .video-showcase video {
+            width: 100%;
+            height: auto;
+        }
 
         .project-actions {
             display: flex;
@@ -199,6 +230,7 @@
             margin-top: 60px;
             padding-bottom: 40px;
         }
+
         .action-btn {
             display: inline-block;
             text-decoration: none;
@@ -212,33 +244,53 @@
             border-radius: 50px;
             transition: all 0.3s ease;
         }
+
         .action-btn:hover {
             background-color: var(--text-color);
             color: var(--bg-color);
         }
 
         @media (max-width: 768px) {
-            .container { padding: 60px 20px; }
-            .desc-row { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
+            .container {
+                padding: 60px 20px;
+            }
+
+            .desc-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 40px 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <main class="container">
         <a href="index.html" class="back-link">← Homepage</a>
-        
+
         <div class="media-stack">
             <img src="assets/thumb_projeto_dev_alura_google.png" alt="Mockup Booker Prizes Archive" class="main-image">
-            
+
             <div class="project-header-panel">
                 <h1>Booker Prizes Archive</h1>
                 <div class="project-meta">
                     <div class="meta-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                            </path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
                         Creative Development
                     </div>
                     <div class="meta-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
                         2026
                     </div>
                 </div>
@@ -250,10 +302,14 @@
                 <h3>O que foi desenvolvido</h3>
                 <div class="desc-content">
                     <p>
-                        Desenvolvido durante a <strong>Imersão Dev Alura + Google</strong>, este projeto centraliza informações detalhadas sobre os títulos finalistas do <strong>Booker Prizes</strong> de 2015 até o presente. A aplicação resolve uma lacuna de dados, oferecendo informações que não constam no site oficial, como contagem de páginas, editoras e disponibilidade em português.
+                        Desenvolvido durante a <strong>Imersão Dev Alura + Google</strong>, este projeto centraliza
+                        informações detalhadas sobre os títulos finalistas do <strong>Booker Prizes</strong> de 2015 até
+                        o presente. A aplicação resolve uma lacuna de dados, oferecendo informações que não constam no
+                        site oficial, como contagem de páginas, editoras e disponibilidade em português.
                     </p>
                     <p>
-                        O projeto alcançou um marco significativo ao ser selecionado entre os <strong>50 melhores projetos</strong> de todo o evento, destacando-se pela utilidade prática e execução técnica.
+                        O projeto alcançou um marco significativo ao ser selecionado entre os <strong>50 melhores
+                            projetos</strong> de todo o evento, destacando-se pela utilidade prática e execução técnica.
                     </p>
                 </div>
             </div>
@@ -261,12 +317,17 @@
             <div class="desc-row">
                 <h3>Aprendizados e Técnicas</h3>
                 <div class="desc-content">
-                    <p>A construção desta ferramenta permitiu explorar a fundo a integração entre inteligência artificial e lógica de interface:</p>
+                    <p>A construção desta ferramenta permitiu explorar a fundo a integração entre inteligência
+                        artificial e lógica de interface:</p>
                     <ul>
-                        <li><strong>Integração com Google Gemini (IA):</strong> Utilização estratégica de IA para o enriquecimento e estruturação da base de dados literária.</li>
-                        <li><strong>Sistema de Busca Inteligente:</strong> Implementação de algoritmos em JavaScript que permitem buscas dinâmicas por título, autor ou ano de premiação.</li>
-                        <li><strong>Arquitetura de Dados Customizada:</strong> Criação de uma estrutura de dados robusta para comportar informações exclusivas de mercado editorial.</li>
-                        <li><strong>UX para Curadoria Digital:</strong> Foco em uma interface limpa que prioriza a descoberta e o consumo de informações bibliográficas densas.</li>
+                        <li><strong>Integração com Google Gemini (IA):</strong> Utilização estratégica de IA para o
+                            enriquecimento e estruturação da base de dados literária.</li>
+                        <li><strong>Sistema de Busca Inteligente:</strong> Implementação de algoritmos em JavaScript que
+                            permitem buscas dinâmicas por título, autor ou ano de premiação.</li>
+                        <li><strong>Arquitetura de Dados Customizada:</strong> Criação de uma estrutura de dados robusta
+                            para comportar informações exclusivas de mercado editorial.</li>
+                        <li><strong>UX para Curadoria Digital:</strong> Foco em uma interface limpa que prioriza a
+                            descoberta e o consumo de informações bibliográficas densas.</li>
                     </ul>
                 </div>
             </div>
@@ -277,25 +338,43 @@
                     <div class="skills-grid">
                         <div class="skill-item">
                             <div class="icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
                             </div>
                             <span>HTML</span>
                         </div>
                         <div class="skill-item">
                             <div class="icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
                             </div>
                             <span>CSS</span>
                         </div>
                         <div class="skill-item">
                             <div class="icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M15 9h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 3h18v18H3z"></path>
+                                    <path d="M15 9h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"></path>
+                                </svg>
                             </div>
                             <span>Javascript</span>
                         </div>
                         <div class="skill-item">
                             <div class="icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                                    </path>
+                                </svg>
                             </div>
                             <span>Google Gemini</span>
                         </div>
@@ -315,9 +394,12 @@
         </div>
 
         <div class="project-actions">
-            <a href="https://github.com/joaoluisdutra/imersao-dev" target="_blank" class="action-btn">código do projeto</a>
-            <a href="https://joaoluisdutra.github.io/imersao-dev/" target="_blank" class="action-btn">visualize na web</a>
+            <a href="https://github.com/joaoluisdutra/imersao-dev" target="_blank" class="action-btn">código do
+                projeto</a>
+            <a href="https://joaoluisdutra.github.io/imersao-dev/" target="_blank" class="action-btn">visualize na
+                web</a>
         </div>
     </main>
 </body>
+
 </html>

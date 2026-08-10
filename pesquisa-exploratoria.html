@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,9 +37,12 @@
             margin-bottom: 40px;
             transition: color 0.3s ease;
         }
-        .back-link:hover { color: var(--accent-color); }
 
-        h1 { 
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        h1 {
             font-size: clamp(2rem, 5vw, 3rem);
             margin: 0 0 10px;
             letter-spacing: -1.5px;
@@ -67,8 +71,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .question-group {
@@ -96,13 +107,16 @@
             font-size: 0.95rem;
         }
 
-        input[type="radio"], input[type="checkbox"] {
+        input[type="radio"],
+        input[type="checkbox"] {
             accent-color: var(--accent-color);
             width: 18px;
             height: 18px;
         }
 
-        input[type="text"], input[type="email"], textarea {
+        input[type="text"],
+        input[type="email"],
+        textarea {
             width: 100%;
             padding: 12px 16px;
             border: 1px solid #ddd;
@@ -190,28 +204,43 @@
         }
     </style>
 </head>
+
 <body>
     <main class="container">
         <a href="index.html" class="back-link">← Voltar ao Início</a>
-        
+
         <header>
             <h1>Pesquisa de Viabilidade e Validação de Mercado</h1>
-            <p class="intro-text">Já que você chegou até aqui, vou te contar um pouquinho mais sobre esse projeto, pode ser? 🙃 <br><br>
+            <p class="intro-text">Já que você chegou até aqui, vou te contar um pouquinho mais sobre esse projeto, pode
+                ser? 🙃 <br><br>
 
-Sabe aquele fatídico momento em que o livro chega a um plot twist e tudo o que você mais quer é gritar e conversar com alguém sobre aquilo em tempo real, mas nenhum dos seus amigos está lendo o mesmo título? Meu projeto atual nasce para ser esse amigo.
+                Sabe aquele fatídico momento em que o livro chega a um plot twist e tudo o que você mais quer é gritar e
+                conversar com alguém sobre aquilo em tempo real, mas nenhum dos seus amigos está lendo o mesmo título?
+                Meu projeto atual nasce para ser esse amigo.
 
-Estou estudando como desenvolver uma rede focada em conectar leitores que estão lendo exatamente a mesma obra, no mesmo ritmo, através de linhas do tempo dinâmicas e protegidas contra spoilers (imagine salas de bate papo para cada título que viabilizam conversas e debates em tempo real, com pessoas que estão no mesmo ritmo que você!).
+                Estou estudando como desenvolver uma rede focada em conectar leitores que estão lendo exatamente a mesma
+                obra, no mesmo ritmo, através de linhas do tempo dinâmicas e protegidas contra spoilers (imagine salas
+                de bate papo para cada título que viabilizam conversas e debates em tempo real, com pessoas que estão no
+                mesmo ritmo que você!).
 
-<br><br><b>O App não busca competir com outros Apps já existentes, como o Goodreads ou Skoob, pelo contrário, a ideia é ser um complemento, possibilitando inclusive a integração com seus dados já cadastrados nessas plataformas.</b>
+                <br><br><b>O App não busca competir com outros Apps já existentes, como o Goodreads ou Skoob, pelo
+                    contrário, a ideia é ser um complemento, possibilitando inclusive a integração com seus dados já
+                    cadastrados nessas plataformas.</b>
 
-<br><br>Esta pesquisa inicial de mercado e UX está sendo realizada como parte de um projeto de conclusão de curso (TCC) em Sistemas de Informação na UNIBAVE. Meu objetivo aqui é investigar e desenhar as funcionalidades ideais para um feature adicional, um ecossistema definitivo de gestão para Clubes do Livro Virtuais e Presenciais, com o intuito de oferecer opções gratuitas e premium.<br><br>
+                <br><br>Esta pesquisa inicial de mercado e UX está sendo realizada como parte de um projeto de conclusão
+                de curso (TCC) em Sistemas de Informação na UNIBAVE. Meu objetivo aqui é investigar e desenhar as
+                funcionalidades ideais para um feature adicional, um ecossistema definitivo de gestão para Clubes do
+                Livro Virtuais e Presenciais, com o intuito de oferecer opções gratuitas e premium.<br><br>
 
-Quero entender como os clubes se organizam hoje para entregar ferramentas que centralizem enquetes, sorteios, painéis de progresso (sem a pressão do ritmo alheio) e roteiros de encontros locais, resolvendo de vez a "colcha de retalhos" que é usar vários apps diferentes.
+                Quero entender como os clubes se organizam hoje para entregar ferramentas que centralizem enquetes,
+                sorteios, painéis de progresso (sem a pressão do ritmo alheio) e roteiros de encontros locais,
+                resolvendo de vez a "colcha de retalhos" que é usar vários apps diferentes.
 
-<br><br>Garantia de Privacidade: Suas respostas são estritamente para fins de análise acadêmica e mapeamento de demandas de software. Não há qualquer intuito de autopromoção.
+                <br><br>Garantia de Privacidade: Suas respostas são estritamente para fins de análise acadêmica e
+                mapeamento de demandas de software. Não há qualquer intuito de autopromoção.
 
-<br><br>Ficou com alguma dúvida sobre a proposta do projeto? joaoluisdutrra@gmail.com
-</p>
+                <br><br>Ficou com alguma dúvida sobre a proposta do projeto? joaoluisdutrra@gmail.com
+            </p>
         </header>
 
         <form id="clubeForm" action="https://formspree.io/f/xnjlbdoa" method="POST">
@@ -223,82 +252,117 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label" for="contato">Contato (E-mail, WhatsApp, Instagram ou Telegram):</label>
-                    <input type="text" id="contato" name="2. Meio de Contato (Opcional)" placeholder="Opcional: Deixe seu contato se desejar">
+                    <label class="question-label" for="contato">Contato (E-mail, WhatsApp, Instagram ou
+                        Telegram):</label>
+                    <input type="text" id="contato" name="2. Meio de Contato (Opcional)"
+                        placeholder="Opcional: Deixe seu contato se desejar">
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Você permite que seja feito um novo contato caso surjam novos formulários, testes de usabilidade ou outras etapas durante o desenvolvimento deste projeto?</label>
+                    <label class="question-label">Você permite que seja feito um novo contato caso surjam novos
+                        formulários, testes de usabilidade ou outras etapas durante o desenvolvimento deste
+                        projeto?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="3. Permissao para novos contatos" value="Sem problemas"> Sem problemas</label>
-                        <label class="option-item"><input type="radio" name="3. Permissao para novos contatos" value="Melhor nao"> Melhor não</label>
+                        <label class="option-item"><input type="radio" name="3. Permissao para novos contatos"
+                                value="Sem problemas"> Sem problemas</label>
+                        <label class="option-item"><input type="radio" name="3. Permissao para novos contatos"
+                                value="Melhor nao"> Melhor não</label>
                     </div>
                 </div>
 
                 <div class="question-group">
                     <label class="question-label">Você faz parte de um clube do livro?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="4. Situacao atual em relacao a clubes" value="Moderador" onclick="showPart('moderador')" required> Sim, sou moderador/organizador</label>
-                        <label class="option-item"><input type="radio" name="4. Situacao atual em relacao a clubes" value="Leitor" onclick="showPart('leitor')"> Sim, sou membro/leitor</label>
-                        <label class="option-item"><input type="radio" name="4. Situacao atual em relacao a clubes" value="Nao Membro" onclick="showPart('habit_leitura')"> Não, mas tenho o hábito da leitura</label>
+                        <label class="option-item"><input type="radio" name="4. Situacao atual em relacao a clubes"
+                                value="Moderador" onclick="showPart('moderador')" required> Sim, sou
+                            moderador/organizador</label>
+                        <label class="option-item"><input type="radio" name="4. Situacao atual em relacao a clubes"
+                                value="Leitor" onclick="showPart('leitor')"> Sim, sou membro/leitor</label>
+                        <label class="option-item"><input type="radio" name="4. Situacao atual em relacao a clubes"
+                                value="Nao Membro" onclick="showPart('habit_leitura')"> Não, mas tenho o hábito da
+                            leitura</label>
                     </div>
                 </div>
             </div>
 
             <div class="form-section" id="section-moderador">
-                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
+                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do
+                    formulário</a>
                 <br><br>
                 <span class="badge">Seção 2: Visão do Gestor</span>
-                
+
                 <div class="question-group">
                     <label class="question-label">Em qual modalidade o seu clube opera atualmente?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="100% Presencial"> 100% Presencial</label>
-                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="100% Online"> 100% Online</label>
-                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="Hibrido"> Híbrido</label>
+                        <label class="option-item"><input type="radio" name="Modalidade do Clube"
+                                value="100% Presencial"> 100% Presencial</label>
+                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="100% Online">
+                            100% Online</label>
+                        <label class="option-item"><input type="radio" name="Modalidade do Clube" value="Hibrido">
+                            Híbrido</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Como organizador, qual dessas tarefas toma mais o seu tempo ou gera mais bagunça hoje? (Selecione todas as que se aplicam)</label>
+                    <label class="question-label">Como organizador, qual dessas tarefas toma mais o seu tempo ou gera
+                        mais bagunça hoje? (Selecione todas as que se aplicam)</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Sugestoes Livros"> Coletar sugestões de livros para as próximas leituras.</label>
-                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Enquetes"> Criar e gerenciar enquetes de votação de títulos.</label>
-                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Sorteios"> Realizar sorteios de livros, gêneros ou dinâmicas.</label>
-                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Progresso"> Cobrar e acompanhar o progresso de leitura dos membros.</label>
-                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Logistica"> Encontrar locais físicos ou gerenciar links de reuniões online.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis"
+                                value="Sugestoes Livros"> Coletar sugestões de livros para as próximas leituras.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Enquetes">
+                            Criar e gerenciar enquetes de votação de títulos.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Sorteios">
+                            Realizar sorteios de livros, gêneros ou dinâmicas.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Progresso">
+                            Cobrar e acompanhar o progresso de leitura dos membros.</label>
+                        <label class="option-item"><input type="checkbox" name="Tarefas Dificeis" value="Logistica">
+                            Encontrar locais físicos ou gerenciar links de reuniões online.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Se o aplicativo oferecesse um "Roteiro de Locais Parceiros" (com cafés/restaurantes mapeados e cupons de desconto), você utilizaria essa curadoria para agendar os encontros presenciais?</label>
+                    <label class="question-label">Se o aplicativo oferecesse um "Roteiro de Locais Parceiros" (com
+                        cafés/restaurantes mapeados e cupons de desconto), você utilizaria essa curadoria para agendar
+                        os encontros presenciais?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Sim"> Sim, com certeza.</label>
-                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Talvez"> Talvez.</label>
-                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Nao"> Não, meu clube é online ou já temos local fixo.</label>
+                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Sim"> Sim, com
+                            certeza.</label>
+                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Talvez">
+                            Talvez.</label>
+                        <label class="option-item"><input type="radio" name="Roteiro Locais" value="Nao"> Não, meu clube
+                            é online ou já temos local fixo.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Para manter um clube organizado e livre de anúncios, você aceitaria pagar uma assinatura mensal acessível (Ex: R$ 15 a R$ 30) que liberasse ferramentas avançadas para TODOS os membros? (Custo centralizado no organizador para rateio).</label>
+                    <label class="question-label">Para manter um clube organizado e livre de anúncios, você aceitaria
+                        pagar uma assinatura mensal acessível (Ex: R$ 15 a R$ 30) que liberasse ferramentas avançadas
+                        para TODOS os membros? (Custo centralizado no organizador para rateio).</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Sim"> Sim, centralizar o pagamento em mim e dividir com o grupo facilita muito.</label>
-                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Talvez"> Talvez, dependeria estritamente do valor por membro.</label>
-                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Nao"> Não, só utilizaria o aplicativo se ele fosse 100% gratuito (mesmo com anúncios).</label>
+                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Sim"> Sim,
+                            centralizar o pagamento em mim e dividir com o grupo facilita muito.</label>
+                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Talvez">
+                            Talvez, dependeria estritamente do valor por membro.</label>
+                        <label class="option-item"><input type="radio" name="Assinatura Organizador" value="Nao"> Não,
+                            só utilizaria o aplicativo se ele fosse 100% gratuito (mesmo com anúncios).</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Caso optasse pela versão gratuita (Básica), o que seria essencial para você conseguir gerenciar o clube, mesmo sem recursos avançados?</label>
+                    <label class="question-label">Caso optasse pela versão gratuita (Básica), o que seria essencial para
+                        você conseguir gerenciar o clube, mesmo sem recursos avançados?</label>
                     <textarea name="Essencial Versao Gratuita" rows="3" placeholder="Sua resposta..."></textarea>
                 </div>
 
                 <div class="question-group">
                     <label class="question-label">Você centralizaria a gestão do clube em um app exclusivo?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="App Centralizado" value="Sim"> Com certeza, resolveria a bagunça.</label>
-                        <label class="option-item"><input type="radio" name="App Centralizado" value="Depende"> Depende do engajamento do grupo.</label>
-                        <label class="option-item"><input type="radio" name="App Centralizado" value="Nao"> Não, prefiro o WhatsApp/Redes Sociais.</label>
+                        <label class="option-item"><input type="radio" name="App Centralizado" value="Sim"> Com certeza,
+                            resolveria a bagunça.</label>
+                        <label class="option-item"><input type="radio" name="App Centralizado" value="Depende"> Depende
+                            do engajamento do grupo.</label>
+                        <label class="option-item"><input type="radio" name="App Centralizado" value="Nao"> Não, prefiro
+                            o WhatsApp/Redes Sociais.</label>
                     </div>
                 </div>
 
@@ -313,46 +377,64 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
             </div>
 
             <div class="form-section" id="section-leitor">
-                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
+                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do
+                    formulário</a>
                 <br><br>
                 <span class="badge">Seção 3: Experiência do Leitor</span>
-                
+
                 <div class="question-group">
                     <label class="question-label">Como se sente ao ver colegas lendo mais rápido que você?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Tranquilo"> Tranquilo(a), cada um tem seu ritmo.</label>
-                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Pressionado"> Um pouco pressionado(a) ou ansioso(a).</label>
-                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Desmotivado"> Desmotivado(a), sinto que estou ficando para trás.</label>
+                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Tranquilo">
+                            Tranquilo(a), cada um tem seu ritmo.</label>
+                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Pressionado"> Um
+                            pouco pressionado(a) ou ansioso(a).</label>
+                        <label class="option-item"><input type="radio" name="Sentimento Ritmo" value="Desmotivado">
+                            Desmotivado(a), sinto que estou ficando para trás.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Você se sentiria mais confortável com um painel de progresso de leitura se ele fosse anônimo?</label>
+                    <label class="question-label">Você se sentiria mais confortável com um painel de progresso de
+                        leitura se ele fosse anônimo?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Sim"> Sim, sem a pressão do julgamento.</label>
-                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Indiferente"> Indiferente.</label>
-                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Nao"> Não, prefiro que saibam que sou eu.</label>
+                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Sim"> Sim, sem a
+                            pressão do julgamento.</label>
+                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Indiferente">
+                            Indiferente.</label>
+                        <label class="option-item"><input type="radio" name="Registro Anonimo" value="Nao"> Não, prefiro
+                            que saibam que sou eu.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
                     <label class="question-label">Um ambiente virtual exclusivo incentivaria você a ler mais?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Incentivo App" value="Sim"> Sim, traria mais foco e comunidade.</label>
-                        <label class="option-item"><input type="radio" name="Incentivo App" value="So Organizacao"> Ajudaria na organização, mas não no hábito.</label>
-                        <label class="option-item"><input type="radio" name="Incentivo App" value="Nao"> Não mudaria nada.</label>
+                        <label class="option-item"><input type="radio" name="Incentivo App" value="Sim"> Sim, traria
+                            mais foco e comunidade.</label>
+                        <label class="option-item"><input type="radio" name="Incentivo App" value="So Organizacao">
+                            Ajudaria na organização, mas não no hábito.</label>
+                        <label class="option-item"><input type="radio" name="Incentivo App" value="Nao"> Não mudaria
+                            nada.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Quais características são essenciais em um local presencial? (Até 3)</label>
+                    <label class="question-label">Quais características são essenciais em um local presencial? (Até
+                        3)</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Silencioso" class="limit-3"> Ambiente reservado/silencioso.</label>
-                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Cardapio" class="limit-3"> Cardápio variado.</label>
-                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Mesas Grandes" class="limit-3"> Mesas grandes que acomodem o grupo.</label>
-                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Acesso" class="limit-3"> Facilidade de acesso (estacionamento/ônibus).</label>
-                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Descontos" class="limit-3"> Descontos ou vantagens exclusivas.</label>
-                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="N/A" class="limit-3"> Não se aplica (100% online).</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Silencioso"
+                                class="limit-3"> Ambiente reservado/silencioso.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Cardapio"
+                                class="limit-3"> Cardápio variado.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Mesas Grandes"
+                                class="limit-3"> Mesas grandes que acomodem o grupo.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Acesso"
+                                class="limit-3"> Facilidade de acesso (estacionamento/ônibus).</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="Descontos"
+                                class="limit-3"> Descontos ou vantagens exclusivas.</label>
+                        <label class="option-item"><input type="checkbox" name="Local Essencial" value="N/A"
+                                class="limit-3"> Não se aplica (100% online).</label>
                     </div>
                 </div>
 
@@ -367,12 +449,14 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
             </div>
 
             <div class="form-section" id="section-habit-leitura">
-                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do formulário</a>
+                <a href="javascript:void(0)" class="back-step-link" onclick="goBackToTriagem()">← Voltar ao início do
+                    formulário</a>
                 <br><br>
                 <span class="badge">Seção 4: Hábito de Leitura</span>
 
                 <div class="question-group">
-                    <label class="question-label">Você utiliza redes sociais focadas em leitura (Goodreads, Skoob, Fabel, etc)?</label>
+                    <label class="question-label">Você utiliza redes sociais focadas em leitura (Goodreads, Skoob,
+                        Fabel, etc)?</label>
                     <div class="options-list">
                         <label class="option-item"><input type="radio" name="Usa Apps Leitura" value="Sim"> Sim</label>
                         <label class="option-item"><input type="radio" name="Usa Apps Leitura" value="Nao"> Não</label>
@@ -380,51 +464,75 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Se sim, você costuma compartilhar seu progresso de leitura ou registrar o que está lendo nesses apps?</label>
+                    <label class="question-label">Se sim, você costuma compartilhar seu progresso de leitura ou
+                        registrar o que está lendo nesses apps?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Compartilha Progresso" value="Sim"> Sim, sempre registro meu progresso.</label>
-                        <label class="option-item"><input type="radio" name="Compartilha Progresso" value="As vezes"> Às vezes.</label>
-                        <label class="option-item"><input type="radio" name="Compartilha Progresso" value="Nao"> Não, uso apenas para consulta.</label>
+                        <label class="option-item"><input type="radio" name="Compartilha Progresso" value="Sim"> Sim,
+                            sempre registro meu progresso.</label>
+                        <label class="option-item"><input type="radio" name="Compartilha Progresso" value="As vezes"> Às
+                            vezes.</label>
+                        <label class="option-item"><input type="radio" name="Compartilha Progresso" value="Nao"> Não,
+                            uso apenas para consulta.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
                     <label class="question-label">Qual a sua relação histórica com clubes do livro?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="radio" name="Historico Clube" value="Ja participei"> Já fiz parte de um no passado.</label>
-                        <label class="option-item"><input type="radio" name="Historico Clube" value="Nunca participei"> Nunca fiz parte.</label>
+                        <label class="option-item"><input type="radio" name="Historico Clube" value="Ja participei"> Já
+                            fiz parte de um no passado.</label>
+                        <label class="option-item"><input type="radio" name="Historico Clube" value="Nunca participei">
+                            Nunca fiz parte.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Caso nunca tenha participado (ou tenha saído de um), qual o principal motivo?</label>
+                    <label class="question-label">Caso nunca tenha participado (ou tenha saído de um), qual o principal
+                        motivo?</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar" value="Roteiros Engessados"> Não me adapto a roteiros de leitura engessados.</label>
-                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar" value="Medo Acompanhar"> Medo de não conseguir acompanhar o ritmo do grupo.</label>
-                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar" value="Medo Encontros"> Medo de não conseguir comparecer aos encontros presenciais.</label>
-                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar" value="Nao Encontrei"> Simplesmente nunca encontrei um grupo legal ou fui convidado.</label>
+                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar"
+                                value="Roteiros Engessados"> Não me adapto a roteiros de leitura engessados.</label>
+                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar"
+                                value="Medo Acompanhar"> Medo de não conseguir acompanhar o ritmo do grupo.</label>
+                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar"
+                                value="Medo Encontros"> Medo de não conseguir comparecer aos encontros
+                            presenciais.</label>
+                        <label class="option-item"><input type="checkbox" name="Motivo Nao Participar"
+                                value="Nao Encontrei"> Simplesmente nunca encontrei um grupo legal ou fui
+                            convidado.</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Onde você costuma encontrar indicações de novas leituras? (Selecione todos que se aplicam)</label>
+                    <label class="question-label">Onde você costuma encontrar indicações de novas leituras? (Selecione
+                        todos que se aplicam)</label>
                     <div class="options-list">
-                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Instagram"> Instagram (Bookgram)</label>
-                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="TikTok"> TikTok (BookTok)</label>
-                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="YouTube"> YouTube (BookTube)</label>
-                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Google"> Buscas no Google / Sites especializados</label>
-                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Livrarias"> Explorando livrarias físicas</label>
-                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Amigos"> Recomendações de amigos</label>
+                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Instagram">
+                            Instagram (Bookgram)</label>
+                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="TikTok">
+                            TikTok (BookTok)</label>
+                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="YouTube">
+                            YouTube (BookTube)</label>
+                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Google">
+                            Buscas no Google / Sites especializados</label>
+                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Livrarias">
+                            Explorando livrarias físicas</label>
+                        <label class="option-item"><input type="checkbox" name="Onde Encontra Livros" value="Amigos">
+                            Recomendações de amigos</label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label class="question-label">Qual seu gênero literário favorito e qual formato você prefere?</label>
+                    <label class="question-label">Qual seu gênero literário favorito e qual formato você
+                        prefere?</label>
                     <input type="text" name="Genero Favorito" placeholder="Ex: Suspense, Fantasia, Biografia...">
                     <div class="options-list" style="margin-top: 15px;">
-                        <label class="option-item"><input type="radio" name="Formato Preferido" value="Fisico"> Prefiro Livro Físico</label>
-                        <label class="option-item"><input type="radio" name="Formato Preferido" value="Digital"> Prefiro Digital (Kindle/E-book)</label>
-                        <label class="option-item"><input type="radio" name="Formato Preferido" value="Ambos"> Gosto de ambos igualmente</label>
+                        <label class="option-item"><input type="radio" name="Formato Preferido" value="Fisico"> Prefiro
+                            Livro Físico</label>
+                        <label class="option-item"><input type="radio" name="Formato Preferido" value="Digital"> Prefiro
+                            Digital (Kindle/E-book)</label>
+                        <label class="option-item"><input type="radio" name="Formato Preferido" value="Ambos"> Gosto de
+                            ambos igualmente</label>
                     </div>
                 </div>
 
@@ -446,12 +554,12 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
         function showPart(role) {
             userRole = role;
             hideAllSections();
-            
-            if(role === 'moderador') {
+
+            if (role === 'moderador') {
                 document.getElementById('section-moderador').classList.add('active');
-            } else if(role === 'leitor') {
+            } else if (role === 'leitor') {
                 document.getElementById('section-leitor').classList.add('active');
-            } else if(role === 'habit_leitura') {
+            } else if (role === 'habit_leitura') {
                 document.getElementById('section-habit-leitura').classList.add('active');
             }
         }
@@ -463,11 +571,11 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
 
         function goBackToRoleSection() {
             hideAllSections();
-            if(userRole === 'moderador') {
+            if (userRole === 'moderador') {
                 document.getElementById('section-moderador').classList.add('active');
-            } else if(userRole === 'leitor') {
+            } else if (userRole === 'leitor') {
                 document.getElementById('section-leitor').classList.add('active');
-            } else if(userRole === 'habit_leitura') {
+            } else if (userRole === 'habit_leitura') {
                 document.getElementById('section-habit-leitura').classList.add('active');
             }
         }
@@ -479,7 +587,7 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
         }
 
         document.querySelectorAll('.limit-3').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
+            checkbox.addEventListener('change', function () {
                 const checkedCount = document.querySelectorAll('.limit-3:checked').length;
                 if (checkedCount > 3) {
                     this.checked = false;
@@ -489,4 +597,5 @@ Quero entender como os clubes se organizam hoje para entregar ferramentas que ce
         });
     </script>
 </body>
+
 </html>
