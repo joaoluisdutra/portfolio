@@ -189,17 +189,25 @@ body {
 }
 
 .home-page .sidebar {
-    width: 430px;
+    width: 500px;
     max-width: 92vw;
     height: 100dvh;
-    padding: 92px clamp(24px, 4vw, 40px) 28px;
+    padding: clamp(88px, 14dvh, 120px) clamp(24px, 5vw, 56px) clamp(72px, 12dvh, 112px);
     background: var(--bg-color);
     border-right: 1px solid rgba(8, 8, 8, 0.12);
 }
 
+.home-page .sidebar-nav {
+    flex-shrink: 0;
+}
+
+.home-page .sidebar-nav .section-label {
+    margin-top: 0;
+}
+
 .home-page .sidebar .close-menu {
-    top: 22px;
-    right: 22px;
+    top: 24px;
+    right: 24px;
     width: 44px;
     height: 44px;
     display: grid;
@@ -214,10 +222,10 @@ body {
 }
 
 .sidebar-heading {
-    margin: 18px 0 32px;
+    margin: 24px 0 48px;
     font-size: clamp(2.5rem, 6vw, 3.4rem);
     font-weight: 800;
-    line-height: 0.98;
+    line-height: 1.06;
     letter-spacing: -0.06em;
 }
 
@@ -232,10 +240,10 @@ body {
 
 .home-page .sidebar-nav a {
     display: grid;
-    grid-template-columns: 20px 1fr 24px;
+    grid-template-columns: 20px minmax(0, 1fr) 24px;
     align-items: baseline;
-    gap: 12px;
-    padding: 22px 0;
+    gap: clamp(12px, 2vw, 20px);
+    padding: 28px 0;
     font-size: clamp(1.3rem, 4vw, 1.6rem);
     font-weight: 700;
     letter-spacing: -0.04em;
@@ -252,7 +260,24 @@ body {
 
 .home-page .sidebar-nav small {
     display: block;
-    margin-top: 6px;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+@media (max-height: 700px) {
+    .home-page .sidebar {
+        padding-top: 80px;
+        padding-bottom: 72px;
+    }
+
+    .home-page .sidebar-heading {
+        margin: 20px 0 32px;
+        font-size: clamp(2.5rem, 6vw, 3rem);
+    }
+
+    .home-page .sidebar-nav a {
+        padding: 22px 0;
+    }
 }
 
 .sidebar-arrow { transition: transform 180ms ease; }
