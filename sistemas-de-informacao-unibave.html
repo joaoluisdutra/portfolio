@@ -125,15 +125,15 @@
             color: #9e9e9e;
         }
 
-        .subjects-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        .phase-card .subjects-list {
+            display: flex;
+            flex-direction: column;
             gap: 24px;
         }
 
         .subject-item h4 {
             font-size: 1rem;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             color: var(--text-color);
             font-weight: 700;
         }
@@ -145,6 +145,9 @@
         }
 
         @media (max-width: 768px) {
+            .phase-card { padding: 24px; }
+            .phase-header { flex-wrap: wrap; gap: 12px; }
+            .uni-stats { flex-wrap: wrap; }
             .uni-section {
                 grid-template-columns: 1fr;
                 padding: 30px;
@@ -159,11 +162,12 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="layout.css">
 </head>
 
-<body>
+<body class="inner-page">
     <nav class="main-navigation"
-        style="position: fixed; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);">
+        style="position: fixed; background: var(--bg-color);">
         <a href="index.html" class="back-link">← VOLTAR</a>
     </nav>
 
@@ -356,7 +360,7 @@
             </div>
 
             <div class="phase-card"
-                style="border-color: var(--accent-color); background-color: rgba(176, 212, 17, 0.05);">
+                style="border-color: var(--accent-color); background-color: rgba(74, 144, 226, 0.06);">
                 <div class="phase-header">
                     <h3 style="font-weight: 800;">Sexta Fase</h3>
                     <span class="phase-status status-current">Em curso</span>

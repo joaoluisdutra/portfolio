@@ -1,0 +1,155 @@
+/* Shared rhythm: 8 / 16 / 24 / 32 / 48 / 64 / 96px.
+   Loaded after page styles so spacing has one source of truth. */
+:root {
+    --space-small: 8px;
+    --space-text: 16px;
+    --space-group: 24px;
+    --space-block: clamp(24px, 4vw, 48px);
+    --space-section: clamp(48px, 7vw, 96px);
+    --page-gutter: clamp(20px, 4vw, 48px);
+    --page-width: 1200px;
+}
+
+.case-page, .research-page {
+    --bg-color: #f7f7f3;
+    --text-color: #080808;
+    --accent-color: #4A90E2;
+}
+.case-page *, .research-page * { box-sizing: border-box; }
+.case-page .container {
+    max-width: var(--page-width);
+    padding: var(--space-block) var(--page-gutter) var(--space-section);
+}
+.case-page .back-link, .research-page .back-link { margin-bottom: var(--space-block); }
+.case-page .media-stack {
+    margin-bottom: var(--space-section);
+    box-shadow: none;
+}
+.case-page .project-header-panel { padding: var(--space-block); }
+.case-page h1 { margin: 0; line-height: 1.15; text-wrap: balance; }
+.case-page .project-meta {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--space-group);
+}
+.case-page .description { margin: 0 0 var(--space-section); }
+.case-page .desc-row {
+    grid-template-columns: minmax(140px, 0.65fr) minmax(0, 2fr);
+    gap: var(--space-block);
+    padding: var(--space-block) 0;
+    border-color: rgba(8, 8, 8, 0.12);
+}
+.case-page .desc-row:first-child { padding-top: 0; }
+.case-page .description h3 { padding-top: 4px; line-height: 1.5; }
+.case-page .desc-content { min-width: 0; }
+.case-page .description p {
+    max-width: 68ch;
+    margin: 0 0 var(--space-text);
+    line-height: 1.7;
+    text-align: left;
+}
+.case-page .description p:last-child { margin-bottom: 0; }
+.case-page .description ul { margin: var(--space-group) 0 0; padding-block: 0; }
+.case-page .description li { text-align: left; margin-bottom: 12px; line-height: 1.65; }
+.case-page .description li:last-child { margin-bottom: 0; }
+.case-page .skills-grid {
+    justify-content: center;
+    gap: 24px 32px;
+}
+.case-page .skill-item { gap: 12px; text-align: center; }
+.case-page .skill-item:hover .icon-circle { box-shadow: none; }
+.case-page .image-gallery, .case-page .deliverables { gap: var(--space-group); }
+.case-page .project-actions { gap: 16px; margin-top: var(--space-block); flex-wrap: wrap; }
+.case-page a:focus-visible, .research-page :is(a, button, input, textarea):focus-visible {
+    outline: 2px solid #4A90E2;
+    outline-offset: 4px;
+}
+
+.inner-page :is(.projects-page-container, .cert-page-container, .si-container) {
+    width: 100%;
+    max-width: var(--page-width);
+    padding: 128px var(--page-gutter) var(--space-section);
+}
+.inner-page :is(.projects-page-header, .cert-page-header, .si-hero) {
+    margin-bottom: var(--space-block);
+}
+.inner-page :is(.projects-page-description, .cert-page-description, .si-hero p) {
+    line-height: 1.6;
+}
+.inner-page .project-gallery { max-width: none; padding: 0; overflow: visible; }
+.inner-page .project-gallery .gallery-track { padding: 0; gap: 40px 24px; }
+.inner-page .category-group { margin: 0 0 var(--space-section); }
+.inner-page .category-title { margin-bottom: var(--space-group); }
+.inner-page .certificate-row { padding-block: var(--space-group); }
+.inner-page .cert-description { line-height: 1.65; }
+.inner-page .cert-skills { margin-top: 8px; line-height: 1.6; }
+.inner-page .uni-section {
+    padding: var(--space-block);
+    margin-bottom: var(--space-section);
+    gap: var(--space-block);
+}
+.inner-page .uni-section p { line-height: 1.65; }
+.inner-page .phases-grid { gap: var(--space-block); }
+.inner-page .phase-card { padding: var(--space-block); }
+.inner-page .phase-header { margin-bottom: 24px; padding-bottom: 24px; gap: 16px; }
+.inner-page .phase-card .subjects-list { gap: 24px; }
+.inner-page .subject-item p { line-height: 1.65; }
+
+.home-page { --home-section-inset: var(--space-block); --home-section-gap: var(--space-section); }
+.home-page :is(.intro-container, .footer-container) {
+    width: 100%;
+    max-width: var(--page-width);
+    margin-inline: auto;
+    padding-inline: var(--page-gutter);
+}
+.home-page .intro-bio { padding-inline: 0; }
+.home-page .project-gallery { max-width: var(--page-width); }
+.home-page .project-gallery .gallery-track { padding-inline: var(--page-gutter); gap: 40px 24px; }
+.home-page .certificates-section .footer-container { max-width: 100%; padding-inline: 0; }
+.home-page .certificates-section :is(.certificate-row, .certificates-header) { padding-inline: var(--page-gutter); }
+.home-page .certificate-row { padding-block: 24px; line-height: 1.5; }
+.home-page .project-info { line-height: 1.5; }
+.home-page .contact-footer {
+    padding: clamp(40px, 5vw, 64px) 0 24px;
+}
+.home-page .contact-footer .footer-container {
+    max-width: none;
+    padding-inline: clamp(20px, 3vw, 40px);
+}
+.home-page .footer-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(32px, 6vw, 80px);
+    margin-bottom: 48px;
+}
+.home-page .footer-info .section-label { margin-bottom: 16px; }
+.home-page .footer-title {
+    max-width: 19ch;
+    margin-bottom: 24px;
+    font-size: clamp(2rem, 3.8vw, 3.5rem);
+    line-height: 1.08;
+    text-wrap: balance;
+}
+.home-page .contact-form { min-width: 0; gap: 24px; }
+.home-page .contact-footer .footer-bottom {
+    padding-top: 24px;
+    line-height: 1.5;
+}
+
+.research-page .container { padding: var(--space-block) var(--page-gutter) var(--space-section); }
+.research-page .intro-text { margin-bottom: var(--space-block); line-height: 1.65; }
+.research-page .form-section { padding: var(--space-block); margin-bottom: var(--space-block); }
+.research-page .question-group { margin-bottom: 32px; }
+.research-page .question-label { margin-bottom: 12px; line-height: 1.5; }
+.research-page .option-item { align-items: baseline; line-height: 1.5; }
+
+@media (max-width: 768px) {
+    .inner-page :is(.projects-page-container, .cert-page-container, .si-container) { padding-top: 104px; }
+    .case-page .desc-row { grid-template-columns: 1fr; gap: 16px; }
+    .case-page .description h3 { padding-top: 0; }
+    .case-page .image-gallery { grid-template-columns: 1fr; }
+    .inner-page .phase-header { flex-wrap: wrap; }
+    .home-page .certificate-row { padding-block: 20px; }
+    .home-page .footer-content { grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
+}

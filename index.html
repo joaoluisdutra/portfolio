@@ -57,9 +57,10 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="layout.css">
 </head>
 
-<body>
+<body class="home-page">
 
     <aside class="sidebar">
         <button class="close-menu nav-icon" aria-label="Fechar menu">
@@ -71,10 +72,11 @@
         </button>
         <nav class="sidebar-nav">
             <h2 class="section-label">Mapa do site</h2>
+            <p class="sidebar-heading">Explore<br>o portfólio.</p>
             <ul>
-                <li><a href="sistemas-de-informacao-unibave.html" class="grade-link">Grade Curricular SI →</a></li>
-                <li><a href="certificacoes.html">Lista de Certificados →</a></li>
-                <li><a href="projetos.html">Ver todos os Projetos →</a></li>
+                <li><a href="sistemas-de-informacao-unibave.html" class="grade-link"><span class="sidebar-number" aria-hidden="true">01</span><span>Formação<small>Grade curricular de SI</small></span><span class="sidebar-arrow" aria-hidden="true">↗</span></a></li>
+                <li><a href="certificacoes.html"><span class="sidebar-number" aria-hidden="true">02</span><span>Certificados<small>Cursos e especializações</small></span><span class="sidebar-arrow" aria-hidden="true">↗</span></a></li>
+                <li><a href="projetos.html"><span class="sidebar-number" aria-hidden="true">03</span><span>Projetos<small>Design e desenvolvimento</small></span><span class="sidebar-arrow" aria-hidden="true">↗</span></a></li>
             </ul>
         </nav>
     </aside>
@@ -110,18 +112,41 @@
         </div>
     </nav>
 
-    <main class="container">
-        <div class="hero">
-            <div class="star-shape"></div>
-            <h1 class="title">
-                <span class="icon-crown"></span><span class="typing-text">Designing Web <span
-                        class="word-experiences">Experienc<span class="font-swap">e</span>s</span></span><span
-                    class="icon-cursor"></span>
-            </h1>
-        </div>
+    <main class="container home-intro">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="hero-kicker"></p>
+                <h1 class="title" id="hero-title">Obsessed<br>by <span class="design-word"><span class="design-initial">d</span>esign</span></h1>
+                <p class="hero-description"><br>Criando interfaces e experiências digitais que unem clareza, intenção e personalidade.</p>
+                <a class="hero-cta" href="#projetos">Ver projetos <span aria-hidden="true">↘</span></a>
+            </div>
+            <div class="hero-carousel" aria-label="Retratos de João Luís Dutra">
+                    <figure class="hero-portrait">
+                <img src="assets/teste-hero.png" alt="Retrato de João Luís Dutra">
+                    </figure>
+                <svg class="hero-doodle hero-doodle-rays" viewBox="0 0 64 100" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M44 30 20 8M29 51 5 42M27 76 4 80" />
+                </svg>
+                <svg class="hero-doodle hero-doodle-arrow" viewBox="0 0 160 140" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M8 122C40 114 111 103 136 68C160 34 132 9 100 13C66 17 49 51 67 73C81 90 111 80 111 60C111 46 96 41 86 50" />
+                </svg>
+            </div>
+            <p class="hero-location"> </span></p>
+        </section>
     </main>
 
-    <section class="project-gallery">
+    <section class="skills-marquee" aria-label="Competências: HTML, CSS, JavaScript, Figma, Photoshop, Illustrator, Adobe XD e Notion">
+        <div class="skills-marquee-track">
+            <div class="skills-marquee-group">
+                <span>HTML</span><b aria-hidden="true">★</b><span>CSS</span><b aria-hidden="true">★</b><span>JavaScript</span><b aria-hidden="true">★</b><span>Figma</span><b aria-hidden="true">★</b><span>Photoshop</span><b aria-hidden="true">★</b><span>Illustrator</span><b aria-hidden="true">★</b><span>Adobe XD</span><b aria-hidden="true">★</b><span>Notion</span><b aria-hidden="true">★</b>
+            </div>
+            <div class="skills-marquee-group" aria-hidden="true">
+                <span>HTML</span><b>★</b><span>CSS</span><b>★</b><span>JavaScript</span><b>★</b><span>Figma</span><b>★</b><span>Photoshop</span><b>★</b><span>Illustrator</span><b>★</b><span>Adobe XD</span><b>★</b><span>Inglês</span><b>★</b><span>Notion</span><b>★</b>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-gallery" id="projetos">
         <div class="gallery-track">
 
             <!-- new ones -->
@@ -136,7 +161,6 @@
                                 <path
                                     d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
                                 </path>
-                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
                             </svg>
                             <span>UI Design</span>
                         </div>
@@ -568,23 +592,30 @@
                 </div>
 
                 <div class="certificate-row">
+                    <div class="col cert-main-title">Gamification</div>
+                    <div class="col"><img src="assets/logo-penn.png" alt="Penn" class="logo-instituicao"></div>
+                    <div class="col">Design</div>
+                    <div class="col">Game Design, Motivational<br> Skills, Psychology</div>
+                    <div class="col"><span class="cert-status">Em andamento</span></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col cert-main-title"><span class="cert-recent-badge">Mais recente</span>UI / UX Design <br>Specialization</div>
+                    <div class="col"><img src="assets/logo-carlarts.png" alt="CalARTS Logo" class="logo-instituicao">
+                    </div>
+                    <div class="col">Design</div>
+                    <div class="col">UI Design, Visual Design, <br>Interface Elements</div>
+                    <div class="col"><a
+                            href="https://drive.google.com/file/d/1nG3ZiXmsaWVEN8wmaNHOPRJs8zYSQ7Id/view?usp=sharing"
+                            class="cert-link">certificado</a></div>
+                </div>
+
+                <div class="certificate-row">
                     <div class="col cert-main-title">Professional Certificate <br>Google UX Design</div>
                     <div class="col"><img src="assets/logo-google.png" alt="Google Logo" class="logo-instituicao"></div>
                     <div class="col">Design</div>
                     <div class="col">UX Research, Figma, Adobe XD, Prototyping, Design Systems</div>
                     <div class="col"><a
                             href="https://drive.google.com/file/d/1XCh7e1GOZ70Rq2bbrT6KHHt9CSZeaVOC/view?usp=sharing"
-                            class="cert-link">certificado</a></div>
-                </div>
-
-                <div class="certificate-row">
-                    <div class="col cert-main-title">UI / UX Design <br>Specialization</div>
-                    <div class="col"><img src="assets/logo-carlarts.png" alt="CalARTS Logo" class="logo-instituicao">
-                    </div>
-                    <div class="col">Design</div>
-                    <div class="col">UI Design, Visual Design, Interface Elements</div>
-                    <div class="col"><a
-                            href="https://drive.google.com/file/d/1nG3ZiXmsaWVEN8wmaNHOPRJs8zYSQ7Id/view?usp=sharing"
                             class="cert-link">certificado</a></div>
                 </div>
 
@@ -656,10 +687,10 @@
 
     <footer class="contact-footer">
         <div class="footer-container">
-            <h2 class="section-label">Contato</h2>
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3 class="footer-title">Dúvidas sobre meu <br> currículo? Entre <br> em contato!</h3>
+                    <h2 class="section-label">Contato</h2>
+                    <h3 class="footer-title">Dúvidas sobre meu currículo? Entre em contato!</h3>
                     <a href="mailto:joaoluisdutrra@gmail.com" class="footer-email">joaoluisdutrra@gmail.com</a><br>
                     <a href="https://wa.me/+5548999925123" class="footer-number">+5548999925123</a>
                 </div>
