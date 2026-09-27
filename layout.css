@@ -96,6 +96,36 @@
 .inner-page .subject-item p { line-height: 1.65; }
 
 .home-page { --home-section-inset: var(--space-block); --home-section-gap: var(--space-section); }
+/* Each section owns only its leading gap, avoiding accumulated padding. */
+.home-page :is(.project-gallery, .intro-bio, .certificates-section, .featured-video-section) {
+    margin-block: var(--space-section) 0;
+    padding-block: 0;
+}
+.home-page .home-intro { padding-bottom: 0; }
+.home-page .skills-marquee { margin-block: var(--space-section) 0; }
+.home-page .section-label { margin-top: 0; }
+.home-page .section-action { text-align: center; margin-top: var(--space-block); }
+.cert-recent-badge { margin-inline: auto; text-align: center; }
+
+/* Vector arrows keep the same monochrome appearance on iOS and Android. */
+:root {
+    --arrow-symbol: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 19 19 5M5 5h14v14'/%3E%3C/svg%3E");
+}
+.project-gallery .project-card::after,
+.home-page .cert-access-minimal-link::after,
+.home-page .sidebar-arrow,
+.home-page .hero-cta span {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    flex: 0 0 1.1rem;
+    font-size: 0;
+    background-color: currentColor;
+    -webkit-mask: var(--arrow-symbol) center / contain no-repeat;
+    mask: var(--arrow-symbol) center / contain no-repeat;
+}
+.home-page .hero-cta span { transform: rotate(90deg); }
 .home-page :is(.intro-container, .footer-container) {
     width: 100%;
     max-width: var(--page-width);
@@ -110,7 +140,8 @@
 .home-page .certificate-row { padding-block: 24px; line-height: 1.5; }
 .home-page .project-info { line-height: 1.5; }
 .home-page .contact-footer {
-    padding: clamp(40px, 5vw, 64px) 0 24px;
+    margin-top: var(--space-section);
+    padding: 0 0 24px;
 }
 .home-page .contact-footer .footer-container {
     max-width: none;
@@ -152,4 +183,24 @@
     .inner-page .phase-header { flex-wrap: wrap; }
     .home-page .certificate-row { padding-block: 20px; }
     .home-page .footer-content { grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
+}
+
+@media (max-width: 1024px) {
+    .home-page .home-intro { padding-inline: var(--page-gutter); }
+    .home-page .hero {
+        grid-template-rows: auto auto;
+        row-gap: 32px;
+    }
+    .home-page .hero-carousel { margin: 0; width: min(72vw, 420px); }
+    .home-page .hero-copy { min-width: 0; width: 100%; }
+    .home-page .hero .title {
+        padding: 0;
+        font-size: clamp(2.5rem, 18vw, 7rem);
+        line-height: 0.88;
+        letter-spacing: -0.075em;
+        white-space: nowrap;
+    }
+    .home-page .hero-description { margin: 32px 0 0; }
+    .home-page .hero-cta { margin-top: 18px; }
+    .home-page .certificates-section { padding-inline: 0; }
 }
