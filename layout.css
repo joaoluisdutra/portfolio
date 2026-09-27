@@ -186,20 +186,27 @@
 }
 
 @media (max-width: 1024px) {
-    .home-page .home-intro { padding-inline: var(--page-gutter); }
+    .home-page .home-intro { padding-inline: clamp(28px, 7vw, 48px); }
     .home-page .hero {
+        padding: 0;
         grid-template-rows: auto auto;
         row-gap: 32px;
     }
     .home-page .hero-carousel { margin: 0; width: min(72vw, 420px); }
-    .home-page .hero-copy { min-width: 0; width: 100%; }
+    .home-page .hero-copy {
+        min-width: 0;
+        width: 100%;
+        container-type: inline-size;
+    }
     .home-page .hero .title {
         padding: 0;
-        font-size: clamp(2.5rem, 18vw, 7rem);
-        line-height: 0.88;
+        font-size: min(16vw, 7rem);
+        font-size: min(19cqi, 7rem);
+        line-height: 0.94;
         letter-spacing: -0.075em;
         white-space: nowrap;
     }
+    .home-page .hero-title-line { display: inline-block; white-space: nowrap; }
     .home-page .hero-description { margin: 32px 0 0; }
     .home-page .hero-cta { margin-top: 18px; }
     .home-page .certificates-section { padding-inline: 0; }
