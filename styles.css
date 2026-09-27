@@ -552,17 +552,22 @@ body {
 }
 
 .intro-container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1160px;
+    padding-inline: clamp(8px, 2vw, 24px);
+    box-sizing: border-box;
     text-align: center;
 }
 
 .intro-text {
     font-size: clamp(1.2rem, 4.5vw, 3rem);
-    font-weight: 600;
-    line-height: 1.4;
+    font-weight: 500;
+    line-height: 1.9;
     color: var(--text-color);
-    letter-spacing: -2px;
+    letter-spacing: -0.035em;
     word-wrap: break-word;
+    text-wrap: balance;
+    margin: 0;
 }
 
 .intro-text b {
@@ -711,18 +716,36 @@ body {
 
 .intro-text img {
     display: inline-block;
-    vertical-align: middle;
-    height: auto;
-    max-width: clamp(50px, 10vw, 130px);
-    margin: 0 8px;
+    vertical-align: -0.45em;
+    width: 2.1em;
+    height: 1.7em;
+    object-fit: contain;
+    margin: 0 0.15em;
     position: relative;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: rotate(-4deg);
+    transform-origin: center 65%;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
     cursor: pointer;
 }
 
+.intro-text img:nth-of-type(even) {
+    transform: rotate(4deg);
+}
+
 .intro-text img:hover {
-    transform: scale(1.4) rotate(10deg);
+    transform: translateY(-0.08em) scale(1.25) rotate(-8deg);
+    filter: drop-shadow(0 0.12em 0.1em rgb(0 0 0 / 14%));
     z-index: 10;
+}
+
+.intro-text img:nth-of-type(even):hover {
+    transform: translateY(-0.08em) scale(1.25) rotate(8deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-text img {
+        transition: none;
+    }
 }
 
 
@@ -1267,11 +1290,6 @@ body {
         align-items: start;
     }
 
-        .intro-text img {
-            max-width: 40px !important;
-            margin: 0 4px;
-        }
-
         .skills-strip {
             padding-left: 20px;
             padding-right: 20px;
@@ -1578,7 +1596,7 @@ body {
     
     .intro-text {
         font-size: 1.2rem;
-        line-height: 1.4;
+        line-height: 1.9;
     }
     
     .skills-dashboard {
