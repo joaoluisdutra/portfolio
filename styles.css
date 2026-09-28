@@ -602,6 +602,8 @@ body {
 .marker-cd { background-image: linear-gradient(#ff6b00, #ff6b00); }
 .marker-web { background-image: linear-gradient(#ff2d55, #ff2d55); }
 .marker-ux { background-image: linear-gradient(#4A90E2, #4A90E2); }
+.marker-graphic { background-image: linear-gradient(#b0d411, #b0d411); }
+.marker-photo { background-image: linear-gradient(#ff2d55, #ff2d55); }
 
 .si-popup {
     visibility: hidden;
