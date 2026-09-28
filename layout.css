@@ -166,7 +166,7 @@
 .home-page .skills-marquee { margin-block: var(--space-section) 0; }
 .home-page .section-label { margin-top: 0; }
 .home-page .section-action { text-align: center; margin-top: var(--space-block); }
-.cert-recent-badge { margin-inline: auto; text-align: center; }
+.cert-recent-badge { margin-inline: 0; text-align: center; }
 
 /* Vector arrows keep the same monochrome appearance on iOS and Android. */
 :root {
@@ -315,6 +315,7 @@
 .research-page .option-item { align-items: baseline; line-height: 1.5; }
 
 @media (max-width: 768px) {
+    .cert-recent-badge { margin-inline: auto; }
     .inner-page :is(.projects-page-container, .cert-page-container, .si-container) { padding-top: 104px; }
     .case-page .desc-row { grid-template-columns: 1fr; gap: 16px; }
     .case-page .description h3 { padding-top: 0; }
