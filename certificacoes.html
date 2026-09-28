@@ -186,12 +186,13 @@
 </head>
 
 <body class="certificates-page inner-page">
-    <nav class="main-navigation"
-        style="position: fixed; background: var(--bg-color);">
-        <a href="index.html" class="back-link">← VOLTAR</a>
-    </nav>
-
     <main class="cert-page-container">
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Certificados</span></li>
+            </ol>
+        </nav>
         <header class="cert-page-header">
             <div class="badge">Lista completa de certificados</div>
             <h1 class="title" style="font-size: clamp(2.5rem, 8vw, 4.5rem);">Formação Complementar</h1>
@@ -533,6 +534,7 @@
             </div>
         </section>
     </main>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>

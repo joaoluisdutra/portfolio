@@ -166,12 +166,13 @@
 </head>
 
 <body class="inner-page">
-    <nav class="main-navigation"
-        style="position: fixed; background: var(--bg-color);">
-        <a href="index.html" class="back-link">← VOLTAR</a>
-    </nav>
-
     <main class="si-container">
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Sistemas de Informação</span></li>
+            </ol>
+        </nav>
         <header class="si-hero">
             <div class="badge">Graduação Acadêmica</div>
             <h1>Sistemas de <br>Informação</h1>
@@ -460,6 +461,7 @@
     <footer class="footer-bottom" style="text-align: center; padding: 60px 0;">
         <p>&copy; 2026 João Luís Dutra. Unibave - Sistemas de Informação.</p>
     </footer>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>

@@ -295,7 +295,13 @@
 
 <body class="case-page">
     <main class="container">
-        <a href="index.html" class="back-link">← VOLTAR</a>
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><a href="projetos.html">Projetos</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Interactive Website</span></li>
+            </ol>
+        </nav>
 
         <div class="media-stack">
             <img src="assets/thumb-projeto-yannick.png" alt="Mockup do Projeto" class="main-image">
@@ -434,6 +440,7 @@
             dynamicElement.appendChild(span);
         });
     </script>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>

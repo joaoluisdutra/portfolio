@@ -241,7 +241,13 @@
 
 <body class="case-page">
     <main class="container">
-        <a href="index.html" class="back-link">← Homepage</a>
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><a href="projetos.html">Projetos</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Landing Page com Slider</span></li>
+            </ol>
+        </nav>
 
         <div class="media-stack">
             <img src="assets/thumb_projeto_slider_adidas.png" alt="Adidas Slider Preview" class="main-image">
@@ -356,6 +362,7 @@
                 na web</a>
         </div>
     </main>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>

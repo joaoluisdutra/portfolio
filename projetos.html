@@ -74,12 +74,13 @@
 </head>
 
 <body class="inner-page">
-    <nav class="main-navigation"
-        style="position: fixed; background: var(--bg-color);">
-        <a href="index.html" class="back-link">← VOLTAR</a>
-    </nav>
-
     <main class="projects-page-container">
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Projetos</span></li>
+            </ol>
+        </nav>
         <header class="projects-page-header">
             <div class="badge">Galeria completa</div>
             <h1 class="title" style="font-size: clamp(2.5rem, 8vw, 4.5rem);">Todos os Projetos</h1>
@@ -525,6 +526,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>

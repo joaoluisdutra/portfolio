@@ -208,7 +208,12 @@
 
 <body class="research-page">
     <main class="container">
-        <a href="index.html" class="back-link">← Voltar ao Início</a>
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Pesquisa Exploratória</span></li>
+            </ol>
+        </nav>
 
         <header>
             <h1>Pesquisa de Viabilidade e Validação de Mercado</h1>
@@ -597,6 +602,7 @@
             });
         });
     </script>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>

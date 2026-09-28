@@ -185,7 +185,7 @@ const markerSi = document.querySelector('.marker-si');
 const siPopup = document.querySelector('.si-popup');
 
 if (markerSi && siPopup) {
-    markerSi.addEventListener('mouseenter', () => {
+    const positionSiPopup = () => {
         markerSi.classList.remove('popup-left');
         siPopup.style.top = '50%';
         siPopup.style.transform = '';
@@ -208,7 +208,9 @@ if (markerSi && siPopup) {
             const shift = updatedRect.bottom - (viewportHeight - margin);
             siPopup.style.top = `calc(50% - ${shift}px)`;
         }
-    });
+    };
+    markerSi.addEventListener('mouseenter', positionSiPopup);
+    markerSi.addEventListener('focusin', positionSiPopup);
 
     markerSi.addEventListener('mouseleave', () => {
         setTimeout(() => {

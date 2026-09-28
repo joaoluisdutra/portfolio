@@ -248,7 +248,13 @@
 
 <body class="case-page">
     <main class="container">
-        <a href="index.html" class="back-link">← Homepage</a>
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><a href="projetos.html">Projetos</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">FerdiCakes</span></li>
+            </ol>
+        </nav>
 
         <div class="media-stack">
             <img src="assets/thumb_projeto_ferdicakes.png" alt="FerdiCakes Preview" class="main-image">
@@ -364,6 +370,7 @@
             </div>
         </div>
     </main>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>

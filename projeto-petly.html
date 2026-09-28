@@ -338,7 +338,13 @@
 
 <body class="case-page">
     <main class="container">
-        <a href="index.html" class="back-link">← VOLTAR</a>
+        <nav class="breadcrumb" aria-label="Caminho de navegação">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><a href="projetos.html">Projetos</a></li>
+                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Petly</span></li>
+            </ol>
+        </nav>
 
         <div class="media-stack">
             <img src="assets/thumb_projeto_petly.png" alt="Telas do aplicativo Petly" class="main-image">
@@ -476,6 +482,7 @@
             dynamicElement.appendChild(span);
         });
     </script>
+    <script src="back-to-top.js"></script>
 </body>
 
 </html>
