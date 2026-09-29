@@ -7,73 +7,66 @@
     <title>Projetos - João Luís Dutra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .projects-page-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 120px 20px 80px;
-        }
-
-        .project-gallery {
-            padding: 40px 0;
-            width: 100%;
-            display: block !important;
-            overflow: hidden;
-        }
-
-        .projects-page-container .title {
-            padding: 0;
-            display: inline-block;
-            width: auto;
-        }
-
-        .projects-page-header {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .projects-page-header .badge {
-            display: inline-block;
-            margin: 0 0 20px;
-            padding: 6px 16px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .projects-page-header .title {
-            display: block;
-            margin: 0 0 16px !important;
-            padding: 0 !important;
-            line-height: 1;
-        }
-
-        .projects-page-description {
-            max-width: 600px;
-            margin: 0;
-            font-size: 1.2rem;
-            line-height: 1.45;
-            opacity: 0.7;
-        }
-
-        @media (max-width: 768px) {
-            .projects-page-container {
-                padding: 88px 20px 40px;
-            }
-
-            .projects-page-header {
-                margin-bottom: 0;
-            }
-        }
-
-    </style>
-    <link rel="stylesheet" href="layout.css">
 </head>
 
-<body class="inner-page">
+<body class="inner-page projects-page">
+    <aside class="sidebar">
+        <a href="index.html" class="menu-home nav-icon" aria-label="Ir para a Home" title="Home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="m3 10 9-7 9 7"></path>
+                <path d="M5 9v12h5v-7h4v7h5V9"></path>
+            </svg>
+        </a>
+        <button class="close-menu nav-icon" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="sidebar-nav">
+            <h2 class="section-label">Mapa do site</h2>
+            <p class="sidebar-heading">Explore<br>o portfólio.</p>
+            <ul>
+                <li><a href="sistemas-de-informacao-unibave.html" class="grade-link"><span class="sidebar-number" aria-hidden="true">01</span><span>Formação<small>Grade curricular de SI</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="certificacoes.html"><span class="sidebar-number" aria-hidden="true">02</span><span>Certificados<small>Cursos e especializações</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="projetos.html"><span class="sidebar-number" aria-hidden="true">03</span><span>Projetos<small>Design e desenvolvimento</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <nav class="main-navigation">
+        <button class="menu-trigger nav-icon" aria-label="Abrir menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <div class="top-nav">
+            <a href="https://github.com/joaoluisdutra" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/joaoluisdutra/" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </nav>
     <main class="projects-page-container">
         <nav class="breadcrumb" aria-label="Caminho de navegação">
             <ol>
@@ -82,451 +75,205 @@
             </ol>
         </nav>
         <header class="projects-page-header">
-            <div class="badge">Galeria completa</div>
-            <h1 class="title" style="font-size: clamp(2.5rem, 8vw, 4.5rem);">Todos os Projetos</h1>
-            <p class="projects-page-description">Uma seleção de projetos que reúne design de interfaces, desenvolvimento
-                web e experiências digitais.</p>
+            <h1 class="title">Todos os Projetos</h1>
+            <p class="projects-page-description">Esta seleção reúne trabalhos desenvolvidos para clientes, projetos
+                acadêmicos e atividades de cursos de formação complementar, com foco em Design de Interfaces,
+                Experiência do Usuário, Design Gráfico, Desenvolvimento Front-end e Web Design.</p>
         </header>
 
-        <section class="project-gallery">
-            <div class="gallery-track">
-                <a href="projeto-dropit.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Dropit App</h2>
-                        <h3 class="project-subtitle">CalARTS</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>UI Design</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2026</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS-DROPIT.png" alt="Dropit App"></div>
+        <div class="projects-toolbar">
+            <button class="project-filter-toggle site-button" type="button" aria-label="Filtrar projetos" aria-expanded="false" aria-controls="project-filter-options" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="currentColor"/><circle cx="15" cy="17" r="3" fill="currentColor"/></svg><span>Filtrar</span></button>
+            <div id="project-filter-options" class="project-filters" role="group" aria-label="Filtrar projetos por categoria" hidden></div>
+            <p class="project-filter-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+        <section class="project-gallery" aria-label="Projetos">
+            <div class="gallery-track" id="projects-grid">
+                <a href="projeto-dropit.html" class="project-card" data-category="UI Design">
+                    <span class="project-number" aria-hidden="true">014</span>
+                    <h2 class="project-title">Dropit</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">UI Design</span></dd></div>
+                        <div><dt>Ano</dt><dd>2026</dd></div>
+                        <div><dt>Projeto</dt><dd>Interface de um aplicativo para acompanhar produtos e listas de desejos.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-tiny-bites.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">TinyBites App</h2>
-                        <h3 class="project-subtitle">CalARTS</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>UI Design</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2026</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS-TINY-BITES.png" alt="TinyBites App">
-                    </div>
+                <a href="projeto-tiny-bites.html" class="project-card" data-category="UI Design">
+                    <span class="project-number" aria-hidden="true">013</span>
+                    <h2 class="project-title">TinyBites</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">UI Design</span></dd></div>
+                        <div><dt>Ano</dt><dd>2026</dd></div>
+                        <div><dt>Projeto</dt><dd>Interface de um aplicativo voltado à alimentação infantil.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-petly.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Petly App</h2>
-                        <h3 class="project-subtitle">Google</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>UX Design</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS-PETLY.png" alt="Petly App"></div>
+                <a href="projeto-petly.html" class="project-card" data-category="UX Design">
+                    <span class="project-number" aria-hidden="true">012</span>
+                    <h2 class="project-title">Petly</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">UX Design</span></dd></div>
+                        <div><dt>Ano</dt><dd>2025</dd></div>
+                        <div><dt>Projeto</dt><dd>Projeto de experiência do usuário para o aplicativo Petly.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-awwwards-yannick-course.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Interactive Website</h2>
-                        <h3 class="project-subtitle">Awwwards Academy</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Creative Development</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2026</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_01.png" alt="Interactive Website">
-                    </div>
+                <a href="projeto-awwwards-yannick-course.html" class="project-card" data-category="Creative Development">
+                    <span class="project-number" aria-hidden="true">011</span>
+                    <h2 class="project-title">Interactive Website</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Creative Development</span></dd></div>
+                        <div><dt>Ano</dt><dd>2026</dd></div>
+                        <div><dt>Projeto</dt><dd>Website interativo desenvolvido em curso da Awwwards Academy.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-dev-alura-google.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Booker Prizes Archive</h2>
-                        <h3 class="project-subtitle">Imersão Dev Alura + Google</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Web Development</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2026</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_02.png" alt="Booker Prizes Archive">
-                    </div>
+                <a href="projeto-dev-alura-google.html" class="project-card" data-category="Web Development">
+                    <span class="project-number" aria-hidden="true">010</span>
+                    <h2 class="project-title">Booker Prizes Archive</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Web Development</span></dd></div>
+                        <div><dt>Ano</dt><dd>2026</dd></div>
+                        <div><dt>Projeto</dt><dd>Arquivo digital dedicado ao Booker Prize.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-imersao-front-end-alura.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Spotify Interface</h2>
-                        <h3 class="project-subtitle">Imersão Front-End Alura</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Web Development</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_01-1_04.png" alt="Spotify Interface">
-                    </div>
+                <a href="projeto-imersao-front-end-alura.html" class="project-card" data-category="Web Development">
+                    <span class="project-number" aria-hidden="true">009</span>
+                    <h2 class="project-title">Spotify Interface</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Web Development</span></dd></div>
+                        <div><dt>Ano</dt><dd>2025</dd></div>
+                        <div><dt>Projeto</dt><dd>Recriação da interface do Spotify em uma imersão de Front-end.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-slider-adidas.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Landing Page com Slider</h2>
-                        <h3 class="project-subtitle">Projeto fictício</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Web Development</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_01-1_05.png" alt="Landing Page Adidas">
-                    </div>
+                <a href="projeto-slider-adidas.html" class="project-card" data-category="Web Development">
+                    <span class="project-number" aria-hidden="true">008</span>
+                    <h2 class="project-title">Landing Page com Slider</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Web Development</span></dd></div>
+                        <div><dt>Ano</dt><dd>2025</dd></div>
+                        <div><dt>Projeto</dt><dd>Landing page com slider para uma proposta fictícia da Adidas.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-app-ampara.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Pitch Deck Ampara App</h2>
-                        <h3 class="project-subtitle">Unibave</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Web Development</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_04.png" alt="Pitch Deck Ampara App">
-                    </div>
+                <a href="projeto-app-ampara.html" class="project-card" data-category="Web Development">
+                    <span class="project-number" aria-hidden="true">007</span>
+                    <h2 class="project-title">Pitch Deck Ampara</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Web Development</span></dd></div>
+                        <div><dt>Ano</dt><dd>2025</dd></div>
+                        <div><dt>Projeto</dt><dd>Apresentação do aplicativo Ampara em formato de pitch deck.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-product-page.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Product Page</h2>
-                        <h3 class="project-subtitle">freeCodeCamp</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Design Gráfico</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2024</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_05.png" alt="Product Page"></div>
+                <a href="projeto-product-page.html" class="project-card" data-category="Web Development">
+                    <span class="project-number" aria-hidden="true">006</span>
+                    <h2 class="project-title">Product Page</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Web Development</span></dd></div>
+                        <div><dt>Ano</dt><dd>2024</dd></div>
+                        <div><dt>Projeto</dt><dd>Página de produto com foco na apresentação visual.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-jornada-design-ebac.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Annual Report</h2>
-                        <h3 class="project-subtitle">Jornada Design Gráfico 2 - EBAC</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Design Gráfico</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_01-1_02.png" alt="Annual Report"></div>
+                <a href="projeto-jornada-design-ebac.html" class="project-card" data-category="Design Gráfico">
+                    <span class="project-number" aria-hidden="true">005</span>
+                    <h2 class="project-title">Annual Report</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Design Gráfico</span></dd></div>
+                        <div><dt>Ano</dt><dd>2025</dd></div>
+                        <div><dt>Projeto</dt><dd>Projeto editorial de um relatório anual.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-ferdicakes.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Landing Page</h2>
-                        <h3 class="project-subtitle">Wix Studio</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Web Design</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_01-1_03.png" alt="Landing Page"></div>
+                <a href="projeto-ferdicakes.html" class="project-card" data-category="Web Design">
+                    <span class="project-number" aria-hidden="true">004</span>
+                    <h2 class="project-title">Landing Page</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Web Design</span></dd></div>
+                        <div><dt>Ano</dt><dd>2025</dd></div>
+                        <div><dt>Projeto</dt><dd>Landing page para a marca FerdiCakes.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-tribute-page.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Responsive Tribute Page</h2>
-                        <h3 class="project-subtitle">freeCodeCamp</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Design Gráfico</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2024</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_03.png" alt="Tribute Page"></div>
+                <a href="projeto-tribute-page.html" class="project-card" data-category="Web Development">
+                    <span class="project-number" aria-hidden="true">003</span>
+                    <h2 class="project-title">Responsive Tribute Page</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Web Development</span></dd></div>
+                        <div><dt>Ano</dt><dd>2024</dd></div>
+                        <div><dt>Projeto</dt><dd>Página de homenagem com layout responsivo.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto_social_media_content_2.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Social Media Content</h2>
-                        <h3 class="project-subtitle">TravelMate Intercâmbio</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Design Gráfico</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2023</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_01-1_06.png" alt="Social Media 1">
-                    </div>
+                <a href="projeto_social_media_content_2.html" class="project-card" data-category="Design Gráfico">
+                    <span class="project-number" aria-hidden="true">002</span>
+                    <h2 class="project-title">Social Media Content</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Design Gráfico</span></dd></div>
+                        <div><dt>Ano</dt><dd>2023</dd></div>
+                        <div><dt>Projeto</dt><dd>Conjunto de peças gráficas para redes sociais.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
 
-                <a href="projeto-social-media-content-1.html" class="project-card">
-                    <div class="project-info">
-                        <h2 class="project-title">Social Media Content</h2>
-                        <h3 class="project-subtitle">Home Decor</h3>
-                        <div class="project-tags">
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                                    </path>
-                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                </svg>
-                                <span>Design Gráfico</span>
-                            </div>
-                            <div class="project-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2022</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="assets/VITRINE-PROJETOS_01-1_01.png" alt="Social Media 2">
-                    </div>
+                <a href="projeto-social-media-content-1.html" class="project-card" data-category="Design Gráfico">
+                    <span class="project-number" aria-hidden="true">001</span>
+                    <h2 class="project-title">Social Media Content</h2>
+                    <dl class="project-details">
+                        <div><dt>Área</dt><dd><span class="project-category">Design Gráfico</span></dd></div>
+                        <div><dt>Ano</dt><dd>2022</dd></div>
+                        <div><dt>Projeto</dt><dd>Conjunto de peças gráficas para redes sociais.</dd></div>
+                    </dl>
+                    <span class="project-open">Ver projeto <span aria-hidden="true">&#8599;</span></span>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer class="footer-bottom" style="text-align: center; padding: 60px 0;">
-        <p>&copy; 2026 João Luís Dutra. Todos os projetos reservados.</p>
+    <footer class="contact-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h2 class="section-label">Contato</h2>
+                    <h3 class="footer-title">Dúvidas sobre meu currículo? Entre em contato!</h3>
+                    <a href="mailto:joaoluisdutrra@gmail.com" class="footer-email">joaoluisdutrra@gmail.com</a><br>
+                    <a href="https://wa.me/+5548999925123" class="footer-number">+5548999925123</a>
+                </div>
+                <form action="https://formspree.io/f/xnjlbdoa" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="_replyto" placeholder="Seu E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn site-button">Enviar Mensagem</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 João Luís Dutra. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-    <script src="back-to-top.js"></script>
 </body>
 
 </html>

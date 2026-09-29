@@ -5,392 +5,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petly App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --off-white: #fafafa;
-            --accent-color: #b0d411;
-            --text-color: #212427;
-        }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Manrope', sans-serif;
-            background: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .back-link {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 700;
-            font-size: .9rem;
-            display: inline-block;
-            margin-bottom: 40px;
-            transition: color .3s ease;
-        }
-
-        .back-link:hover {
-            color: var(--accent-color);
-        }
-
-        h1 {
-            font-size: clamp(1.6rem, 5vw, 2.2rem);
-            margin: 0 0 25px;
-            letter-spacing: -1px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 800;
-        }
-
-        .dynamic-hover span {
-            display: inline-block;
-            transition: color .2s ease, transform .2s ease;
-            cursor: default;
-        }
-
-        .dynamic-hover span:nth-child(4n+1):hover {
-            color: var(--accent-color);
-        }
-
-        .dynamic-hover span:nth-child(4n+2):hover {
-            color: #ff6b00;
-        }
-
-        .dynamic-hover span:nth-child(4n+3):hover {
-            color: #ff2d55;
-        }
-
-        .dynamic-hover span:nth-child(4n):hover {
-            color: #4a90e2;
-        }
-
-        .dynamic-hover span:hover {
-            transform: translateY(-3px);
-        }
-
-        .media-stack {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(33, 36, 39, .05);
-            margin-bottom: 40px;
-            border: 1px solid #f0f0f0;
-        }
-
-        .main-image {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .project-header-panel {
-            background: var(--off-white);
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .project-meta {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .meta-badge {
-            font-size: .7rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 1px;
-            padding: 6px 16px;
-            border: 1px solid rgba(33, 36, 39, .1);
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .meta-badge svg {
-            width: 12px;
-            height: 12px;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            max-width: 1200px;
-            margin: 0 auto 80px 0;
-        }
-
-        .desc-row {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 80px;
-            padding: 50px 0;
-            border-top: 1px solid #eee;
-        }
-
-        .desc-row:first-child {
-            border-top: none;
-            padding-top: 0;
-        }
-
-        .description h3 {
-            font-size: .7rem;
-            margin: 0;
-            letter-spacing: 2.5px;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding-top: 10px;
-            opacity: .6;
-        }
-
-        .description p {
-            margin: 0 0 20px;
-            line-height: 1.8;
-            max-width: 750px;
-        }
-
-        .description ul {
-            list-style: none;
-            padding: 10px 0;
-            margin: 30px 0 0;
-        }
-
-        .description li {
-            margin-bottom: 18px;
-            padding-left: 28px;
-            position: relative;
-            text-align: justify;
-        }
-
-        .description li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        .description strong {
-            font-weight: 700;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px 40px;
-        }
-
-        .skill-item {
-            width: 90px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 18px;
-            font-size: .65rem;
-            font-weight: 700;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: .8px;
-            transition: transform .3s ease;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .icon-circle {
-            width: 72px;
-            height: 72px;
-            background: #fff;
-            border: 1px solid #ececec;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .3s cubic-bezier(.16, 1, .3, 1);
-            box-shadow: 0 4px 12px rgba(33, 36, 39, .03);
-        }
-
-        .skill-item:hover .icon-circle {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 25px rgba(176, 212, 17, .2);
-        }
-
-        .skill-item svg {
-            width: 30px;
-            height: 30px;
-            stroke-width: 1.5;
-        }
-
-        .project-actions {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 60px;
-            padding-bottom: 40px;
-        }
-
-        .action-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: .75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 16px 35px;
-            border: 1px solid var(--text-color);
-            border-radius: 50px;
-            transition: all .3s ease;
-        }
-
-        .deliverables {
-            display: grid;
-            gap: 28px;
-        }
-
-        .deliverable {
-            margin: 0;
-            overflow: hidden;
-            border: 1px solid #f0f0f0;
-            border-radius: 8px;
-            background: var(--off-white);
-            box-shadow: 0 15px 35px rgba(33, 36, 39, .05);
-        }
-
-        .deliverable img,
-        .deliverable video {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .deliverable a {
-            display: block;
-            cursor: zoom-in;
-        }
-
-        .deliverable a img {
-            transition: transform .35s ease;
-        }
-
-        .deliverable a:hover img {
-            transform: scale(1.015);
-        }
-
-        .deliverable figcaption {
-            padding: 16px 20px;
-            font-size: .72rem;
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-        }
-
-        .deliverable video {
-            background: #111;
-        }
-
-        .action-btn:hover {
-            background: var(--text-color);
-            color: var(--bg-color);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 60px 20px;
-            }
-
-            .main-image {
-                height: 300px;
-            }
-
-            .project-header-panel {
-                padding: 45px 20px;
-            }
-
-            .desc-row {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 40px 0;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body class="case-page inner-page">
+    <aside class="sidebar">
+        <a href="index.html" class="menu-home nav-icon" aria-label="Ir para a Home" title="Home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="m3 10 9-7 9 7"></path>
+                <path d="M5 9v12h5v-7h4v7h5V9"></path>
+            </svg>
+        </a>
+        <button class="close-menu nav-icon" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="sidebar-nav">
+            <h2 class="section-label">Mapa do site</h2>
+            <p class="sidebar-heading">Explore<br>o portfólio.</p>
+            <ul>
+                <li><a href="sistemas-de-informacao-unibave.html" class="grade-link"><span class="sidebar-number" aria-hidden="true">01</span><span>Formação<small>Grade curricular de SI</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="certificacoes.html"><span class="sidebar-number" aria-hidden="true">02</span><span>Certificados<small>Cursos e especializações</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="projetos.html"><span class="sidebar-number" aria-hidden="true">03</span><span>Projetos<small>Design e desenvolvimento</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+            </ul>
+        </nav>
+    </aside>
 
-<body class="case-page">
-    <main class="container">
-        <nav class="breadcrumb" aria-label="Caminho de navegação">
+    <nav class="main-navigation">
+        <button class="menu-trigger nav-icon" aria-label="Abrir menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <div class="top-nav">
+            <a href="https://github.com/joaoluisdutra" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/joaoluisdutra/" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+<main class="case-container">
+<nav class="breadcrumb" aria-label="Caminho de navegação">
             <ol>
                 <li><a href="index.html">Home</a></li>
                 <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><a href="projetos.html">Projetos</a></li>
                 <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Petly</span></li>
             </ol>
         </nav>
-
-        <div class="media-stack">
-            <img src="assets/thumb_projeto_petly.png" alt="Telas do aplicativo Petly" class="main-image">
-            <div class="project-header-panel">
-                <h1>APP PETLY: Agendamento <span class="dynamic-hover">Simplificado</span> para Pets</h1>
-                <div class="project-meta">
-                    <div class="meta-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                            </path>
-                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                        </svg>
-                        UX Design
-                    </div>
-                    <div class="meta-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        2026
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="description">
-            <section class="desc-row">
-                <h3>O que foi desenvolvido</h3>
-                <div class="desc-content">
-                    <p>Neste projeto, desenvolvi um aplicativo mobile como parte da certificação profissional UX Design
-                        da Google, focado na resolução de um gargalo operacional real de um pet shop local: a
-                        digitalização do agendamento de serviços.</p>
+<header class="case-header"><p class="case-eyebrow">Projeto 012</p><h1>Petly</h1></header>
+<div class="case-explorer">
+<aside class="case-index"><p class="case-index-label">Mapa do projeto</p><nav class="case-tabs" aria-label="Categorias do projeto"><a class="case-tab" id="case-tab-0" href="#case-panel-0"><span class="case-tab-number" aria-hidden="true">01</span><span class="case-tab-label">Visão geral</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+<a class="case-tab" id="case-tab-1" href="#case-panel-1"><span class="case-tab-number" aria-hidden="true">02</span><span class="case-tab-label">O que foi desenvolvido</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+<a class="case-tab" id="case-tab-2" href="#case-panel-2"><span class="case-tab-number" aria-hidden="true">03</span><span class="case-tab-label">Aprendizados e Técnicas</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+<a class="case-tab" id="case-tab-3" href="#case-panel-3"><span class="case-tab-number" aria-hidden="true">04</span><span class="case-tab-label">Habilidades</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+</nav><div class="project-actions">
+            <a href="https://www.figma.com/design/F3KT1ReAxFdqDLHtxjzjmd/App-Petshop?node-id=0-1&t=5YGDVqKyFVOZlH6l-1"
+                class="action-btn site-button">Visualize na Web</a>
+        </div></aside>
+<div class="case-panels"><section class="case-panel" id="case-panel-0" aria-labelledby="case-heading-0"><p class="case-panel-step" aria-hidden="true">01 / 04</p><h2 id="case-heading-0">Visão geral</h2><p class="case-intro">Projeto de experiência do usuário para o aplicativo Petly.</p>
+<figure class="case-preview-frame"><video class="case-preview" controls autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de demonstração do projeto">
+                            <source src="assets/video-projeto-petly.mp4" type="video/mp4">Seu navegador não suporta a
+                            reprodução de vídeo.
+                        </video></figure>
+<dl class="case-facts"><div><dt>Área</dt><dd>UX Design</dd></div><div><dt>Ano</dt><dd>2026</dd></div></dl></section>
+<section class="case-panel" id="case-panel-1" aria-labelledby="case-heading-1"><p class="case-panel-step" aria-hidden="true">02 / 04</p><h2 id="case-heading-1">O que foi desenvolvido</h2><div class="desc-content">
+                    <p>Neste projeto, desenvolvi um aplicativo mobile como parte da <strong>certificação profissional UX Design
+                        da Google</strong>, focado na resolução de um gargalo operacional real de um pet shop local: a
+                        <strong>digitalização do agendamento de serviços</strong>.</p>
                     <p>A aplicação foi projetada para eliminar o fluxo manual e fragmentado via WhatsApp. A interface
                         limpa, acessível e de alta usabilidade permite concluir um agendamento completo em uma jornada
                         otimizada de quatro etapas: tela principal, seleção de horário, confirmação e feedback de
                         sucesso.</p>
-                </div>
-            </section>
-
-            <section class="desc-row">
-                <h3>Aprendizados e Técnicas</h3>
-                <div class="desc-content">
+                </div></section>
+<section class="case-panel" id="case-panel-2" aria-labelledby="case-heading-2"><p class="case-panel-step" aria-hidden="true">03 / 04</p><h2 id="case-heading-2">Aprendizados e Técnicas</h2><div class="desc-content">
                     <p>O desenvolvimento deste projeto consolidou processos de experiência do usuário e design de
                         interface aplicados a um cenário de negócio real:</p>
                     <ul>
@@ -407,12 +116,8 @@
                             em feedbacks, garantindo confiabilidade e bloqueio imediato de horários para evitar
                             conflitos de agenda.</li>
                     </ul>
-                </div>
-            </section>
-
-            <section class="desc-row">
-                <h3>Habilidades</h3>
-                <div class="desc-content">
+                </div></section>
+<section class="case-panel" id="case-panel-3" aria-labelledby="case-heading-3"><p class="case-panel-step" aria-hidden="true">04 / 04</p><h2 id="case-heading-3">Habilidades</h2><div class="desc-content">
                     <div class="skills-grid">
                         <div class="skill-item">
                             <div class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -452,37 +157,11 @@
                                 </svg></div><span>Protótipos</span>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="desc-row">
-                <h3>Demonstração</h3>
-                <div class="desc-content">
-                    <figure class="deliverable"><video controls playsinline preload="metadata">
-                            <source src="assets/video-projeto-petly.mp4" type="video/mp4">Seu navegador não suporta a
-                            reprodução de vídeo.
-                        </video></figure>
-                </div>
-            </section>
-        </div>
-
-
-
-        <div class="project-actions">
-            <a href="https://www.figma.com/design/F3KT1ReAxFdqDLHtxjzjmd/App-Petshop?node-id=0-1&t=5YGDVqKyFVOZlH6l-1"
-                class="action-btn">Visualize na web</a>
-        </div>
-    </main>
-    <script>
-        const dynamicElement = document.querySelector('.dynamic-hover');
-        const characters = dynamicElement.textContent.split('');
-        dynamicElement.textContent = '';
-        characters.forEach(char => {
-            const span = document.createElement('span');
-            span.textContent = char === ' ' ? '\u00A0' : char;
-            dynamicElement.appendChild(span);
-        });
-    </script>
-    <script src="back-to-top.js"></script>
+                </div></section>
+</div>
+</div>
+<nav class="case-pagination" aria-label="Navegação entre projetos"><a href="projeto-awwwards-yannick-course.html">Próximo projeto <span class="case-next-arrow" aria-hidden="true"></span></a></nav>
+</main>
+<script src="script.js"></script>
 </body>
-
 </html>

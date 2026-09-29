@@ -7,165 +7,67 @@
     <title>Sistemas de Informação - Unibave</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .si-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 170px 20px 80px;
-        }
-
-        .si-hero {
-            text-align: left;
-            margin-bottom: 80px;
-        }
-
-        .si-hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin: 20px 0;
-            font-weight: 800;
-        }
-
-        .si-hero .badge {
-            display: inline-block;
-            font-size: 0.8rem;
-            padding: 6px 16px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .uni-section {
-            background-color: var(--off-white);
-            padding: 60px;
-            border-radius: 24px;
-            margin-bottom: 80px;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .uni-stats {
-            display: flex;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            border-left: 2px solid var(--accent-color);
-            padding-left: 15px;
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 800;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            opacity: 0.6;
-            letter-spacing: 1px;
-        }
-
-        .phases-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .phase-card {
-            border: 1px solid #eee;
-            border-radius: 20px;
-            padding: 40px;
-            transition: transform 0.3s ease;
-        }
-
-        .phase-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .phase-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-
-        .phase-status {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 1px;
-            padding: 6px 12px;
-            border-radius: 50px;
-        }
-
-        .status-done {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .status-current {
-            background-color: #fffde7;
-            color: #f9a825;
-            border: 1px solid #f9a825;
-        }
-
-        .status-future {
-            background-color: #f5f5f5;
-            color: #9e9e9e;
-        }
-
-        .phase-card .subjects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .subject-item h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-            color: var(--text-color);
-            font-weight: 700;
-        }
-
-        .subject-item p {
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 768px) {
-            .phase-card { padding: 24px; }
-            .phase-header { flex-wrap: wrap; gap: 12px; }
-            .uni-stats { flex-wrap: wrap; }
-            .uni-section {
-                grid-template-columns: 1fr;
-                padding: 30px;
-            }
-
-            .si-container {
-                padding: 88px 20px;
-            }
-
-            .si-hero h1 {
-                letter-spacing: -1px;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="layout.css">
 </head>
 
-<body class="inner-page">
+<body class="inner-page education-page">
+    <aside class="sidebar">
+        <a href="index.html" class="menu-home nav-icon" aria-label="Ir para a Home" title="Home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="m3 10 9-7 9 7"></path>
+                <path d="M5 9v12h5v-7h4v7h5V9"></path>
+            </svg>
+        </a>
+        <button class="close-menu nav-icon" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="sidebar-nav">
+            <h2 class="section-label">Mapa do site</h2>
+            <p class="sidebar-heading">Explore<br>o portfólio.</p>
+            <ul>
+                <li><a href="sistemas-de-informacao-unibave.html" class="grade-link"><span class="sidebar-number" aria-hidden="true">01</span><span>Formação<small>Grade curricular de SI</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="certificacoes.html"><span class="sidebar-number" aria-hidden="true">02</span><span>Certificados<small>Cursos e especializações</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="projetos.html"><span class="sidebar-number" aria-hidden="true">03</span><span>Projetos<small>Design e desenvolvimento</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <nav class="main-navigation">
+        <button class="menu-trigger nav-icon" aria-label="Abrir menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <div class="top-nav">
+            <a href="https://github.com/joaoluisdutra" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/joaoluisdutra/" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
     <main class="si-container">
         <nav class="breadcrumb" aria-label="Caminho de navegação">
             <ol>
@@ -173,19 +75,11 @@
                 <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Sistemas de Informação</span></li>
             </ol>
         </nav>
-        <header class="si-hero">
-            <div class="badge">Graduação Acadêmica</div>
-            <h1>Sistemas de <br>Informação</h1>
-            <p style="font-size: 1.2rem; opacity: 0.7; max-width: 600px;">Desenvolvendo a base técnica e analítica para
-                criar soluções tecnológicas que conectam pessoas e negócios.</p>
-        </header>
-
         <section class="uni-section">
             <div>
-                <h2 class="section-label" style="margin-bottom: 15px;">A Instituição</h2>
-                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Unibave — Centro Universitário Barriga Verde</h3>
-                <p>Localizada em Orleans - SC, o Unibave é uma instituição comunitária de referência na região sul
-                    catarinense, focada no desenvolvimento regional e na excelência acadêmica.</p>
+                <h1 class="uni-title">Sistemas de Informação</h1>
+                <p>O curso reúne conhecimentos de computação, tecnologia e gestão para desenvolver sistemas e soluções
+                    voltados às necessidades das pessoas e das organizações.</p>
                 <div class="uni-stats">
                     <div class="stat-item">
                         <span class="stat-value">5</span>
@@ -197,17 +91,18 @@
                     </div>
                 </div>
             </div>
-            <div style="text-align: center;">
-                <img src="assets/logo-unibave.png" alt="Unibave" style="max-width: 200px; filter: grayscale(1);">
+            <div class="education-logo-wrapper">
+                <img class="education-logo" src="assets/logo-unibave.png" alt="Unibave">
             </div>
         </section>
 
         <div class="phases-grid">
-            <div class="phase-card">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Primeira Fase</h3>
+            <details class="phase-card">
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Primeira Fase</h3>
                     <span class="phase-status status-done">Concluída</span>
-                </div>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>Computador e Sociedade</h4>
@@ -234,13 +129,14 @@
                         <p>Compreensão do comportamento humano e cultura nas organizações.</p>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="phase-card">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Segunda Fase</h3>
+            <details class="phase-card">
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Segunda Fase</h3>
                     <span class="phase-status status-done">Concluída</span>
-                </div>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>Algoritmo e Programação I</h4>
@@ -263,13 +159,14 @@
                         <p>Análise de dados, probabilidade e inferência para tomada de decisão.</p>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="phase-card">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Terceira Fase</h3>
+            <details class="phase-card">
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Terceira Fase</h3>
                     <span class="phase-status status-done">Concluída</span>
-                </div>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>Algoritmo e Programação II</h4>
@@ -292,13 +189,14 @@
                         <p>Gerenciamento de processos, memória e sistemas de arquivos.</p>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="phase-card">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Quarta Fase</h3>
+            <details class="phase-card">
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Quarta Fase</h3>
                     <span class="phase-status status-done">Concluída</span>
-                </div>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>POO I</h4>
@@ -325,13 +223,14 @@
                         <p>Ciclo de vida do software, requisitos e metodologias de desenvolvimento.</p>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="phase-card">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Quinta Fase</h3>
+            <details class="phase-card">
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Quinta Fase</h3>
                     <span class="phase-status status-done">Concluída</span>
-                </div>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>POO II</h4>
@@ -358,14 +257,14 @@
                         <p>Mapeamento e otimização de fluxos de trabalho empresariais (BPM).</p>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="phase-card"
-                style="border-color: var(--accent-color); background-color: rgba(74, 144, 226, 0.06);">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Sexta Fase</h3>
-                    <span class="phase-status status-current">Em curso</span>
-                </div>
+            <details class="phase-card" open>
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Sexta Fase</h3>
+                    <span class="phase-status status-current">Em andamento</span>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>Redes de Computadores II</h4>
@@ -388,13 +287,14 @@
                         <p>Tópicos complementares escolhidos para diversificação técnica.</p>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="phase-card">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Sétima Fase</h3>
+            <details class="phase-card">
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Sétima Fase</h3>
                     <span class="phase-status status-future">Pendente</span>
-                </div>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>Ética Profissional</h4>
@@ -421,13 +321,14 @@
                         <p>Pesquisa e estruturação inicial do Trabalho de Conclusão de Curso.</p>
                     </div>
                 </div>
-            </div>
+            </details>
 
-            <div class="phase-card">
-                <div class="phase-header">
-                    <h3 style="font-weight: 800;">Oitava Fase</h3>
+            <details class="phase-card">
+                <summary class="phase-header">
+                    <h3 class="education-phase-title">Oitava Fase</h3>
                     <span class="phase-status status-future">Pendente</span>
-                </div>
+                    <span class="phase-toggle-icon" aria-hidden="true"></span>
+                </summary>
                 <div class="subjects-list">
                     <div class="subject-item">
                         <h4>Dispositivos Móveis</h4>
@@ -454,14 +355,38 @@
                         <p>Execução, defesa e entrega final do projeto de graduação.</p>
                     </div>
                 </div>
-            </div>
+            </details>
         </div>
     </main>
 
-    <footer class="footer-bottom" style="text-align: center; padding: 60px 0;">
-        <p>&copy; 2026 João Luís Dutra. Unibave - Sistemas de Informação.</p>
+    <footer class="contact-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h2 class="section-label">Contato</h2>
+                    <h3 class="footer-title">Dúvidas sobre meu currículo? Entre em contato!</h3>
+                    <a href="mailto:joaoluisdutrra@gmail.com" class="footer-email">joaoluisdutrra@gmail.com</a><br>
+                    <a href="https://wa.me/+5548999925123" class="footer-number">+5548999925123</a>
+                </div>
+                <form action="https://formspree.io/f/xnjlbdoa" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="_replyto" placeholder="Seu E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn site-button">Enviar Mensagem</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 João Luís Dutra. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
-    <script src="back-to-top.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

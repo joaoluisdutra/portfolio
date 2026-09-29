@@ -5,292 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pitch Deck Ampara App - Projeto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --off-white: #fafafa;
-            --accent-color: #b0d411;
-            --text-color: #0e1111;
-        }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Manrope', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .back-link {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 40px;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: var(--accent-color);
-        }
-
-        h1 {
-            font-size: clamp(1.6rem, 5vw, 2.2rem);
-            margin: 0 0 25px;
-            letter-spacing: -1px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 800;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            max-width: 1200px;
-            margin: 0 auto 80px 0;
-            color: var(--text-color);
-            text-align: left;
-        }
-
-        .desc-row {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 80px;
-            padding: 50px 0;
-            border-top: 1px solid #eee;
-        }
-
-        .desc-row:first-child {
-            border-top: none;
-            padding-top: 0;
-        }
-
-        .description h3 {
-            font-size: 0.7rem;
-            color: var(--text-color);
-            margin: 0;
-            letter-spacing: 2.5px;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding-top: 10px;
-            opacity: 0.6;
-        }
-
-        .description p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-            max-width: 750px;
-        }
-
-        .media-stack {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-            margin-bottom: 40px;
-            border: 1px solid #f0f0f0;
-        }
-
-        .main-image {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .project-meta {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .meta-badge {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 1px;
-            padding: 6px 16px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .meta-badge svg {
-            width: 12px;
-            height: 12px;
-        }
-
-        .project-header-panel {
-            background-color: var(--off-white);
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 18px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #0e1111;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .icon-circle {
-            width: 72px;
-            height: 72px;
-            background-color: #ffffff;
-            border: 1px solid #ececec;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        }
-
-        .skill-item:hover .icon-circle {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 25px rgba(176, 212, 17, 0.2);
-        }
-
-        .skill-item svg {
-            width: 30px;
-            height: 30px;
-            stroke-width: 1.5;
-        }
-
-        .video-showcase {
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            line-height: 0;
-        }
-
-        .video-showcase video {
-            width: 100%;
-            height: auto;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .demo-image {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .demo-image:hover {
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 60px 20px;
-            }
-
-            .desc-row {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 40px 0;
-            }
-
-            .image-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body class="case-page inner-page">
+    <aside class="sidebar">
+        <a href="index.html" class="menu-home nav-icon" aria-label="Ir para a Home" title="Home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="m3 10 9-7 9 7"></path>
+                <path d="M5 9v12h5v-7h4v7h5V9"></path>
+            </svg>
+        </a>
+        <button class="close-menu nav-icon" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="sidebar-nav">
+            <h2 class="section-label">Mapa do site</h2>
+            <p class="sidebar-heading">Explore<br>o portfólio.</p>
+            <ul>
+                <li><a href="sistemas-de-informacao-unibave.html" class="grade-link"><span class="sidebar-number" aria-hidden="true">01</span><span>Formação<small>Grade curricular de SI</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="certificacoes.html"><span class="sidebar-number" aria-hidden="true">02</span><span>Certificados<small>Cursos e especializações</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="projetos.html"><span class="sidebar-number" aria-hidden="true">03</span><span>Projetos<small>Design e desenvolvimento</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+            </ul>
+        </nav>
+    </aside>
 
-<body class="case-page">
-    <main class="container">
-        <nav class="breadcrumb" aria-label="Caminho de navegação">
+    <nav class="main-navigation">
+        <button class="menu-trigger nav-icon" aria-label="Abrir menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <div class="top-nav">
+            <a href="https://github.com/joaoluisdutra" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/joaoluisdutra/" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+<main class="case-container">
+<nav class="breadcrumb" aria-label="Caminho de navegação">
             <ol>
                 <li><a href="index.html">Home</a></li>
                 <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><a href="projetos.html">Projetos</a></li>
                 <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Ampara</span></li>
             </ol>
         </nav>
-
-        <div class="media-stack">
-            <img src="assets/thumb-projeto-app-ampara.png" alt="Ampara App Preview" class="main-image">
-
-            <div class="project-header-panel">
-                <h1>Pitch Deck Ampara App</h1>
-                <div class="project-meta">
-                    <div class="meta-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
-                            </path>
-                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                        </svg>
-                        Web Development
-                    </div>
-                    <div class="meta-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        2025
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="description">
-            <div class="desc-row">
-                <h3>O que foi desenvolvido</h3>
-                <div class="desc-content">
-                    <p>O Ampara é um protótipo de aplicativo focado na inclusão e integração universitária, desenvolvido
-                        como projeto final da disciplina de Práticas Integrativas no Unibave. O projeto nasceu para
+<header class="case-header"><p class="case-eyebrow">Projeto 007</p><h1>Pitch Deck Ampara App</h1></header>
+<div class="case-explorer">
+<aside class="case-index"><p class="case-index-label">Mapa do projeto</p><nav class="case-tabs" aria-label="Categorias do projeto"><a class="case-tab" id="case-tab-0" href="#case-panel-0"><span class="case-tab-number" aria-hidden="true">01</span><span class="case-tab-label">Visão geral</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+<a class="case-tab" id="case-tab-1" href="#case-panel-1"><span class="case-tab-number" aria-hidden="true">02</span><span class="case-tab-label">O que foi desenvolvido</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+<a class="case-tab" id="case-tab-2" href="#case-panel-2"><span class="case-tab-number" aria-hidden="true">03</span><span class="case-tab-label">Aprendizados e Técnicas</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+<a class="case-tab" id="case-tab-3" href="#case-panel-3"><span class="case-tab-number" aria-hidden="true">04</span><span class="case-tab-label">Habilidades</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
+<a class="case-tab" id="case-tab-4" href="#case-panel-4"><span class="case-tab-number" aria-hidden="true">05</span><span class="case-tab-label">Apresentação do Projeto</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a></nav></aside>
+<div class="case-panels"><section class="case-panel" id="case-panel-0" aria-labelledby="case-heading-0"><p class="case-panel-step" aria-hidden="true">01 / 05</p><h2 id="case-heading-0">Visão geral</h2><p class="case-intro">Apresentação do aplicativo Ampara em formato de pitch deck.</p>
+<figure class="case-preview-frame"><img src="assets/thumb-ampara.png" alt="Pitch Deck do aplicativo Ampara" class="case-preview"></figure>
+<dl class="case-facts"><div><dt>Área</dt><dd>Web Development</dd></div><div><dt>Ano</dt><dd>2025</dd></div></dl></section>
+<section class="case-panel" id="case-panel-1" aria-labelledby="case-heading-1"><p class="case-panel-step" aria-hidden="true">02 / 05</p><h2 id="case-heading-1">O que foi desenvolvido</h2><div class="desc-content">
+                    <p>O Ampara é um protótipo de aplicativo focado na <strong>inclusão e integração universitária</strong>, desenvolvido
+                        como projeto final da disciplina de <strong>Práticas Integrativas</strong> no <strong>Unibave</strong>. O projeto nasceu para
                         melhorar a experiência no campus, atendendo especificamente às demandas de alunos PCDs,
                         estrangeiros e neurodivergentes.</p>
                     <p>Funciona como uma ponte de auxílio, utilizando geolocalização para conectar o usuário auxiliado
                         aos auxiliadores mais próximos para serviços como intérprete de Libras, tradução e auxílio à
-                        locomoção. O aplicativo é capaz de traçar percursos acessíveis priorizando rampas e indicar
+                        locomoção. O aplicativo é capaz de traçar <strong>percursos acessíveis</strong> priorizando rampas e indicar
                         zonas calmas para estudantes neurodivergentes.</p>
-                </div>
-            </div>
-
-            <div class="desc-row">
-                <h3>Aprendizados e Técnicas</h3>
-                <div class="desc-content">
+                </div></section>
+<section class="case-panel" id="case-panel-2" aria-labelledby="case-heading-2"><p class="case-panel-step" aria-hidden="true">03 / 05</p><h2 id="case-heading-2">Aprendizados e Técnicas</h2><div class="desc-content">
                     <p>O desenvolvimento seguiu um processo robusto que incluiu brainstorming, elaboração de Modelo
                         Canvas, projeto detalhado e conceitual, além de análise e projeção financeira. Definimos a ACAFE
                         como cliente ideal para implementação em larga escala em universidades de Santa Catarina.</p>
@@ -298,12 +102,8 @@
                         painel administrativo, gestores podem acessar relatórios de desempenho e crescimento das
                         chamadas, transformando dados reais em índices concretos de acessibilidade, enquanto alunos
                         auxiliadores podem validar suas horas de serviço como horas complementares.</p>
-                </div>
-            </div>
-
-            <div class="desc-row">
-                <h3>Habilidades</h3>
-                <div class="desc-content">
+                </div></section>
+<section class="case-panel" id="case-panel-3" aria-labelledby="case-heading-3"><p class="case-panel-step" aria-hidden="true">04 / 05</p><h2 id="case-heading-3">Habilidades</h2><div class="desc-content">
                     <div class="skills-grid">
                         <div class="skill-item">
                             <div class="icon-circle">
@@ -342,47 +142,42 @@
                             <span>Canva</span>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="desc-row">
-                <h3>Apresentação do Projeto</h3>
-                <div class="desc-content">
+                </div></section>
+<section class="case-panel" id="case-panel-4" aria-labelledby="case-heading-4"><p class="case-panel-step" aria-hidden="true">05 / 05</p><h2 id="case-heading-4">Apresentação do Projeto</h2><div class="desc-content">
                     <div class="image-gallery">
-                        <img src="assets/apresentacao_amapara_app_01.png" alt="Slide 01" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_02.png" alt="Slide 02" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_03.png" alt="Slide 03" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_04.png" alt="Slide 04" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_05.png" alt="Slide 05" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_06.png" alt="Slide 06" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_07.png" alt="Slide 07" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_08.png" alt="Slide 08" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_09.png" alt="Slide 09" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_10.png" alt="Slide 10" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_11.png" alt="Slide 11" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_12.png" alt="Slide 12" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_13.png" alt="Slide 13" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_14.png" alt="Slide 14" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_15.png" alt="Slide 15" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_16.png" alt="Slide 16" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_17.png" alt="Slide 17" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_18.png" alt="Slide 18" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_19.png" alt="Slide 19" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_20.png" alt="Slide 20" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_21.png" alt="Slide 21" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_22.png" alt="Slide 22" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_23.png" alt="Slide 23" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_24.png" alt="Slide 24" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_25.png" alt="Slide 25" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_26.png" alt="Slide 26" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_27.png" alt="Slide 27" class="demo-image">
-                        <img src="assets/apresentacao_amapara_app_28.png" alt="Slide 28" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_01.png" alt="Slide 01" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_02.png" alt="Slide 02" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_03.png" alt="Slide 03" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_04.png" alt="Slide 04" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_05.png" alt="Slide 05" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_06.png" alt="Slide 06" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_07.png" alt="Slide 07" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_08.png" alt="Slide 08" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_09.png" alt="Slide 09" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_10.png" alt="Slide 10" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_11.png" alt="Slide 11" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_12.png" alt="Slide 12" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_13.png" alt="Slide 13" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_14.png" alt="Slide 14" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_15.png" alt="Slide 15" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_16.png" alt="Slide 16" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_17.png" alt="Slide 17" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_18.png" alt="Slide 18" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_19.png" alt="Slide 19" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_20.png" alt="Slide 20" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_21.png" alt="Slide 21" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_22.png" alt="Slide 22" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_23.png" alt="Slide 23" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_24.png" alt="Slide 24" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_25.png" alt="Slide 25" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_26.png" alt="Slide 26" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_27.png" alt="Slide 27" class="demo-image">
+                        <img loading="lazy" src="assets/apresentacao_amapara_app_28.png" alt="Slide 28" class="demo-image">
                     </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="back-to-top.js"></script>
+                </div></section></div>
+</div>
+<nav class="case-pagination" aria-label="Navegação entre projetos"><a href="projeto-product-page.html">Próximo projeto <span class="case-next-arrow" aria-hidden="true"></span></a></nav>
+</main>
+<script src="script.js"></script>
 </body>
-
 </html>

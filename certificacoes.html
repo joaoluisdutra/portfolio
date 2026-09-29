@@ -7,185 +7,67 @@
     <title>Certificações - João Luís Dutra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .cert-page-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 120px 20px;
-        }
-
-        .category-group {
-            margin: 40px 0 80px;
-        }
-
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-        }
-
-        .certificate-row {
-            grid-template-columns: 1.5fr 1fr 1fr 2.5fr !important;
-            gap: 30px;
-        }
-
-        .cert-skills {
-            display: block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.5;
-            margin-top: 4px;
-        }
-
-        .cert-description {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            line-height: 1.5;
-        }
-
-        .title,
-        .section-label,
-        .category-title {
-            text-align: left;
-        }
-
-        .cert-page-container .title {
-            padding: 0;
-            display: inline-block;
-            width: auto;
-        }
-
-        .title {
-            margin: 0.25rem 0 1rem;
-        }
-
-        .section-label {
-            margin-bottom: 0.25rem;
-        }
-
-        .cert-page-header {
-            text-align: left;
-            margin-bottom: 80px;
-        }
-
-        .cert-page-header .badge {
-            display: inline-block;
-            margin: 0 0 20px;
-            padding: 6px 16px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .cert-page-header .title {
-            display: block;
-            margin: 0 0 16px !important;
-            padding: 0 !important;
-            line-height: 1;
-        }
-
-        .cert-page-description {
-            max-width: 600px;
-            margin: 0;
-            font-size: 1.2rem;
-            line-height: 1.45;
-            opacity: 0.7;
-        }
-
-        .cert-page-header+.category-group {
-            margin-top: 0;
-        }
-
-        @media (max-width: 1024px) {
-            .certificate-row {
-                grid-template-columns: 1.5fr 1fr 1fr 2fr !important;
-            }
-
-            .certificate-row .col:nth-child(4) {
-                display: block !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .cert-page-container {
-                padding: 88px 20px;
-            }
-
-            /* On small screens, give each reading block room to breathe. */
-            .cert-page-header {
-                margin-bottom: 76px;
-            }
-
-            .category-group {
-                margin: 0 0 104px;
-            }
-
-            .category-title {
-                margin-bottom: 32px !important;
-                padding-bottom: 14px;
-            }
-
-            .section-label,
-            .title,
-            .category-title {
-                text-align: left !important;
-                margin-left: 0 !important;
-            }
-
-            .title {
-                margin-top: 0 !important;
-                margin-bottom: 0.5rem !important;
-                text-align: left !important;
-                display: block;
-            }
-
-            .section-label {
-                margin-bottom: 0.25rem !important;
-            }
-
-            .certificate-row {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-                text-align: center;
-                column-gap: 18px;
-                row-gap: 28px;
-                padding: 42px 8px 46px;
-            }
-
-            .certificate-row .col:nth-child(1),
-            .certificate-row .col:nth-child(4) {
-                grid-column: 1 / -1;
-            }
-
-            .certificate-row .col:nth-child(2) {
-                justify-self: end;
-            }
-
-            .certificate-row .col:nth-child(3) {
-                justify-self: start;
-            }
-
-            .certificate-row .cert-link {
-                margin: 0;
-            }
-
-            .certificate-row .col img {
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="layout.css">
 </head>
 
 <body class="certificates-page inner-page">
+    <aside class="sidebar">
+        <a href="index.html" class="menu-home nav-icon" aria-label="Ir para a Home" title="Home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="m3 10 9-7 9 7"></path>
+                <path d="M5 9v12h5v-7h4v7h5V9"></path>
+            </svg>
+        </a>
+        <button class="close-menu nav-icon" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="sidebar-nav">
+            <h2 class="section-label">Mapa do site</h2>
+            <p class="sidebar-heading">Explore<br>o portfólio.</p>
+            <ul>
+                <li><a href="sistemas-de-informacao-unibave.html" class="grade-link"><span class="sidebar-number" aria-hidden="true">01</span><span>Formação<small>Grade curricular de SI</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="certificacoes.html"><span class="sidebar-number" aria-hidden="true">02</span><span>Certificados<small>Cursos e especializações</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+                <li><a href="projetos.html"><span class="sidebar-number" aria-hidden="true">03</span><span>Projetos<small>Design e desenvolvimento</small></span><span class="sidebar-arrow" aria-hidden="true">&#8599;</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <nav class="main-navigation">
+        <button class="menu-trigger nav-icon" aria-label="Abrir menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <div class="top-nav">
+            <a href="https://github.com/joaoluisdutra" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/joaoluisdutra/" target="_blank" class="nav-icon"
+                aria-label="Ver perfil no LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
     <main class="cert-page-container">
         <nav class="breadcrumb" aria-label="Caminho de navegação">
             <ol>
@@ -194,24 +76,25 @@
             </ol>
         </nav>
         <header class="cert-page-header">
-            <div class="badge">Lista completa de certificados</div>
-            <h1 class="title" style="font-size: clamp(2.5rem, 8vw, 4.5rem);">Formação Complementar</h1>
-            <p class="cert-page-description">Cursos e certificações que complementam minha formação em design,
-                tecnologia e desenvolvimento digital.</p>
+            <h1 class="title">Formação Complementar</h1>
         </header>
 
+        <section class="cert-overview" aria-labelledby="cert-overview-title">
+            <h2 id="cert-overview-title">Resumo da formação</h2>
+            <dl class="cert-overview-counts">
+                <div><dt>Cursos</dt><dd>23</dd><dd class="cert-overview-note">22 concluídos e <br>1 em andamento</dd></div>
+                <div><dt>Eventos</dt><dd>10</dd></div>
+                <div><dt>Artigo científico</dt><dd>1</dd></div>
+            </dl>
+            <dl class="cert-overview-highlights">
+                <div><dt>Curso em andamento</dt><dd>Gamification <span>Penn</span></dd></div>
+                <div><dt>Curso mais recente</dt><dd>UI / UX Design<br>Specialization <span>CalARTS</span></dd></div>
+            </dl>
+        </section>
+
         <section class="category-group">
-            <h3 class="category-title">Design</h3>
+            <h2 class="category-title">Certificados Profissionais e Especializações</h2>
             <div class="certificates-list">
-                <div class="certificate-row">
-                    <div class="col">
-                        <strong>Gamification</strong>
-                        <span class="cert-skills">Game Design, Behavioral Economics, Motivational Skills, Psychology</span>
-                    </div>
-                    <div class="col"><img src="assets/logo-penn.png" alt="Penn" class="logo-instituicao"></div>
-                    <div class="col"><span class="cert-status">Em andamento</span></div>
-                    <div class="col"><p class="cert-description">Curso de Gamification da Penn em andamento.</p></div>
-                </div>
                 <div class="certificate-row">
                     <div class="col">
                         <span class="cert-recent-badge">Mais recente</span>
@@ -220,8 +103,8 @@
                     </div>
                     <div class="col"><img src="assets/logo-carlarts.png" class="logo-instituicao" alt="CalARTS"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1nG3ZiXmsaWVEN8wmaNHOPRJs8zYSQ7Id/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Certificate%20-%20UI%20%20UX%20Design%20Specialization.pdf"
+                            target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Curso focado nos fundamentos visuais de interfaces, explorando
                             elementos de UI, composição, hierarquia visual e decisões gráficas aplicadas ao design
@@ -235,13 +118,93 @@
                     </div>
                     <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1XCh7e1GOZ70Rq2bbrT6KHHt9CSZeaVOC/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Professional%20Certificate%20Google%20UX%20Design.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Certificação profissional completa que abrange todo o ciclo de
                             design de produto, desde a empatia com o usuário até a criação de protótipos de alta
                             fidelidade e design para impacto social.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <details class="category-group cert-dropdown">
+            <summary><h2 class="category-title">Cursos de curta duração</h2><span class="cert-dropdown-icon" aria-hidden="true"></span></summary>
+            <div class="certificates-list">
+                <div class="certificate-row">
+                    <div class="col"><strong>Foundations of User Experience (UX) Design</strong></div>
+                    <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
+                    <div class="col"><a href="assets/certificados/Foundations%20of%20User%20Experience%20(UX)%20Design.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Fundamentos de UX Design e introdução ao design centrado no usuário.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Start the UX Design Process: Empathize, Define, and Ideate</strong></div>
+                    <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
+                    <div class="col"><a href="assets/certificados/Start%20the%20UX%20Design%20Process%20Empathize%2C%20Define%2C%20and%20Ideate.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Etapas iniciais do processo de UX: empatia com usuários, definição de problemas e geração de ideias.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Build Wireframes and Low-Fidelity Prototypes</strong></div>
+                    <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
+                    <div class="col"><a href="assets/certificados/Build%20Wireframes%20and%20Low-Fidelity%20Prototypes.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Criação de wireframes e protótipos de baixa fidelidade para explorar a estrutura e os fluxos de uma interface.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Conduct UX Research and Test Early Concepts</strong></div>
+                    <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
+                    <div class="col"><a href="assets/certificados/Conduct%20UX%20Research%20and%20Test%20Early%20Concepts.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Pesquisa de UX e testes de conceitos iniciais para orientar melhorias na experiência do usuário.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Create High-Fidelity Designs and Prototypes in Figma</strong></div>
+                    <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
+                    <div class="col"><a href="assets/certificados/Create%20High-Fidelity%20Designs%20and%20Prototypes%20in%20Figma.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Criação de interfaces e protótipos de alta fidelidade no Figma.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Build Dynamic User Interfaces (UI) for Websites</strong></div>
+                    <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
+                    <div class="col"><a href="assets/certificados/Build%20Dynamic%20User%20Interfaces%20(UI)%20for%20Websites.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Desenvolvimento de interfaces dinâmicas para websites, com foco na experiência de navegação.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Design a User Experience for Social Good &amp; Prepare for Jobs</strong></div>
+                    <div class="col"><img src="assets/logo-google.png" class="logo-instituicao" alt="Google"></div>
+                    <div class="col"><a href="assets/certificados/Design%20a%20User%20Experience%20for%20Social%20Good%20%26%20Prepare%20for%20Jobs.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Design de experiências voltadas ao impacto social e preparação para oportunidades profissionais em UX.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Visual Elements of User Interface Design</strong></div>
+                    <div class="col"><img src="assets/logo-carlarts.png" class="logo-instituicao" alt="CalARTS"></div>
+                    <div class="col"><a href="assets/certificados/Visual%20Elements%20of%20User%20Interface%20Design.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Estudo dos elementos visuais que compõem interfaces digitais e de sua aplicação em UI Design.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>UX Design Fundamentals</strong></div>
+                    <div class="col"><img src="assets/logo-carlarts.png" class="logo-instituicao" alt="CalARTS"></div>
+                    <div class="col"><a href="assets/certificados/UX%20Design%20Fundamentals.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Fundamentos de UX Design para estruturar experiências centradas nas necessidades dos usuários.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Web Design: Strategy and Information Architecture</strong></div>
+                    <div class="col"><img src="assets/logo-carlarts.png" class="logo-instituicao" alt="CalARTS"></div>
+                    <div class="col"><a href="assets/certificados/Web%20Design%20Strategy%20and%20Information%20Architecture.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Estratégia e arquitetura da informação para organizar conteúdos e navegação em websites.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col"><strong>Web Design: Wireframes to Prototypes</strong></div>
+                    <div class="col"><img src="assets/logo-carlarts.png" class="logo-instituicao" alt="CalARTS"></div>
+                    <div class="col"><a href="assets/certificados/Web%20Design%20Wireframes%20to%20Prototypes.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col"><p class="cert-description">Evolução de wireframes para protótipos no processo de design de websites.</p></div>
+                </div>
+                <div class="certificate-row">
+                    <div class="col">
+                        <strong>Gamification</strong>
+                        <span class="cert-skills">Game Design, Behavioral Economics, Motivational Skills, Psychology</span>
+                    </div>
+                    <div class="col"><img src="assets/logo-penn.png" alt="Penn" class="logo-instituicao"></div>
+                    <div class="col"><span class="cert-status">Em andamento</span></div>
+                    <div class="col"><p class="cert-description">Curso de Gamification da Penn em andamento.</p></div>
                 </div>
                 <div class="certificate-row">
                     <div class="col">
@@ -250,8 +213,7 @@
                     </div>
                     <div class="col"><img src="assets/logo-awwwards.png" class="logo-instituicao" alt="Awwwards"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1_tMVbGsWX7VTEipFOnUkI8ehbgXrDro0/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Building%20Better%20User%20Experiences.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Aborda o ciclo completo de um projeto, desde a mentalidade
                             estratégica e Product Thinking até testes de usabilidade e comunicação persuasiva de
@@ -264,8 +226,7 @@
                         <span class="cert-skills">Heurísticas, Desk Research, Benchmarking, Wireframes, Testes...</span>
                     </div>
                     <div class="col"><img src="assets/logo-awwwards.png" class="logo-instituicao" alt="Awwwards"></div>
-                    <div class="col"><a href="https://drive.google.com/file/d/1qnX0azakttDSUo84wEQoudNHZQgpcM1G/view"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                    <div class="col"><a href="assets/certificados/Introduction%20to%20UX%20Design.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Guia pelo ciclo de vida de UX, focando intensamente em metodologia,
                             pesquisa qualitativa e estratégia para garantir produtos centrados no ser humano.</p>
@@ -278,8 +239,7 @@
                             Heurística...</span>
                     </div>
                     <div class="col"><img src="assets/logo-pucrs.png" class="logo-instituicao" alt="PUCRS"></div>
-                    <div class="col"><a href="https://drive.google.com/file/d/10wAV_rzpBzNLf8lxuqDREd59S9tftzEN/view"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                    <div class="col"><a href="assets/certificados/Design%20Centrado%20no%20Usu%C3%A1rio.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Oferece uma visão sistêmica sobre a importância de colocar o ser
                             humano no centro do desenvolvimento, equilibrando pesquisa e validação técnica.</p>
@@ -292,8 +252,7 @@
                     </div>
                     <div class="col"><img src="assets/logo-awwwards.png" class="logo-instituicao" alt="Awwwards"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/14gIwOd80xXXBQyXFbyWe7N0Au5_YkeO1/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Introduction%20to%20Color%20Theory%20for%20Visual%20Communication.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Mergulho no impacto emocional das cores e aplicação prática em
                             design, equilibrando técnica com experimentação criativa audaciosa.</p>
@@ -306,8 +265,7 @@
                     </div>
                     <div class="col"><img src="assets/logo-pucrs.png" class="logo-instituicao" alt="PUCRS"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1_jOlfqd-yXbmptzQ51R5d6xeZKDooaay/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Hist%C3%B3ria%20do%20Design%2C%20Est%C3%A9tica%20e%20Estilos%20de%20Design.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Estudo sobre a trajetória do design, explorando movimentos
                             históricos, conceitos de estética e a evolução dos estilos que moldaram a comunicação
@@ -321,19 +279,12 @@
                     </div>
                     <div class="col"><img src="assets/logo-tester.png" class="logo-instituicao" alt="Tester Work"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/17wJxz4DKo4t8n6uaCtp1itDC74VIuk59/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Functional%20Testing%20with%20Tester%20Work%20Course.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Curso focado em testes funcionais e boas práticas de garantia de
                             qualidade para desenvolvimento de software.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="category-group">
-            <h3 class="category-title">Programação Front-end & Desenvolvimento Web</h3>
-            <div class="certificates-list">
                 <div class="certificate-row">
                     <div class="col">
                         <strong>HTML, CSS and JS for Beginners</strong>
@@ -341,8 +292,7 @@
                     </div>
                     <div class="col"><img src="assets/logo-awwwards.png" class="logo-instituicao" alt="Awwwards"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1rELIJJgRgesQxui8Y2tSuARlKFydf3u-/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/HTML%2C%20CSS%20and%20JavaScript%20for%20Beginners.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Transforma o código em expressão criativa, equilibrando estruturação
                             técnica com camadas visuais dinâmicas e animações fluidas.</p>
@@ -355,19 +305,12 @@
                     </div>
                     <div class="col"><img src="assets/logo-freecodecamp.png" class="logo-freecodecamp" alt="fCC"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1FdX_jct5Xw9RdzxCIN8rGtVr6UbO6tog/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Responsive%20Web%20Design.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Focado em estruturação semântica e layouts adaptáveis, garantindo
                             que sites sejam acessíveis e utilizáveis em qualquer dispositivo.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="category-group">
-            <h3 class="category-title">Programação Back-end</h3>
-            <div class="certificates-list">
                 <div class="certificate-row">
                     <div class="col">
                         <strong>Java</strong>
@@ -375,49 +318,24 @@
                     </div>
                     <div class="col"><img src="assets/logo-unibave.png" class="logo-unibave" alt="Unibave"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1OntglA1VmMgVRQ7T8CXh3fObsgeAxv3b/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Programa%C3%A7%C3%A3o%20em%20Java.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Formação técnica focada na resolução de problemas reais de mercado,
                             cobrindo desde fundamentos até arquiteturas de sistemas robustas.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </details>
 
-        <section class="category-group">
-            <h3 class="category-title">Publicações</h3>
+        <details class="category-group cert-dropdown">
+            <summary><h2 class="category-title">Eventos</h2><span class="cert-dropdown-icon" aria-hidden="true"></span></summary>
             <div class="certificates-list">
-                <div class="certificate-row">
-                    <div class="col">
-                        <strong>XV Senpex (Artigo Publicado)</strong>
-                        <span class="cert-skills">Pesquisa Científica, Impacto Social, Era da Informação</span>
-                    </div>
-                    <div class="col"><img src="assets/logo-unibave.png" class="logo-unibave" alt="Senpex"></div>
-                    <div class="col"><a
-                            href="https://drive.google.com/file/d/1nzxbWalETGB6_0ODlM1X8mqB8-NBXi0J/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
-                    <div class="col">
-                        <p class="cert-description">Publicação do artigo: "A dualidade na era da informação: impacto nos
-                            movimentos sociais e os desafios do sensacionalismo digital". <a
-                                href="https://www.even3.com.br/anais/xv-senpex-unibave-integracao-ensino-pesquisa-extensao-e-inovacao-para-o-alcance-dos-objetivos-de-desenvolvimento-sustentavel-ods-466414/966394-a-dualidade-na-era-da-informacao--impacto-nos-movimentos-sociais-e-os-desafios-do-sensacionalismo-digital--uma-a/"
-                                target="_blank" style="color:var(--accent-color);">Ver Artigo →</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="category-group">
-            <h3 class="category-title">Eventos</h3>
-            <div class="certificates-list">
-
                 <div class="certificate-row">
                     <div class="col"><strong>Imersão Front-End</strong><span class="cert-skills">Alura, Front-End, Web
                             Development</span></div>
                     <div class="col"><img src="assets/logo-alura.png" class="logo-instituicao" alt="Alura"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1XoNUO4fPO4111aOgP7Z7ZNK78n8N0XpT/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Imers%C3%A3o%20Front-End.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Participação em evento imersivo focado nas últimas tendências e
                             práticas de desenvolvimento Front-End.</p>
@@ -428,8 +346,7 @@
                             IA, Machine Learning</span></div>
                     <div class="col"><img src="assets/logo-alura.png" class="logo-instituicao" alt="Alura"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1ydOAH6mjspuzXFDU9iLpxf3IRYiEE6T_/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Imers%C3%A3o%20Intelig%C3%AAncia%20Artificial.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Participação em evento imersivo sobre os fundamentos e aplicações da
                             Inteligência Artificial.</p>
@@ -440,8 +357,7 @@
                             JavaScript</span></div>
                     <div class="col"><img src="assets/logo-alura.png" class="logo-instituicao" alt="Alura"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1umPt-o-c4B8cfTURgufg8YrIhtE31zmd/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Imers%C3%A3o%20Dev%20%2B%20Google%20Gemini.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Desenvolvimento de projetos integrando IA generativa para otimização
                             de fluxos e criação de aplicações inteligentes.</p>
@@ -452,8 +368,7 @@
                             Illustrator, Photoshop</span></div>
                     <div class="col"><img src="assets/logo-ebac.png" class="logo-ebac" alt="EBAC"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1JEyFyTVsp98zNnyKvLx-kwmiy1ZEWSbU/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Jornada%20Design%20Gr%C3%A1fico.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Capacitação intensiva em criação de identidades visuais e domínio
                             técnico de ferramentas Adobe.</p>
@@ -464,8 +379,7 @@
                             class="cert-skills">Sistemas de Informação, Tecnologia</span></div>
                     <div class="col"><img src="assets/logo-unibave.png" class="logo-unibave" alt="Unibave"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/11k363lp_A9L_ipBpZbvFH3UYV-UXFOXe/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/XI%20Semana%20Acad%C3%AAmica%20de%20Sistemas%20de%20Informa%C3%A7%C3%A3o.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Participação em palestras e workshops focados nas tendências de
                             infraestrutura e desenvolvimento.</p>
@@ -476,8 +390,7 @@
                             class="cert-skills">Sistemas de Informação, Tecnologia</span></div>
                     <div class="col"><img src="assets/logo-unibave.png" class="logo-unibave" alt="Unibave"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1t-o_1eJImkR9q9E5P_k7ZQfbQ2jJRii9/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/XII%20Semana%20Acad%C3%AAmica%20de%20Sistemas%20de%20Informa%C3%A7%C3%A3o.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Participação em uma nova edição da Semana Acadêmica de Sistemas de
                             Informação, com destaque para discussões acadêmicas e desenvolvimento profissional.</p>
@@ -488,8 +401,7 @@
                             Inovação</span></div>
                     <div class="col"><img src="assets/logo-unibave.png" class="logo-unibave" alt="Senpex"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1W6j-R5scJ6gu7CrVx9DaCQEYBOh_rHs4/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/XVI%20Senpex.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Evento institucional focado na integração entre ensino acadêmico e
                             desafios da comunidade regional.</p>
@@ -500,8 +412,7 @@
                             Inovação, Tecnologia</span></div>
                     <div class="col"><img src="assets/logo-unibave.png" class="logo-unibave" alt="Unibave"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1btkvL-KRDYu3QeJly0WkfKVCyumAisxS/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/OficinaWorkshop%20-%20INVENTEC.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Participação no workshop INVENTEC, com foco em inovação, tecnologia
                             e experiências práticas de formação.</p>
@@ -512,8 +423,7 @@
                             Tecnologia</span></div>
                     <div class="col"><img src="assets/logo-acafe.png" class="logo-acafe" alt="Acafe"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1jR2cC53WK9a7bcTHnZSB4BX_VRTX6iBa/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Fiepe.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Participação no FIEPE atendendo a palestras e apresentação de
                             trabalhos científicos, em um ambiente voltado à troca de conhecimento e à inovação.</p>
@@ -524,17 +434,65 @@
                             Tecnologia</span></div>
                     <div class="col"><img src="assets/logo-acafe.png" class="logo-acafe" alt="Acafe"></div>
                     <div class="col"><a
-                            href="https://drive.google.com/file/d/1zdPQm-XrlZBPvPP-zLr4XWuL2PWVSsTE/view?usp=sharing"
-                            target="_blank" class="cert-link">CERTIFICADO</a></div>
+                            href="assets/certificados/Acafe%20Challenge.pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
                     <div class="col">
                         <p class="cert-description">Participação no evento Acafe Challenge, com destaque para a presença
                             em uma iniciativa voltada à inovação e ao desenvolvimento de soluções tecnológicas.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </details>
+
+        <details class="category-group cert-dropdown">
+            <summary><h2 class="category-title">Publicação (artigo)</h2><span class="cert-dropdown-icon" aria-hidden="true"></span></summary>
+            <div class="certificates-list">
+                <div class="certificate-row">
+                    <div class="col">
+                        <strong>XV Senpex (Artigo Publicado)</strong>
+                        <span class="cert-skills">Pesquisa Científica, Impacto Social, Era da Informação</span>
+                    </div>
+                    <div class="col"><img src="assets/logo-unibave.png" class="logo-unibave" alt="Senpex"></div>
+                    <div class="col"><a
+                            href="assets/certificados/XV%20Senpex%20(Artigo%20Publicado).pdf" target="_blank" rel="noopener noreferrer" class="cert-link site-button">Certificado</a></div>
+                    <div class="col">
+                        <p class="cert-description">Publicação do artigo: "A dualidade na era da informação: impacto nos
+                            movimentos sociais e os desafios do sensacionalismo digital". <a class="publication-article-link"
+                                href="https://www.even3.com.br/anais/xv-senpex-unibave-integracao-ensino-pesquisa-extensao-e-inovacao-para-o-alcance-dos-objetivos-de-desenvolvimento-sustentavel-ods-466414/966394-a-dualidade-na-era-da-informacao--impacto-nos-movimentos-sociais-e-os-desafios-do-sensacionalismo-digital--uma-a/"
+                                target="_blank">Ver Artigo &#8594;</a></p>
+                    </div>
+                </div>
+            </div>
+        </details>
     </main>
-    <script src="back-to-top.js"></script>
+    <footer class="contact-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h2 class="section-label">Contato</h2>
+                    <h3 class="footer-title">Dúvidas sobre meu currículo? Entre em contato!</h3>
+                    <a href="mailto:joaoluisdutrra@gmail.com" class="footer-email">joaoluisdutrra@gmail.com</a><br>
+                    <a href="https://wa.me/+5548999925123" class="footer-number">+5548999925123</a>
+                </div>
+                <form action="https://formspree.io/f/xnjlbdoa" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="_replyto" placeholder="Seu E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn site-button">Enviar Mensagem</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 João Luís Dutra. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

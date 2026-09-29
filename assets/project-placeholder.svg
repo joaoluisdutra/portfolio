@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <rect width="1200" height="560" fill="#eaeae4"/>
+  <g fill="none" stroke="#92958a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="576" y="226" width="48" height="40" rx="3"/>
+    <circle cx="590" cy="238" r="4"/>
+    <path d="m576 258 14-12 12 10 10-16 12 18"/>
+  </g>
+  <text x="600" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#686b60">Imagem do projeto</text>
+</svg>
