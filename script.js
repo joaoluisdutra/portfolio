@@ -251,14 +251,19 @@ if (projectFilters) {
     });
     const gallery = document.querySelector('.projects-page .project-gallery');
     const status = document.querySelector('.project-filter-status');
-    const projects = Array.from(gallery.querySelectorAll('.project-card')).map(card => ({
+    const projects = Array.from(gallery.querySelectorAll('.project-card')).map((card, index) => ({
         card,
-        category: card.dataset.category
+        category: card.dataset.category,
+        year: Number(Array.from(card.querySelectorAll('.project-details > div')).find(row => row.querySelector('dt').textContent.trim() === 'Ano').querySelector('dd').textContent.trim()),
+        index
     }));
+    let selectedCategory = null;
+    let selectedOrder = 'desc';
     const categories = [...new Set(projects.map(project => project.category))];
     const buttons = [];
 
     const selectCategory = (category) => {
+        selectedCategory = category;
         let count = 0;
         projects.forEach(project => {
             const visible = category === null || project.category === category;
@@ -269,7 +274,7 @@ if (projectFilters) {
         buttons.forEach(item => {
             item.button.setAttribute('aria-pressed', String(item.category === category));
         });
-        status.textContent = `${count} ${count === 1 ? 'projeto' : 'projetos'}${category ? ` em ${category}` : ' no total'}`;
+        status.textContent = `${count} ${count === 1 ? 'projeto' : 'projetos'}${category ? ` em ${category}` : ' no total'} · ${selectedOrder === 'asc' ? 'Mais antigos primeiro' : 'Mais recentes primeiro'}`;
     };
 
     [null, ...categories].forEach(category => {
@@ -285,7 +290,39 @@ if (projectFilters) {
         buttons.push({ button, category });
         projectFilters.appendChild(button);
     });
-    selectCategory(null);
+    const sortControl = document.querySelector('.project-sort-control');
+    const sortToggle = sortControl.querySelector('.project-sort-toggle');
+    const sortOptions = sortControl.querySelector('.project-filters');
+    const sortButtons = Array.from(sortOptions.querySelectorAll('[data-order]'));
+    const setSortOpen = (open, restoreFocus = false) => {
+        sortOptions.hidden = !open;
+        sortToggle.setAttribute('aria-expanded', String(open));
+        if (open) setFiltersOpen(false);
+        if (restoreFocus) sortToggle.focus();
+    };
+    const applyOrder = () => {
+        const sorted = [...projects].sort((a, b) => selectedOrder === 'asc'
+            ? a.year - b.year || b.index - a.index
+            : b.year - a.year || a.index - b.index);
+        const grid = gallery.querySelector('.gallery-track');
+        sorted.forEach(project => grid.appendChild(project.card));
+        sortButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.order === selectedOrder)));
+        selectCategory(selectedCategory);
+    };
+    sortControl.hidden = false;
+    sortToggle.addEventListener('click', () => setSortOpen(sortOptions.hidden));
+    sortButtons.forEach(button => button.addEventListener('click', () => {
+        selectedOrder = button.dataset.order;
+        applyOrder();
+        setSortOpen(false, true);
+    }));
+    document.addEventListener('click', event => {
+        if (!sortControl.contains(event.target)) setSortOpen(false);
+    });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !sortOptions.hidden) setSortOpen(false, true);
+    });
+    applyOrder();
 }
 /* fim de filtros do catálogo de projetos */
 

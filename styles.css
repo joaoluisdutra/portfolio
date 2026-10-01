@@ -3165,7 +3165,26 @@ body .site-button[hidden] { display: none !important; }
 @media (max-width: 600px) {
     .certificates-page .cert-overview { margin-bottom: 48px; }
     .certificates-page .cert-overview-counts { gap: 16px; }
-    .certificates-page .cert-overview-highlights { grid-template-columns: 1fr; }
+    .certificates-page .cert-overview-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-self: stretch;
+        gap: 16px;
+        padding-block: 20px;
+        border-block: 1px solid #d5d5cf;
+    }
+    .certificates-page .cert-overview-highlights > div { min-width: 0; }
+    .certificates-page .cert-overview-highlights > div + div {
+        padding-left: 16px;
+        border-left: 1px solid #d5d5cf;
+    }
+    .certificates-page .cert-overview-highlights dt {
+        display: flex;
+        align-items: center;
+        min-height: calc(3em + 6px);
+        width: fit-content;
+        margin-bottom: 8px;
+    }
+    .certificates-page .cert-overview-highlights dd { overflow-wrap: anywhere; }
 }
 .certificates-page .cert-page-container {
     max-width: 1440px;
@@ -3229,7 +3248,20 @@ body .site-button[hidden] { display: none !important; }
 .certificates-page .nav-icon:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 @media (max-width: 768px) {
     .certificates-page .cert-page-header { margin-bottom: 32px; }
-    .certificates-page .certificate-row { row-gap: 20px; }
+    .certificates-page .certificate-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+    }
+    .certificates-page .certificate-row > .col:first-child,
+    .certificates-page .certificate-row > .col:last-child { flex-basis: 100%; }
+    .certificates-page .certificate-row > .col:nth-child(2),
+    .certificates-page .certificate-row > .col:nth-child(3) {
+        flex: 0 1 auto;
+        max-width: calc(50% - 12px);
+    }
+    .certificates-page .certificate-row .col img { object-position: center; }
 }
 /* fim de resumo e layout dos certificados */
 
@@ -3372,7 +3404,7 @@ body .site-button[hidden] { display: none !important; }
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 8px 20px;
     margin-bottom: 40px;
@@ -3430,11 +3462,14 @@ body .site-button[hidden] { display: none !important; }
     outline-offset: 3px;
 }
 .projects-page .project-filter-status {
-    margin: 0;
+    margin: 0 0 0 auto;
     font-size: 0.72rem;
     color: #555;
 }
 .projects-page .project-filter-status:empty { display: none; }
+.projects-page .project-sort-control { position: relative; }
+.projects-page .project-sort-control[hidden] { display: none; }
+.projects-page .project-sort-control .project-filters { width: min(260px, calc(100vw - 48px)); left: auto; right: 0; }
 .projects-page .project-filter-toggle {
     display: inline-flex;
     align-items: center;

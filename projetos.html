@@ -7,7 +7,7 @@
     <title>Projetos - João Luís Dutra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=d2b5fd17f7eb">
 </head>
 
 <body class="inner-page projects-page">
@@ -84,6 +84,13 @@
         <div class="projects-toolbar">
             <button class="project-filter-toggle site-button" type="button" aria-label="Filtrar projetos" aria-expanded="false" aria-controls="project-filter-options" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="currentColor"/><circle cx="15" cy="17" r="3" fill="currentColor"/></svg><span>Filtrar</span></button>
             <div id="project-filter-options" class="project-filters" role="group" aria-label="Filtrar projetos por categoria" hidden></div>
+            <div class="project-sort-control" hidden>
+                <button class="project-sort-toggle project-filter-toggle site-button" type="button" aria-expanded="false" aria-controls="project-sort-options"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/></svg><span>Ordenar por</span></button>
+                <div id="project-sort-options" class="project-filters" role="group" aria-label="Ordenar projetos por ano" hidden>
+                    <button class="project-filter" type="button" data-order="desc" aria-pressed="true" aria-controls="projects-grid">Mais recentes primeiro</button>
+                    <button class="project-filter" type="button" data-order="asc" aria-pressed="false" aria-controls="projects-grid">Mais antigos primeiro</button>
+                </div>
+            </div>
             <p class="project-filter-status" role="status" aria-live="polite" aria-atomic="true"></p>
         </div>
         <section class="project-gallery" aria-label="Projetos">
@@ -273,7 +280,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=8f90af89f359"></script>
 </body>
 
 </html>
