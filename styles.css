@@ -3082,7 +3082,11 @@ body .site-button[hidden] { display: none !important; }
 .inner-page .phase-card .subjects-list { gap: 24px; }
 .inner-page .subject-item p { line-height: 1.65; }
 
-.home-page { --home-section-inset: var(--space-block); --home-section-gap: var(--space-section); }
+.home-page {
+    --space-section: clamp(60px, 8vw, 112px);
+    --home-section-inset: var(--space-block);
+    --home-section-gap: var(--space-section);
+}
 /* fim de espaçamentos e estrutura das páginas */
 
 /* início de espaçamento entre seções */
@@ -3248,20 +3252,103 @@ body .site-button[hidden] { display: none !important; }
 .certificates-page .nav-icon:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 @media (max-width: 768px) {
     .certificates-page .cert-page-header { margin-bottom: 32px; }
-    .certificates-page .certificate-row {
+    :is(.home-page, .certificates-page) .certificate-row:not(.header) {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
+        column-gap: 24px;
         row-gap: 20px;
+        text-align: center;
     }
-    .certificates-page .certificate-row > .col:first-child,
+    :is(.home-page, .certificates-page) .certificate-row > .col:first-child,
     .certificates-page .certificate-row > .col:last-child { flex-basis: 100%; }
-    .certificates-page .certificate-row > .col:nth-child(2),
-    .certificates-page .certificate-row > .col:nth-child(3) {
+    :is(.home-page, .certificates-page) .certificate-row > .col:nth-child(2),
+    .certificates-page .certificate-row > .col:nth-child(3),
+    .home-page .certificate-row > .col:last-child {
         flex: 0 1 auto;
         max-width: calc(50% - 12px);
+        min-width: 0;
     }
-    .certificates-page .certificate-row .col img { object-position: center; }
+    .home-page .certificate-row > .col:first-child { order: 0; }
+    .home-page .certificate-row > .col:nth-child(2) { order: 1; }
+    .home-page .certificate-row > .col:last-child { order: 2; }
+    .home-page .certificate-row > .col:nth-child(3) {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+        font-size: 0.8rem;
+        color: #555;
+    }
+    :is(.home-page, .certificates-page) .certificate-row .col img {
+        margin-inline: auto;
+        object-position: center;
+    }
+    :is(.home-page, .certificates-page) .certificate-row .cert-link {
+        margin: 0;
+        padding: 12px;
+        font-size: 0.7rem;
+        letter-spacing: 0.02em;
+    }
+    .home-page .certificate-row .cert-main-title {
+        font-size: 0.9rem;
+        line-height: 1.45;
+    }
+}
+.cert-mobile-description { display: none; }
+
+@media (max-width: 768px) {
+    .home-page .certificate-row:not(.header):has(.cert-status),
+    .home-page .certificate-row .cert-recent-badge {
+        display: none;
+    }
+    :is(.home-page, .certificates-page) .certificate-row:not(.header) {
+        column-gap: clamp(16px, 4vw, 24px);
+        row-gap: 16px;
+    }
+    :is(.home-page, .certificates-page) .certificate-row > .col:first-child {
+        text-align: center;
+    }
+    :is(.home-page, .certificates-page) .certificate-row .cert-recent-badge {
+        margin-inline: auto;
+    }
+    .certificates-page .certificate-row > .col:last-child,
+    .certificates-page .certificate-row .cert-description {
+        text-align: center;
+    }
+    :is(.home-page, .certificates-page) .certificate-row .col img {
+        width: clamp(76px, 22vw, 102px);
+        height: clamp(26px, 7vw, 35px);
+    }
+    :is(.home-page, .certificates-page) .certificate-row .col img.logo-freecodecamp {
+        width: clamp(90px, 26vw, 118px);
+    }
+    body:is(.home-page, .certificates-page) .certificate-row .cert-link.site-button {
+        min-height: 40px;
+        padding: 8px clamp(12px, 3vw, 18px) !important;
+        font-size: clamp(0.65rem, 2.5vw, 0.75rem) !important;
+    }
+    .home-page .certificate-row .cert-area { display: none; }
+    .home-page .certificate-row .cert-mobile-description {
+        display: block;
+        margin: 0;
+        font-size: 0.8rem;
+        line-height: 1.65;
+        text-align: center;
+        color: #555;
+    }
+    .home-page .certificate-row:has(.cert-status) > .col:last-child {
+        order: 1;
+        flex-basis: 100%;
+        max-width: none;
+        text-align: center;
+    }
+    .home-page .certificate-row:has(.cert-status) > .col:nth-child(2) { order: 2; }
+    .home-page .certificate-row .cert-status {
+        font-size: 0.65rem;
+        letter-spacing: 0.06em;
+        color: #555;
+    }
 }
 /* fim de resumo e layout dos certificados */
 
