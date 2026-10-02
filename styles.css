@@ -3784,6 +3784,7 @@ body .site-button[hidden] { display: none !important; }
 .home-page .project-gallery .gallery-track { padding-inline: var(--page-gutter); gap: 40px 24px; }
 .home-page .certificates-section .footer-container { max-width: 100%; padding-inline: 0; }
 .home-page .certificates-section :is(.certificate-row, .certificates-header) { padding-inline: var(--page-gutter); }
+.home-page .certificates-header { padding-bottom: 12px; }
 .home-page .certificate-row { padding-block: 24px; line-height: 1.5; }
 .home-page .project-info { line-height: 1.5; }
 :is(.home-page, .projects-page, .certificates-page, .education-page, .case-page) .contact-footer {
