@@ -1,6 +1,7 @@
 /* SVG stroke transition shared by all pages. Loaded before the first paint. */
 (() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileViewport = window.matchMedia('(max-width: 768px)');
     const key = 'portfolio-page-transition';
     const colors = ['#4A90E2', '#ff2d55', '#ff6b00'];
     let pending;
@@ -32,8 +33,30 @@
     let busy = false;
     let frame;
     let direction = 1;
-    const length = shape.getTotalLength();
-    shape.setAttribute('stroke-dasharray', length + ' ' + length);
+    const desktopPath = shape.getAttribute('d');
+    const desktopTransform = shape.getAttribute('transform');
+    let length;
+
+    function configurePath() {
+        const mobile = mobileViewport.matches;
+        overlay.setAttribute('viewBox', mobile ? '0 0 664 1316' : '0 0 1316 664');
+        // On phones the stroke travels down the screen, from top-left to bottom-right.
+        shape.setAttribute('d', mobile
+            ? 'M-60 -60 C-20 120 570 20 540 230 C510 440 40 190 90 460 C140 730 610 430 570 750 C530 1070 100 730 170 1050 C220 1270 600 1110 724 1376'
+            : desktopPath);
+        if (mobile) shape.removeAttribute('transform');
+        else shape.setAttribute('transform', desktopTransform);
+        length = shape.getTotalLength();
+        shape.setAttribute('stroke-dasharray', length + ' ' + length);
+    }
+
+    configurePath();
+    mobileViewport.addEventListener('change', () => {
+        if (!busy) {
+            configurePath();
+            reset();
+        }
+    });
 
     function pageDepth(url) {
         const filename = url.pathname.split('/').pop();
@@ -52,6 +75,7 @@
     function reset() {
         cancelAnimationFrame(frame);
         overlay.classList.remove('is-active');
+        configurePath();
         shape.setAttribute('stroke-dashoffset', String(length));
         shape.setAttribute('stroke-width', '2');
         busy = false;
@@ -105,6 +129,7 @@
         if (!url.pathname.endsWith('.html') && !url.pathname.endsWith('/')) return;
         event.preventDefault();
         if (busy) return;
+        configurePath();
         busy = true;
         direction = navigationDirection(url);
         const color = colors[Math.floor(Math.random() * colors.length)];
