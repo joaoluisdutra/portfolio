@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Website</title>
-
-    <link rel="stylesheet" href="styles.css?v=arrows-20261002">
-    <script src="page-transition.js?v=11"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site interativo — Projeto 011 | João Luís Dutra</title>
+<meta name="description" content="Website experimental e responsivo desenvolvido na Awwwards Academy, sob orientação de Yannick Gregoire. Implementei a estrutura, a estilização e as interações em HTML, CSS e JavaScript.">
+<link rel="stylesheet" href="styles.css?v=organized-20261006">
+<script src="script.js?v=organized-20261006"></script>
 </head>
 <body class="case-page inner-page">
     <aside class="sidebar">
-        <a href="index.html" class="menu-home nav-icon" aria-label="Ir para a Home" title="Home">
+        <a href="index.html" class="menu-home nav-icon" aria-label="Ir para o início" title="Início">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                 <path d="m3 10 9-7 9 7"></path>
@@ -68,101 +67,260 @@
     </nav>
 
 <main class="case-container">
-<nav class="breadcrumb" aria-label="Caminho de navegação">
-            <ol>
-                <li><a href="index.html">Home</a></li>
-                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><a href="projetos.html">Projetos</a></li>
-                <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Interactive Website</span></li>
-            </ol>
-        </nav>
-<header class="case-header"><p class="case-eyebrow">Projeto 011</p><h1>Design Dinâmico e Responsivo</h1></header>
-<div class="case-explorer">
-<aside class="case-index"><p class="case-index-label">Mapa do projeto</p><nav class="case-tabs" aria-label="Categorias do projeto"><a class="case-tab" id="case-tab-0" href="#case-panel-0"><span class="case-tab-number" aria-hidden="true">01</span><span class="case-tab-label">Visão geral</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
-<a class="case-tab" id="case-tab-1" href="#case-panel-1"><span class="case-tab-number" aria-hidden="true">02</span><span class="case-tab-label">O que foi desenvolvido</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
-<a class="case-tab" id="case-tab-2" href="#case-panel-2"><span class="case-tab-number" aria-hidden="true">03</span><span class="case-tab-label">Aprendizados e Técnicas</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
-<a class="case-tab" id="case-tab-3" href="#case-panel-3"><span class="case-tab-number" aria-hidden="true">04</span><span class="case-tab-label">Habilidades</span><span class="case-tab-arrow" aria-hidden="true">&#8599;</span></a>
-</nav><div class="project-actions">
-            <a href="https://github.com/joaoluisdutra/awwwards-course-creative-developer" target="_blank"
-                class="action-btn site-button">Código do Projeto</a>
-            <a href="https://joaoluisdutra.github.io/awwwards-course-creative-developer/" target="_blank"
-                class="action-btn site-button">Visualize na Web</a>
-        </div></aside>
-<div class="case-panels"><section class="case-panel" id="case-panel-0" aria-labelledby="case-heading-0"><p class="case-panel-step" aria-hidden="true">01 / 04</p><h2 id="case-heading-0">Visão geral</h2><p class="case-intro">Website interativo desenvolvido em curso da Awwwards Academy.</p>
-<figure class="case-preview-frame"><video class="case-preview" controls autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de demonstração do projeto">
-                        <source src="assets/video-projeto-yannick.mp4" type="video/mp4">
-                        Seu navegador não suporta a tag de vídeo.
-                    </video></figure>
-<dl class="case-facts"><div><dt>Área</dt><dd>Creative Development</dd></div><div><dt>Ano</dt><dd>2026</dd></div></dl></section>
-<section class="case-panel" id="case-panel-1" aria-labelledby="case-heading-1"><p class="case-panel-step" aria-hidden="true">02 / 04</p><h2 id="case-heading-1">O que foi desenvolvido</h2><div class="desc-content">
-                    <p>
-                        Neste projeto, desenvolvi um site dinâmico e totalmente responsivo construído do zero (vanilla
-                        stack), como parte da certificação da <strong>Awwwards Academy</strong> sob orientação de
-                        <strong>Yannick Gregoire</strong>. A aplicação foi projetada para ir além do layout estático, focando na criação
-                        de uma interface moderna onde o design e a funcionalidade se encontram através de <strong>animações
-                        fluidas e componentes interativos</strong>.
-                    </p>
-                    <p>
-                        O resultado é uma experiência de usuário (UX) elevada, onde cada elemento da interface reage ao
-                        comportamento do visitante, seguindo os mais altos padrões de excelência visual exigidos pela
-                        indústria criativa.
-                    </p>
-                </div></section>
-<section class="case-panel" id="case-panel-2" aria-labelledby="case-heading-2"><p class="case-panel-step" aria-hidden="true">03 / 04</p><h2 id="case-heading-2">Aprendizados e Técnicas</h2><div class="desc-content">
-                    <p>O desenvolvimento deste projeto foi um marco para consolidar o domínio das tecnologias nativas da
-                        web e a lógica de programação aplicada à interface:</p>
-                    <ul>
-                        <li><strong>HTML & CSS Avançado:</strong> Implementação de estruturas semânticas e estilização
-                            complexa, utilizando técnicas modernas para garantir que o design se adapte perfeitamente a
-                            qualquer dispositivo.</li>
-                        <li><strong>Manipulação do DOM com JavaScript:</strong> Foco na criação de componentes "vivos",
-                            utilizando JS para gerenciar estados da interface e disparar eventos baseados na interação
-                            do usuário.</li>
-                        <li><strong>Micro-interações e Animações:</strong> Desenvolvimento de fluxos visuais que guiam a
-                            atenção do usuário, priorizando a fluidez e a performance do navegador.</li>
-                        <li><strong>Padrões Awwwards:</strong> Alinhamento com as tendências globais de design de
-                            interação, focando em detalhes que transformam um site comum em uma experiência digital
-                            memorável.</li>
-                    </ul>
-                </div></section>
-<section class="case-panel" id="case-panel-3" aria-labelledby="case-heading-3"><p class="case-panel-step" aria-hidden="true">04 / 04</p><h2 id="case-heading-3">Habilidades</h2><div class="desc-content">
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="16 18 22 12 16 6"></polyline>
-                                    <polyline points="8 6 2 12 8 18"></polyline>
-                                </svg>
-                            </div>
-                            <span>HTML</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                    <polyline points="2 17 12 22 22 17"></polyline>
-                                    <polyline points="2 12 12 17 22 12"></polyline>
-                                </svg>
-                            </div>
-                            <span>CSS</span>
-                        </div>
-                        <div class="skill-item">
-                            <div class="icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 3h18v18H3z"></path>
-                                    <path d="M15 9h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"></path>
-                                </svg>
-                            </div>
-                            <span>Javascript</span>
-                        </div>
+    <nav class="breadcrumb" aria-label="Caminho de navegação">
+        <ol>
+            <li>
+                <a href="index.html">Início</a>
+            </li>
+            <li>
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="projetos.html">Projetos</a>
+            </li>
+            <li>
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <span aria-current="page">Site interativo</span>
+            </li>
+        </ol>
+    </nav>
+    <div class="case-explorer">
+        <div class="case-project-card">
+            <header class="case-header">
+                <p class="case-eyebrow">Projeto 011</p>
+                <h1>Site interativo</h1>
+                <p class="case-summary">Site experimental desenvolvido na Awwwards Academy, sob orientação de Yannick Gregoire, com implementação front-end de minha responsabilidade.</p>
+                <dl class="case-facts case-header-facts">
+                    <div>
+                        <dt>Área</dt>
+                        <dd>Creative Development</dd>
                     </div>
-                </div></section>
+                    <div>
+                        <dt>Tipo</dt>
+                        <dd>Projeto de curso · Awwwards Academy</dd>
+                    </div>
+                    <div>
+                        <dt>Meu papel</dt>
+                        <dd>Implementação front-end</dd>
+                    </div>
+                    <div>
+                        <dt>Ano</dt>
+                        <dd>2026</dd>
+                    </div>
+                    <div>
+                        <dt>Entrega</dt>
+                        <dd>Site implementado · demonstração disponível</dd>
+                    </div>
+                    <div>
+                        <dt>Tecnologias e ferramentas</dt>
+                        <dd>HTML · CSS · JavaScript</dd>
+                    </div>
+                </dl>
+                <div class="project-actions case-header-actions">
+                    <a href="https://github.com/joaoluisdutra/awwwards-course-creative-developer" target="_blank" rel="noopener noreferrer"
+                        class="action-btn site-button" aria-description="Abre em uma nova aba">Ver código no GitHub <span class="case-external-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                    <a href="https://joaoluisdutra.github.io/awwwards-course-creative-developer/" target="_blank" rel="noopener noreferrer"
+                        class="action-btn site-button" aria-description="Abre em uma nova aba">Abrir site <span class="case-external-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                </div>
+            </header>
+            <aside class="case-index">
+                <p class="case-index-label">Mapa do projeto</p>
+                <nav class="case-tabs" aria-label="Seções do projeto">
+                    <a class="case-tab" id="case-tab-0" href="#case-panel-0">
+                        <span class="case-tab-number" aria-hidden="true">01</span>
+                        <span class="case-tab-label">Visão geral</span>
+                        <span class="case-tab-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                    <a class="case-tab" id="case-tab-1" href="#case-panel-1">
+                        <span class="case-tab-number" aria-hidden="true">02</span>
+                        <span class="case-tab-label">Contexto e escopo</span>
+                        <span class="case-tab-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                    <a class="case-tab" id="case-tab-2" href="#case-panel-2">
+                        <span class="case-tab-number" aria-hidden="true">03</span>
+                        <span class="case-tab-label">Decisões e processo</span>
+                        <span class="case-tab-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                    <a class="case-tab" id="case-tab-3" href="#case-panel-3">
+                        <span class="case-tab-number" aria-hidden="true">04</span>
+                        <span class="case-tab-label">Resultados e retrospectiva</span>
+                        <span class="case-tab-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                </nav>
+                <div class="case-mobile-navigation" hidden>
+                    <label for="case-section-select">Seção do projeto</label>
+                    <select id="case-section-select" aria-controls="case-panels">
+                        <option value="0">01 / 04 — Visão geral</option>
+                        <option value="1">02 / 04 — Contexto e escopo</option>
+                        <option value="2">03 / 04 — Decisões e processo</option>
+                        <option value="3">04 / 04 — Resultados e retrospectiva</option>
+                    </select>
+                </div>
+            </aside>
+        </div>
+        <div class="case-content">
+            <div class="case-panels" id="case-panels">
+                <section class="case-panel" id="case-panel-0" aria-labelledby="case-heading-0">
+                    <p class="case-panel-step" aria-hidden="true">01 / 04</p>
+                    <h2 id="case-heading-0">Visão geral</h2>
+                    <p>A experiência transforma uma composição estática em uma página que reage ao cursor e à rolagem. Os blocos mudam de proporção, as formas flutuam e as seções se sobrepõem durante a exploração do conteúdo.</p>
+                    <figure class="case-preview-frame">
+                        <video class="case-preview" controls muted loop playsinline preload="metadata" aria-label="Vídeo de demonstração do projeto" poster="assets/case-previews/video-projeto-yannick.webp">
+                            <source src="assets/video-projeto-yannick.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                        <figcaption>Vídeo de 35 segundos: navegação pela página e comportamento visual das seções.</figcaption>
+                    </figure>
+                    <h3>O que observar no vídeo</h3>
+                    <ul>
+                        <li>Blocos cuja largura acompanha a posição do cursor.</li>
+                        <li>Seções fixadas durante a rolagem para criar sobreposição.</li>
+                        <li>Formas geométricas com movimento vertical contínuo.</li>
+                    </ul>
+                    <a class="case-section-next site-button" href="#case-panel-1">Continuar: Contexto e escopo <span aria-hidden="true">&#8594;</span>
+                    </a>
+                </section>
+                <section class="case-panel" id="case-panel-1" aria-labelledby="case-heading-1">
+                    <p class="case-panel-step" aria-hidden="true">02 / 04</p>
+                    <h2 id="case-heading-1">Contexto e escopo</h2>
+                    <p>O exercício da Awwwards Academy propôs uma experiência visual construída com tecnologias nativas da web, sem frameworks.</p>
+                    <h3>Meu papel e escopo</h3>
+                    <p>A formação na Awwwards Academy orientou o desenvolvimento. Minha responsabilidade foi implementar o front-end; apresento o trabalho como exercício educacional sob orientação de Yannick Gregoire.</p>
+                    <h3>Desafio de implementação</h3>
+                    <p>Relacionar a posição do cursor às proporções do layout e coordenar essa resposta com as transições. O código utiliza um evento mousemove, enquanto o CSS controla a duração e a curva do movimento.</p>
+                    <a class="case-section-next site-button" href="#case-panel-2">Continuar: Decisões e processo <span aria-hidden="true">&#8594;</span>
+                    </a>
+                </section>
+                <section class="case-panel" id="case-panel-2" aria-labelledby="case-heading-2">
+                    <p class="case-panel-step" aria-hidden="true">03 / 04</p>
+                    <h2 id="case-heading-2">Decisões e processo</h2>
+                    <div class="case-decision-list">
+                        <article class="case-decision">
+                            <span class="case-decision-number" aria-hidden="true">03.1</span>
+                            <div>
+                                <h3>Transformar o cursor em proporção do layout</h3>
+                                <dl class="case-decision-detail">
+                                    <div>
+                                        <dt>Problema</dt>
+                                        <dd>Os blocos precisavam reagir à posição do visitante na tela.</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Abordagem</dt>
+                                        <dd>O evento mousemove atualiza flexBasis: clientX determina a largura do bloco vazio, clientY / 2 influencia o título e innerWidth − clientX define a área das figuras.</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Critério</dt>
+                                        <dd>A mesma coordenada permite relacionar as áreas da composição por meio do Flexbox.</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Efeito na entrega</dt>
+                                        <dd>O espaço destinado a texto e imagem muda com o movimento do cursor.</dd>
+                                    </div>
+                                </dl><pre class="case-code"><code>function handleMouseMove(event) {
+    emptyElement.style.flexBasis = event.clientX + 'px';
+    titleElement.style.flexBasis = event.clientY / 2 + 'px';
+    figureElements.forEach(function (element) {
+        element.style.flexBasis =
+            window.innerWidth - event.clientX + 'px';
+    });
+}</code></pre><p class="case-source">
+                                <a href="https://github.com/joaoluisdutra/awwwards-course-creative-developer/blob/81528186a0e29d1c48c2bdb1264752b9f8428440/index.html#L84-L99" target="_blank" rel="noopener noreferrer">Consultar o evento no código-fonte &#8599;</a>
+                            </p>
+                        </div>
+                    </article>
+                    <div class="case-comparison">
+                        <figure>
+                            <img src="assets/case-previews/yannick-cursor-esquerda.png" alt="Página original com o cursor na coordenada horizontal 450, reservando uma área menor para o bloco vazio" loading="lazy" decoding="async">
+                            <figcaption>Cursor em x = 450 px: bloco vazio mais estreito.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/case-previews/yannick-cursor-direita.png" alt="Página original com o cursor na coordenada horizontal 800, ampliando o bloco vazio e reduzindo a área do texto" loading="lazy" decoding="async">
+                            <figcaption>Cursor em x = 800 px: bloco vazio mais largo.</figcaption>
+                        </figure>
+                    </div>
+                    <article class="case-decision">
+                        <span class="case-decision-number" aria-hidden="true">03.2</span>
+                        <div>
+                            <h3>Suavizar a resposta e manter o movimento no CSS</h3>
+                            <dl class="case-decision-detail">
+                                <div>
+                                    <dt>Problema</dt>
+                                    <dd>Uma alteração imediata das proporções produziria uma mudança brusca entre posições.</dd>
+                                </div>
+                                <div>
+                                    <dt>Abordagem</dt>
+                                    <dd>O CSS aplica uma transição de um segundo a flex-basis com cubic-bezier(0,.9,.4,.99). A animação float alterna translateY de −5% a 5% nas formas.</dd>
+                                </div>
+                                <div>
+                                    <dt>Critério</dt>
+                                    <dd>O script fornece a dimensão e o CSS define o tempo e a curva do movimento.</dd>
+                                </div>
+                                <div>
+                                    <dt>Efeito na entrega</dt>
+                                    <dd>A composição acompanha o cursor gradualmente; as formas flutuam de maneira independente.</dd>
+                                </div>
+                            </dl><pre class="case-code"><code>transition: flex-basis 1s cubic-bezier(0,.9,.4,.99);
+
+@keyframes float {
+    0%   { transform: translateY(-5%); }
+    100% { transform: translateY(5%); }
+}</code></pre><p class="case-source">
+                            <a href="https://github.com/joaoluisdutra/awwwards-course-creative-developer/blob/81528186a0e29d1c48c2bdb1264752b9f8428440/styles.css#L180-L188" target="_blank" rel="noopener noreferrer">Consultar a animação no CSS &#8599;</a>
+                        </p>
+                    </div>
+                </article>
+                <article class="case-decision">
+                    <span class="case-decision-number" aria-hidden="true">03.3</span>
+                    <div>
+                        <h3>Relacionar a rolagem à composição das seções</h3>
+                        <dl class="case-decision-detail">
+                            <div>
+                                <dt>Problema</dt>
+                                <dd>A leitura precisava revelar as seções em uma sequência visual e acomodar a área de figuras em telas menores.</dd>
+                            </div>
+                            <div>
+                                <dt>Abordagem</dt>
+                                <dd>As seções utilizam position: sticky e top: 100px. A regra de até 768px muda os artigos de serviços para flex-direction: column e a área das figuras para flex-basis: 25vh.</dd>
+                            </div>
+                            <div>
+                                <dt>Critério</dt>
+                                <dd>Sticky relaciona a composição à rolagem nativa; a disposição em coluna permite reorganizar figura e texto no breakpoint.</dd>
+                            </div>
+                            <div>
+                                <dt>Efeito na entrega</dt>
+                                <dd>As seções se sobrepõem durante a rolagem e os serviços passam a apresentar figura e texto em sequência vertical em telas menores.</dd>
+                            </div>
+                        </dl>
+                        <p class="case-source">
+                            <a href="https://github.com/joaoluisdutra/awwwards-course-creative-developer/blob/81528186a0e29d1c48c2bdb1264752b9f8428440/styles.css#L241-L279" target="_blank" rel="noopener noreferrer">Consultar a regra de adaptação &#8599;</a>
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <a class="case-section-next site-button" href="#case-panel-3">Continuar: Resultados e retrospectiva <span aria-hidden="true">&#8594;</span>
+            </a>
+        </section>
+        <section class="case-panel" id="case-panel-3" aria-labelledby="case-heading-3">
+            <p class="case-panel-step" aria-hidden="true">04 / 04</p>
+            <h2 id="case-heading-3">Resultados e retrospectiva</h2>
+            <h3>Entrega e aprendizado</h3>
+            <p>A entrega reúne a página implementada, o código publicado e a demonstração em vídeo. O projeto exercitou a relação entre coordenadas do cursor e propriedades do layout, além da divisão entre o cálculo de dimensões no JavaScript e a temporização no CSS.</p>
+            <h3>Evidências examinadas</h3>
+            <p>Os trechos e as duas capturas desta página foram extraídos do código publicado: as posições x = 450 px e x = 800 px mostram a alteração do bloco vazio. A folha de estilos registra o breakpoint de 768px, a sobreposição sticky e a animação float.</p>
+            <h3>Próxima etapa</h3>
+            <p>A próxima evolução é limitar a resposta ao cursor a dispositivos com apontador, oferecer movimento reduzido e testar a leitura e a navegação em telas menores. Também cabe comparar alternativas ao uso de flex-basis animado, medindo o custo de layout.</p>
+        </section>
+    </div>
 </div>
 </div>
-<nav class="case-pagination" aria-label="Navegação entre projetos"><a href="projeto-dev-alura-google.html">Próximo projeto <span class="case-next-arrow" aria-hidden="true"></span></a></nav>
+<nav class="case-pagination" aria-label="Navegação entre projetos">
+    <a href="projeto-petly.html">
+        <span class="case-prev-arrow" aria-hidden="true">&#8592;</span>Projeto anterior</a>
+        <a href="projetos.html">Todos os projetos</a>
+        <a href="projeto-dev-alura-google.html">Próximo projeto <span class="case-next-arrow" aria-hidden="true">
+        </span>
+    </a>
+</nav>
 </main>
-<script src="script.js?v=8f90af89f359"></script>
 </body>
 </html>
