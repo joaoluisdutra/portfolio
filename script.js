@@ -658,7 +658,7 @@ if (skillIcons.length > 0) {
 (() => {
     const button = document.createElement('button');
     button.type = 'button';
-    button.className = 'back-to-top site-button';
+    button.className = 'back-to-top';
     button.hidden = true;
     button.setAttribute('aria-label', 'Voltar ao topo');
     button.title = 'Voltar ao topo';
