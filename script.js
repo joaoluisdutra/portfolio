@@ -3,12 +3,24 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobileViewport = window.matchMedia('(max-width: 768px)');
     const key = 'portfolio-page-transition';
+    const historyKey = 'portfolio-history-source';
     const transitionColor = '#080808';
     let pending;
+    let historySource;
     try {
         pending = JSON.parse(sessionStorage.getItem(key));
         sessionStorage.removeItem(key);
+        historySource = sessionStorage.getItem(historyKey);
     } catch (_) { /* Navigation also works when storage is unavailable. */ }
+
+    let sourceEntry;
+    try {
+        sourceEntry = JSON.parse(historySource);
+    } catch (_) { /* Older sessions may only contain a URL. */ }
+    const historyIndex = Number.isInteger(history.state?.portfolioIndex)
+        ? history.state.portfolioIndex
+        : (pending?.historyIndex ?? (sourceEntry?.index ?? -1) + 1);
+    history.replaceState({ ...history.state, portfolioIndex: historyIndex }, '', location.href);
 
     const ns = 'http://www.w3.org/2000/svg';
     const overlay = document.createElementNS(ns, 'svg');
@@ -135,12 +147,52 @@
         overlay.classList.add('is-active');
         animate(false, () => {
             try {
-                sessionStorage.setItem(key, JSON.stringify({ url: url.href, color, direction, time: Date.now() }));
+                sessionStorage.setItem(key, JSON.stringify({ url: url.href, color, direction, historyIndex: historyIndex + 1, time: Date.now() }));
             } catch (_) { /* The outgoing animation still works without storage. */ }
             location.assign(url.href);
         });
     });
-    window.addEventListener('pageshow', (event) => { if (event.persisted) reset(); });
+    function animateHistoryNavigation(source) {
+        reset();
+        if (reducedMotion.matches) return;
+        const destination = new URL(location.href);
+        let entry;
+        try {
+            entry = JSON.parse(source);
+        } catch (_) { /* Fall back to the page hierarchy for older sessions. */ }
+        const activation = window.navigation?.activation;
+        const fromIndex = activation?.from?.index;
+        const toIndex = activation?.entry?.index;
+        if (activation?.navigationType === 'traverse' && fromIndex >= 0 && toIndex >= 0 && fromIndex !== toIndex) {
+            direction = toIndex < fromIndex ? -1 : 1;
+        } else if (Number.isInteger(entry?.index) && historyIndex !== entry.index) {
+            direction = historyIndex < entry.index ? -1 : 1;
+        } else {
+            const sourceUrl = entry?.url || source;
+            direction = sourceUrl && pageDepth(destination) < pageDepth(new URL(sourceUrl)) ? -1 : 1;
+        }
+        shape.setAttribute('stroke', transitionColor);
+        draw(false, 0);
+        overlay.classList.add('is-active');
+        busy = true;
+        animate(false, () => animate(true, reset));
+    }
+
+    // Remember the page being left, including native Back and Forward navigation.
+    window.addEventListener('pagehide', () => {
+        try {
+            sessionStorage.setItem(historyKey, JSON.stringify({ url: location.href, index: historyIndex }));
+        } catch (_) { /* History remains usable without storage. */ }
+    });
+    window.addEventListener('pageshow', (event) => {
+        const historyNavigation = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
+        if (!event.persisted && (!historyNavigation || arriving)) return;
+        let source = historySource;
+        try {
+            source = sessionStorage.getItem(historyKey) || source;
+        } catch (_) { /* Use the source captured during initialization. */ }
+        animateHistoryNavigation(source);
+    });
 })();
 
 /* Intera??es inicializadas ap?s o HTML estar dispon?vel. */
@@ -545,12 +597,17 @@ if (skillIcons.length > 0) {
         }
         // Project navigation belongs to the conclusion, after the internal reading flow.
         if (pagination) pagination.hidden = index !== panels.length - 1;
-        if (updateHash) history.replaceState(null, '', tabs[index].hash);
+        if (updateHash) history.replaceState(history.state, '', tabs[index].hash);
     }
 
     function revealPanel(index) {
         panels[index].focus({ preventScroll: true });
-        panels[index].scrollIntoView({ block: 'start', behavior: 'instant' });
+        scrollToPanel(index);
+    }
+
+    function scrollToPanel(index) {
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+        panels[index].scrollIntoView({ block: 'start', behavior });
     }
 
     // Internal actions reveal the next section before moving focus to its content.
@@ -579,7 +636,7 @@ if (skillIcons.length > 0) {
         tab.addEventListener('click', event => {
             event.preventDefault();
             activate(index, true);
-            if (mobile.matches) revealPanel(index);
+            revealPanel(index);
         });
         tab.addEventListener('keydown', event => {
             const previous = mobile.matches ? 'ArrowLeft' : 'ArrowUp';
@@ -593,7 +650,8 @@ if (skillIcons.length > 0) {
             if (target === undefined) return;
             event.preventDefault();
             activate(target, true);
-            tabs[target].focus();
+            tabs[target].focus({ preventScroll: true });
+            scrollToPanel(target);
         });
     });
     window.addEventListener('hashchange', activateFromHash);
@@ -656,6 +714,49 @@ if (skillIcons.length > 0) {
 })();
 
 /* Mobile certificate rows link to the complete certificates page. */
+(() => {
+    const links = document.querySelectorAll('a[href*="assets/certificados/"]');
+    if (!links.length) return;
+    const dialog = document.createElement('dialog');
+    dialog.className = 'case-image-dialog certificate-dialog';
+    dialog.setAttribute('aria-label', 'Certificado');
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'case-image-dialog-close';
+    close.textContent = 'Fechar ×';
+    close.autofocus = true;
+    const content = document.createElement('div');
+    dialog.append(close, content);
+    document.body.append(dialog);
+    let activeLink;
+    links.forEach(link => {
+        link.removeAttribute('target');
+        link.setAttribute('aria-haspopup', 'dialog');
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            activeLink = link;
+            const pdf = new URL(link.href).pathname.toLowerCase().endsWith('.pdf');
+            const preview = document.createElement(pdf ? 'iframe' : 'img');
+            if (pdf) preview.title = 'Visualização do certificado';
+            else preview.alt = 'Certificado';
+            preview.src = link.href;
+            content.replaceChildren(preview);
+            dialog.showModal();
+            dialog.scrollTop = 0;
+        });
+    });
+    close.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+        const bounds = dialog.getBoundingClientRect();
+        if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
+            event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+        content.replaceChildren();
+        activeLink?.focus({ preventScroll: true });
+    });
+})();
+
 document.querySelectorAll('.home-page .certificates-list .certificate-row:not(.header)').forEach(row => {
     const link = document.createElement('a');
     link.className = 'cert-mobile-row-link';

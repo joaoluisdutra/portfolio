@@ -3979,7 +3979,15 @@ body .site-button[hidden] { display: none !important; }
 .case-header-facts > div:last-child { grid-column: auto; }
 .case-page .case-header-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .case-page .case-header-actions .action-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 12px 20px; font-size: 0.85rem; text-align: center; }
+.case-page .case-header-actions .action-btn.site-button { border: 1px solid rgba(8, 8, 8, 0.25) !important; }
 .case-external-arrow { margin-left: 8px; font-size: 0; }
+.case-page .case-header-actions .case-external-arrow {
+    width: 0.85rem;
+    height: 0.85rem;
+    flex-basis: 0.85rem;
+    margin-left: 4px;
+    opacity: 0.55;
+}
 .case-eyebrow, .case-index-label, .case-panel-step {
     font-size: 0.7rem;
     letter-spacing: 0.08em;
@@ -4119,6 +4127,7 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
 .case-image-dialog::backdrop { background: rgb(0 0 0 / 80%); }
 .case-image-dialog-close { display: block; margin: 0 0 16px auto; padding: 10px 16px; border: 1px solid currentColor; border-radius: 24px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
 .case-image-dialog img { display: block; width: 100%; height: auto; }
+.certificate-dialog iframe { display: block; width: 100%; height: 75vh; height: 75dvh; border: 0; }
 .case-image-dialog-caption { margin: 12px 0 0; font-size: 0.85rem; }
 .case-panel .deliverable { margin: 0; min-width: 0; }
 .case-panel figcaption { margin-top: 8px; font-size: 0.75rem; color: #666; }
