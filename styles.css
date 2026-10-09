@@ -3854,8 +3854,10 @@ body .site-button[hidden] { display: none !important; }
     padding: clamp(32px, 4vw, 48px) 0 24px;
 }
 :is(.home-page, .projects-page, .certificates-page, .education-page, .case-page) .contact-footer .footer-container {
-    max-width: none;
-    padding-inline: clamp(20px, 3vw, 40px);
+    width: calc(100% - 2 * var(--page-gutter));
+    max-width: var(--home-content-width, 1080px);
+    margin-inline: auto;
+    padding-inline: 0;
 }
 :is(.home-page, .projects-page, .certificates-page, .education-page, .case-page) .footer-content {
     display: grid;
