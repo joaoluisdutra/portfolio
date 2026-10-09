@@ -4322,6 +4322,7 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     .home-page .project-gallery .project-card:nth-child(-n + 3) {
         grid-column: auto;
         grid-row: auto;
+        width: 100%;
         aspect-ratio: auto;
         align-self: stretch;
     }
