@@ -3,7 +3,7 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobileViewport = window.matchMedia('(max-width: 768px)');
     const key = 'portfolio-page-transition';
-    const colors = ['#4A90E2', '#ff2d55', '#ff6b00', '#00BFA6'];
+    const transitionColor = '#080808';
     let pending;
     try {
         pending = JSON.parse(sessionStorage.getItem(key));
@@ -100,9 +100,9 @@
     }
 
     const arriving = pending && pending.url === location.href && Date.now() - pending.time < 15000;
-    if (arriving && !reducedMotion.matches && colors.includes(pending.color)) {
+    if (arriving && !reducedMotion.matches) {
         direction = pending.direction === -1 ? -1 : 1;
-        shape.setAttribute('stroke', pending.color);
+        shape.setAttribute('stroke', transitionColor);
         draw(true, 0);
         overlay.classList.add('is-active');
         busy = true;
@@ -129,7 +129,7 @@
         configurePath();
         busy = true;
         direction = navigationDirection(url);
-        const color = colors[Math.floor(Math.random() * colors.length)];
+        const color = transitionColor;
         shape.setAttribute('stroke', color);
         draw(false, 0);
         overlay.classList.add('is-active');
@@ -340,6 +340,7 @@ const siPopup = document.querySelector('.si-popup');
 
 if (markerSi && siPopup) {
     const positionSiPopup = () => {
+        if (window.matchMedia('(max-width: 768px)').matches) return;
         markerSi.classList.remove('popup-left');
         siPopup.style.top = '50%';
         siPopup.style.transform = '';
@@ -653,6 +654,16 @@ if (skillIcons.length > 0) {
     });
     dialog.addEventListener('close', () => activeTrigger?.focus({ preventScroll: true }));
 })();
+
+/* Mobile certificate rows link to the complete certificates page. */
+document.querySelectorAll('.home-page .certificates-list .certificate-row:not(.header)').forEach(row => {
+    const link = document.createElement('a');
+    link.className = 'cert-mobile-row-link';
+    link.href = 'certificacoes.html';
+    const title = row.querySelector('.cert-main-title')?.textContent.trim() || 'Certificados';
+    link.setAttribute('aria-label', `${title}: ver na página de certificações`);
+    row.append(link);
+});
 
 /* início de botão voltar ao topo */
 (() => {

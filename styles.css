@@ -1827,6 +1827,7 @@ body {
 /* início de identidade visual e composição da home */
 /* Home / 2026: a deliberately direct, editorial identity. */
 .home-page {
+    --home-heading-gap: 24px;
     --bg-color: #f7f7f3;
     --text-color: #080808;
     --accent-color: #c9ed21;
@@ -3109,6 +3110,9 @@ body .site-button[hidden] { display: none !important; }
 .inner-page .subject-item p { line-height: 1.65; }
 
 .home-page {
+    --home-container-width: 1120px;
+    --home-content-width: 1080px;
+    --home-bio-width: 900px;
     --space-section: clamp(60px, 8vw, 112px);
     --home-section-inset: var(--space-block);
     --home-section-gap: var(--space-section);
@@ -3750,14 +3754,14 @@ body .site-button[hidden] { display: none !important; }
 }
 .home-page .intro-bio { padding-inline: 0; }
 .home-page .intro-text {
-    font-size: clamp(1.8rem, 4.8vw, 3.8rem);
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.055em;
+    font-size: clamp(1.6rem, 3.8vw, 3rem);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.04em;
     text-wrap: balance;
 }
 .home-page .intro-text b {
-    font-weight: 800;
+    font-weight: 600;
     display: inline;
     padding: 0;
     vertical-align: baseline;
@@ -3790,6 +3794,7 @@ body .site-button[hidden] { display: none !important; }
 .home-page .intro-text .marker-si { background-image: none !important; }
 .home-page .bio-course-link {
     color: inherit;
+    font-weight: 600;
     text-decoration: underline;
     text-decoration-thickness: 0.045em;
     text-underline-offset: 0.1em;
@@ -3822,15 +3827,19 @@ body .site-button[hidden] { display: none !important; }
 .home-page .marker-si.popup-left:focus-within .si-popup {
     transform: translateY(-50%) translateX(-15px);
 }
+
+@media (max-width: 768px) {
+    .home-page .marker-si .si-popup { display: none; }
+}
 .home-page .bio-cutout img:hover {
     transform: translate(-50%, -54%) rotate(0deg) scale(1.08);
     z-index: 2;
 }
 @media (max-width: 600px) {
     .home-page .intro-text {
-        font-size: clamp(1.65rem, 6.6vw, 2.4rem);
-        line-height: 1.3;
-        letter-spacing: -0.045em;
+        font-size: clamp(1.4rem, 5.6vw, 2rem);
+        line-height: 1.4;
+        letter-spacing: -0.035em;
     }
 }
 .home-page .project-gallery { max-width: var(--page-width); }
@@ -4126,6 +4135,34 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
 
 .home-page .skills-marquee { margin-bottom: 0; }
 
+.home-page .project-gallery .projects-header {
+    margin-inline: var(--page-gutter);
+    margin-bottom: var(--home-heading-gap);
+    padding-bottom: 0;
+}
+
+.home-page .certificates-section .certificates-header {
+    margin-bottom: var(--home-heading-gap);
+    padding-bottom: 0;
+}
+
+.home-page :is(.projects-header, .certificates-header) > .section-label {
+    margin-block: 0 !important;
+}
+
+.home-page .featured-video-section .section-label {
+    margin-block: 0 var(--home-heading-gap) !important;
+}
+
+.home-page .project-gallery .gallery-track {
+    padding-inline: var(--page-gutter) !important;
+}
+
+@media (min-width: 769px) {
+    .home-page .project-gallery .projects-header { margin-inline: 0; }
+    .home-page .project-gallery .gallery-track { padding-inline: 0 !important; }
+}
+
 .home-page .project-gallery .gallery-track {
     grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -4384,6 +4421,31 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     }
 }
 
+.cert-mobile-row-link { display: none; }
+
+@media (max-width: 768px) {
+    .home-page .certificates-section .certificate-row:not(.header) {
+        position: relative;
+    }
+    .home-page .certificates-section .certificate-row > .col:nth-child(4) {
+        display: none !important;
+    }
+    .home-page .certificate-row > .col:nth-child(2) {
+        flex-basis: 100%;
+        max-width: none;
+    }
+    .home-page .certificate-row .cert-mobile-row-link {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+    .home-page .certificate-row .cert-mobile-row-link:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: -2px;
+    }
+}
+
 .home-page .certificates-section > .footer-container {
     width: calc(100% - 2 * clamp(24px, 7vw, 104px));
     max-width: 1200px;
@@ -4403,4 +4465,35 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
 }
 @media (max-width: 768px) {
     .home-page .certificates-section .certificate-row { gap: 16px 24px; }
+}
+
+/* Desktop: shared alignment for projects, certificates and the 404 experiment. */
+@media (min-width: 769px) {
+    .home-page .home-intro {
+        width: calc(100% - 2 * var(--page-gutter));
+        max-width: var(--home-container-width);
+        margin-inline: auto;
+        padding-inline: 0;
+    }
+
+    .home-page .project-gallery,
+    .home-page .certificates-section > .footer-container,
+    .home-page .featured-video-section > .footer-container {
+        width: calc(100% - 2 * var(--page-gutter));
+        max-width: var(--home-content-width);
+        margin-inline: auto;
+        padding-inline: 0;
+    }
+
+    .home-page .project-gallery .gallery-track,
+    .home-page .certificates-section :is(.certificates-header, .certificate-row) {
+        padding-inline: 0;
+    }
+
+    .home-page .intro-container {
+        width: calc(100% - 2 * var(--page-gutter));
+        max-width: var(--home-bio-width);
+        margin-inline: auto;
+        padding-inline: 0;
+    }
 }
