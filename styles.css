@@ -4335,6 +4335,15 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
         min-height: 0;
         aspect-ratio: 3 / 2;
     }
+
+    .home-page .project-gallery .project-image img {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 480px) {
@@ -4405,21 +4414,33 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     .certificates-page .category-group .certificate-row .col img { width: 100%; object-fit: contain; }
 }
 @media (max-width: 768px) {
-    .certificates-page .category-group .certificate-row:not(.header) { display: flex; }
-    .certificates-page .category-group .certificate-row > .cert-skills-column {
-        display: block;
-        order: 4;
-        flex: 0 0 100%;
-        max-width: none;
+    .certificates-page .category-group .certificate-row:not(.header) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 20px 16px;
+    }
+    .certificates-page .category-group .certificate-row > .col:first-child {
+        grid-area: 1 / 1 / 2 / -1;
+    }
+    .certificates-page .category-group .certificate-row > .col:nth-child(4) {
+        grid-area: 2 / 1 / 3 / -1;
         text-align: center;
     }
-    .certificates-page .cert-column-label {
-        display: block;
-        margin-bottom: 4px;
-        font-size: 0.65rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
+    .certificates-page .category-group .certificate-row > .col:nth-child(2),
+    .certificates-page .category-group .certificate-row > .col:nth-child(3) {
+        max-width: none;
+        align-self: center;
+    }
+    .certificates-page .category-group .certificate-row > .col:nth-child(2) {
+        grid-area: 3 / 1 / 4 / 2;
+        justify-self: end;
+    }
+    .certificates-page .category-group .certificate-row > .col:nth-child(3) {
+        grid-area: 3 / 2 / 4 / 3;
+        justify-self: start;
+    }
+    .certificates-page .category-group .certificate-row > .cert-skills-column {
+        display: none;
     }
 }
 
