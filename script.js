@@ -197,6 +197,21 @@
 
 /* Intera??es inicializadas ap?s o HTML estar dispon?vel. */
 function initializePortfolio() {
+document.querySelectorAll('.case-panel').forEach(panel => {
+    const step = panel.querySelector('.case-panel-step')?.textContent.trim().match(/^(\d+)/)?.[1];
+    if (!step) return;
+    let subsection = 0;
+    panel.querySelectorAll('h3').forEach(heading => {
+        if (heading.closest('.case-decision, .case-evidence-placeholder')) return;
+        subsection += 1;
+        heading.classList.add('case-subsection-heading');
+        const number = document.createElement('span');
+        number.className = 'case-subsection-number';
+        number.setAttribute('aria-hidden', 'true');
+        number.textContent = `${step}.${subsection}`;
+        heading.prepend(number);
+    });
+});
 /* início de animações da hero */
 document.addEventListener('mousemove', (e) => {
     const star = document.querySelector('.star-shape');
