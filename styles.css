@@ -3653,7 +3653,7 @@ body .site-button[hidden] { display: none !important; }
 :is(.projects-page, .certificates-page, .education-page, .case-page) .contact-footer .footer-number { overflow-wrap: anywhere; }
 .projects-page .projects-page-container { max-width: 1440px; }
 .projects-page .project-gallery .gallery-track {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 32px 20px;
     align-items: start;
     padding: 0;
@@ -3683,10 +3683,7 @@ body .site-button[hidden] { display: none !important; }
     font-variant-numeric: tabular-nums;
     color: var(--text-color);
 }
-.projects-page .project-card[data-category^="Front-End Development"] .project-open > span { color: #b0d411; }
-.projects-page .project-card[data-category^="Web Design"] .project-open > span { color: #ff2d55; }
-.projects-page .project-card[data-category^="UI & UX Design"] .project-open > span { color: #4a90e2; }
-.projects-page .project-card[data-category^="Graphic Design"] .project-open > span { color: #00bfa6; }
+.projects-page .project-open > span { color: #080808; }
 .projects-page .project-gallery .project-title {
     margin: 0;
     padding: 7px 0;
@@ -3704,7 +3701,11 @@ body .site-button[hidden] { display: none !important; }
     padding: 5px 0;
     border-top: 1px solid rgba(8, 8, 8, 0.25);
 }
-.projects-page .project-details > .project-categories-row { grid-template-columns: 1fr; gap: 4px; }
+.projects-page .project-details > .project-categories-row {
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+}
 .projects-page .project-details dt { font-weight: 700; }
 .projects-page .project-details dd { margin: 0; overflow-wrap: anywhere; }
 .project-category {
@@ -3714,12 +3715,18 @@ body .site-button[hidden] { display: none !important; }
     border-radius: 3px;
     background: #080808;
     color: #ffffff;
-    font-size: 0.78em;
+    font-size: 0.90em;
     line-height: 1.5;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
 }
+.project-category[data-category="Front-End Development"] { background: #b0d411; color: #080808; }
+.project-category[data-category="Web Design"] { background: #ff2d55; color: #080808; }
+.project-category[data-category="UI & UX Design"] { background: #4a90e2; color: #080808; }
+.project-category[data-category="Graphic Design"] { background: #ff6b00; color: #080808; }
 .project-categories-row dd { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 4px; }
+.projects-page .project-categories-row dd { flex-wrap: nowrap; }
+.projects-page .project-category { white-space: nowrap; }
 .projects-page .project-open {
     display: flex;
     justify-content: space-between;
