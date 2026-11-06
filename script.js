@@ -468,19 +468,19 @@ if (projectFilters) {
     const status = document.querySelector('.project-filter-status');
     const projects = Array.from(gallery.querySelectorAll('.project-card')).map(card => ({
         card,
-        category: card.dataset.category,
+        categories: (card.dataset.category || '').split('|').filter(Boolean),
         number: Number(card.querySelector('.project-number').textContent.trim())
     }));
     let selectedCategory = null;
     let selectedOrder = 'desc';
-    const categories = [...new Set(projects.map(project => project.category))];
+    const categories = ['Front-End Development', 'Web Design', 'UI & UX Design', 'Graphic Design'];
     const buttons = [];
 
     const selectCategory = (category) => {
         selectedCategory = category;
         let count = 0;
         projects.forEach(project => {
-            const visible = category === null || project.category === category;
+            const visible = category === null || project.categories.includes(category);
             project.card.hidden = !visible;
             if (visible) count++;
         });

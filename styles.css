@@ -3681,7 +3681,12 @@ body .site-button[hidden] { display: none !important; }
     line-height: 1;
     letter-spacing: -0.07em;
     font-variant-numeric: tabular-nums;
+    color: var(--text-color);
 }
+.projects-page .project-card[data-category^="Front-End Development"] .project-open > span { color: #b0d411; }
+.projects-page .project-card[data-category^="Web Design"] .project-open > span { color: #ff2d55; }
+.projects-page .project-card[data-category^="UI & UX Design"] .project-open > span { color: #4a90e2; }
+.projects-page .project-card[data-category^="Graphic Design"] .project-open > span { color: #00bfa6; }
 .projects-page .project-gallery .project-title {
     margin: 0;
     padding: 7px 0;
@@ -3699,20 +3704,22 @@ body .site-button[hidden] { display: none !important; }
     padding: 5px 0;
     border-top: 1px solid rgba(8, 8, 8, 0.25);
 }
+.projects-page .project-details > .project-categories-row { grid-template-columns: 1fr; gap: 4px; }
 .projects-page .project-details dt { font-weight: 700; }
 .projects-page .project-details dd { margin: 0; overflow-wrap: anywhere; }
-.projects-page .project-category {
-    padding: 1px 4px;
-    background: var(--category-color, #b0d411);
-    color: #080808;
+.project-category {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: #080808;
+    color: #ffffff;
+    font-size: 0.78em;
+    line-height: 1.5;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
 }
-.projects-page [data-category="UI Design"] { --category-color: #b0d411; }
-.projects-page [data-category="UX Design"] { --category-color: #4a90e2; }
-.projects-page [data-category="Creative Development"] { --category-color: #ff6b00; }
-.projects-page [data-category="Design Gráfico"] { --category-color: var(--identity-turquoise); }
-.projects-page [data-category="Web Design"] { --category-color: #ff2d55; }
+.project-categories-row dd { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 4px; }
 .projects-page .project-open {
     display: flex;
     justify-content: space-between;
@@ -3975,6 +3982,8 @@ body .site-button[hidden] { display: none !important; }
 .case-header { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #d0d3c3; }
 .case-summary { max-width: 78ch; margin-top: 16px; font-size: 0.9rem; line-height: 1.75; color: #444; }
 .case-header .case-header-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; margin-top: 20px; padding-top: 20px; border-bottom: 0; }
+.case-header-facts > .project-categories-row { grid-column: 1 / -1; }
+.case-header-facts .project-categories-row dd { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 4px; }
 .case-header-facts dd { line-height: 1.6; overflow-wrap: anywhere; }
 .case-header-facts > div:last-child { grid-column: auto; }
 .case-page .case-header-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
