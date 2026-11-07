@@ -3720,13 +3720,10 @@ body .site-button[hidden] { display: none !important; }
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
 }
-.project-category[data-category] { background: #e8e8e4; color: #333; }
-.project-category[data-category] { transition: background-color 180ms ease, color 180ms ease; }
-.project-category[data-category="Front-End Development"]:is(:hover, :focus-visible) { background: #b0d411; color: #080808; }
-.project-category[data-category="Web Design"]:is(:hover, :focus-visible) { background: #ff2d55; color: #080808; }
-.project-category[data-category="UI & UX Design"]:is(:hover, :focus-visible) { background: #4a90e2; color: #080808; }
-.project-category[data-category="Graphic Design"]:is(:hover, :focus-visible) { background: #ff6b00; color: #080808; }
-.case-page .project-category[data-category] { background: #b0d411; color: #080808; }
+.project-category[data-category="Front-End Development"] { background: #b0d411; color: #080808; }
+.project-category[data-category="Web Design"] { background: #ff2d55; color: #080808; }
+.project-category[data-category="UI & UX Design"] { background: #4a90e2; color: #080808; }
+.project-category[data-category="Graphic Design"] { background: #ff6b00; color: #080808; }
 .projects-page .project-category[data-category="Front-End Development"] { background: #b0d411; color: #080808; }
 .projects-page .project-category[data-category="Web Design"] { background: #ff2d55; color: #080808; }
 .projects-page .project-category[data-category="UI & UX Design"] { background: #4a90e2; color: #080808; }
@@ -4057,9 +4054,13 @@ body .site-button[hidden] { display: none !important; }
 .case-tab-number { color: #555; font-size: 0.65rem; }
 .case-tab-label { transform-origin: left center; transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1); }
 .case-tab:is(:hover, :focus-visible) .case-tab-label { transform: translateX(4px); }
-.case-tab { --tab-color: #d8d8d3; }
-.case-tab:is(:hover, :focus-visible) { background: #e4e4df; }
-.case-tab[aria-selected="true"] { background: #b0d411; color: #080808; opacity: 1; font-weight: 700; border-color: transparent; }
+.case-tab:nth-child(5n + 1) { --tab-color: #b0d411; }
+.case-tab:nth-child(5n + 2) { --tab-color: #4a90e2; }
+.case-tab:nth-child(5n + 3) { --tab-color: #ff6b00; }
+.case-tab:nth-child(5n + 4) { --tab-color: #ff2d55; }
+.case-tab:nth-child(5n + 5) { --tab-color: var(--identity-turquoise); }
+.case-tab:is(:hover, :focus-visible) { background: color-mix(in srgb, var(--tab-color) 15%, #eeefe6); }
+.case-tab[aria-selected="true"] { background: var(--tab-color); color: var(--tab-ink); opacity: 1; font-weight: 700; border-color: transparent; }
 .case-tab[aria-selected="true"] .case-tab-number { color: inherit; }
 .case-tab-arrow { opacity: 0; transform: translate(-3px, 3px); transition: opacity 220ms ease, transform 240ms ease; }
 .case-tab:is(:hover, :focus-visible, [aria-selected="true"]) .case-tab-arrow { opacity: 1; }
@@ -4181,7 +4182,7 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     .case-enhanced .case-index-label, .case-enhanced .case-tabs { display: none; }
     .case-enhanced .case-mobile-navigation { display: grid; gap: 10px; }
     .case-mobile-navigation label { font-size: 0.75rem; color: #444; }
-    .case-mobile-navigation select { width: 100%; min-width: 0; min-height: 48px; border: 1px solid #b8b8b2; border-radius: 4px; padding: 12px; background: #d0d0cb; color: #171717; font: inherit; font-size: 0.85rem; }
+    .case-mobile-navigation select { width: 100%; min-width: 0; min-height: 48px; border: 1px solid #b8b8b2; border-radius: 4px; padding: 12px; background: var(--selected-tab-color, #b0d411); color: var(--selected-tab-ink, #080808); font: inherit; font-size: 0.85rem; }
     .case-mobile-navigation select:focus-visible { outline: 2px solid #212427; outline-offset: 4px; }
     .case-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
     .case-tab { padding: 14px 12px; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; font-size: 0.8rem; }
