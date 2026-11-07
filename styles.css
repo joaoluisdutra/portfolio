@@ -2560,6 +2560,18 @@ body {
             font-weight: 500;
         }
 
+        .certificates-page .cert-dropdown[open] > summary {
+            background: #f0f0ec;
+        }
+
+        .certificates-page .cert-dropdown[open] > summary .category-title {
+            color: #60750b;
+        }
+
+        .certificates-page .cert-dropdown[open] > .certificates-list {
+            padding-inline: 16px;
+        }
+
         :where(.certificates-page) .cert-dropdown > summary:focus-visible {
             outline: 2px solid currentColor;
             outline-offset: 4px;
@@ -3486,6 +3498,7 @@ body .site-button[hidden] { display: none !important; }
     border-radius: 0;
     background: transparent;
 }
+.education-page .phase-card[open] > .phase-header { background: #f0f0ec; }
 .education-page .phase-header {
     padding: 40px 16px;
     margin-bottom: 0;
@@ -3508,7 +3521,7 @@ body .site-button[hidden] { display: none !important; }
     transform: rotate(45deg);
 }
 .education-page .phase-card[open] > .phase-header .phase-toggle-icon { transform: rotate(225deg); }
-.education-page .phase-card[open] > .subjects-list { margin: 24px 0 36px; }
+.education-page .phase-card[open] > .subjects-list { margin: 24px 0 36px; padding-inline: 16px; }
 .education-page .phase-header h3 { margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.4; letter-spacing: -0.025em; }
 .education-page .phase-status { border: 0; border-radius: 2px; padding: 4px 8px; font-size: 0.7rem; font-weight: 500; line-height: 1.4; letter-spacing: 0; text-transform: none; }
 .education-page .status-done { background: #ededeb; color: #555; }
