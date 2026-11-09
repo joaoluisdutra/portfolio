@@ -1,0 +1,199 @@
+DESIGN SYSTEM VISUAL — PORTFÓLIO
+Levantamento dos padrões atualmente implementados no site.
+Fonte principal do levantamento: styles.css e páginas HTML associadas.
+
+1. DIREÇÃO VISUAL
+- Identidade editorial, minimalista e tipográfica, com bastante espaço em branco.
+- Fundo claro quente, texto quase preto, linhas finas e poucos elementos decorativos.
+- Cores vivas funcionam como acentos para categorias, navegação e estados ativos.
+- Cards e conteúdo priorizam alinhamento, leitura e hierarquia de texto.
+- Evitar introduzir sombras pesadas, gradientes ou cores de acento sem função.
+
+2. PALETA DE CORES
+Cores de identidade usadas nas categorias e na navegação:
+- Verde lima: #B0D411 (identidade Front-End; accent legado global).
+- Azul: #4A90E2 (identidade UI & UX; foco e links em alguns contextos).
+- Laranja: #FF6B00 (identidade Graphic Design e terceira posição do mapa).
+- Rosa: #FF2D55 (identidade Web Design e quarta posição do mapa).
+- Turquesa: #00BFA6 (quinta posição do mapa; variável --identity-turquoise).
+- Verde lima da home: #C9ED21 (accent específico da home).
+
+Neutros principais:
+- #080808: texto principal nas páginas de identidade mais recentes.
+- #212427: texto/elementos escuros em estilos base e código.
+- #333333 / #444444: texto secundário.
+- #555555 / #666666: rótulos, números, metadados e texto auxiliar.
+- #FFFFFF: branco puro em partes da base.
+- #FAFAFA: --off-white legado.
+- #F7F7F3: fundo geral quente da home, páginas de projeto e superfícies claras.
+- #F7F7F2: fundos de alguns componentes e caixas de evidência.
+- #EEEEE6: fundo do card lateral de projeto.
+- #E0E2D5: borda do card lateral de projeto.
+- #D0D3C3: divisor do cabeçalho do card de projeto.
+- #DEDED8: linhas divisórias de conteúdo e abas.
+- #EAEAE4: legendas e superfícies de mídia.
+- #B8B8B2: bordas e linhas de maior contraste.
+- #212427: superfície escura de blocos de código, com texto #F7F7F2.
+
+Aplicação das cores por componente:
+- Tag de área: fundo sólido correspondente à área e texto #080808.
+- Mapa do projeto: sequência por posição: 1 verde, 2 azul, 3 laranja,
+  4 rosa, 5 turquesa; a sequência se repete em mapas com mais itens.
+- Aba ativa: cor sólida de sua posição. Hover/foco não ativo: mistura de
+  15% da cor da aba com #EEEEE6.
+- Foco de teclado: contorno azul #4A90E2 em links e controles de páginas de projeto.
+- Home, projetos, certificados e formação podem definir acentos locais; respeitar
+  as variáveis da página antes de reutilizar um acento global.
+
+3. TIPOGRAFIA
+- Família principal: Manrope, sans-serif.
+- A folha de estilos também contém referências a Be Vietnam Pro, Plus Jakarta Sans,
+  Outfit, Archivo e Epilogue em um ciclo tipográfico experimental. Manrope continua
+  sendo a família base. Conferir o carregamento efetivo de fontes no HTML antes de
+  depender de uma família secundária.
+- Pesos usados: 400 para corpo e metadados; 600 para botões, rótulos e subtítulos;
+  700 para títulos e ênfase; 900 para assinatura da marca.
+- Cor normal do texto: #080808 ou #212427 segundo a página; texto secundário #444.
+- Corpo em páginas de projeto: normalmente 0.95rem com line-height 1.8.
+- Resumo de projeto: 0.9rem / 1.75.
+- Texto auxiliar/metadados: entre 0.65rem e 0.8rem.
+- Botões: 0.75rem, peso 600, line-height 1.4.
+- Títulos de painel de projeto: clamp(1.4rem, 2.2vw, 2rem), peso 600,
+  line-height 1.25 e letter-spacing -0.04em.
+- Título do projeto: clamp(1.75rem, 2.6vw, 2.5rem), peso 700,
+  line-height 1.15 e letter-spacing -0.055em.
+- Assinatura da home: 1.15rem, peso 900, letter-spacing -0.1em.
+- Preferir títulos com text-wrap: balance/pretty quando disponíveis.
+
+4. ESCALA, LARGURA E ESPAÇAMENTO
+Escala de ritmo compartilhada:
+- 8px: --space-small.
+- 16px: --space-text.
+- 24px: --space-group.
+- 24–48px: --space-block = clamp(24px, 4vw, 48px).
+- 48–96px: --space-section = clamp(48px, 7vw, 96px).
+- Margem lateral de página: --page-gutter = clamp(20px, 4vw, 48px).
+- Largura máxima de conteúdo: --page-width = 1200px.
+- Container de páginas individuais de projeto: máximo 1440px.
+- Containers internos compartilhados: até 1200px.
+- Separação da home entre seções: clamp(72px, 8vw, 120px).
+- Separação comum de colunas em conteúdo: 16–32px; valores maiores quando
+  textos longos precisam de largura de leitura.
+- Largura recomendada de parágrafo: aproximadamente 68–78ch.
+
+5. FORMAS, BORDAS E SUPERFÍCIES
+- Raio padrão de card lateral de projeto: 8px.
+- Botões compartilhados: totalmente arredondados (999px), borda de 2px,
+  fundo transparente em repouso.
+- Botões de ação do cabeçalho de projeto: altura mínima 44px, padding horizontal 20px.
+- Tags: raio discreto de 3px; padding vertical 3px e horizontal 8px.
+- Card lateral: fundo #EEEEE6, borda 1px #E0E2D5, padding 28px.
+- Divisores: 1px em cinzas claros; usar para agrupar conteúdo sem criar caixas
+  desnecessárias.
+- Sombras são geralmente removidas ou discretas nas páginas de projeto.
+
+6. COMPONENTES E PADRÕES
+Navegação:
+- Navegação principal com padding de 20px 28px em telas maiores e 17px 18px
+  em telas até 768px.
+- Menu lateral com links em lista, números/descrições auxiliares e seta que se
+  desloca levemente no hover.
+- Cores de hover do menu podem variar por posição, respeitando a paleta de identidade.
+
+Cartões de projeto na listagem:
+- Apresentação editorial com número grande, título, linhas divisórias e metadados.
+- Categorias aparecem como tags com suas cores de identidade.
+- Hover/foco deve comunicar interação sem deslocamentos excessivos na listagem.
+- Imagens podem ampliar sutilmente em galerias onde esse efeito está habilitado.
+
+Cartão lateral da página de projeto:
+- Categorias ocupam a largura completa do grid de fatos.
+- Demais dados organizados em duas colunas, com 28px de espaço horizontal e 20px
+  vertical no layout atual.
+- Card ocupa uma coluna lateral de 340–430px em telas largas, com 28–56px até
+  o conteúdo principal.
+- Ações têm altura mínima 44px.
+
+Mapa do projeto:
+- Navegação vertical em desktop; navegação compacta/select em telas até 1024px.
+- Cada item mostra número, título e seta.
+- Altura/padding confortáveis: 16px 12px em desktop; 14px 12px em tablet;
+  12px 8px em telas até 480px.
+- Aba ativa recebe preenchimento colorido sólido. Hover/foco recebe uma tonalidade
+  clara da cor associada àquela posição.
+- Número acompanha a cor de texto do item ativo.
+
+Botões:
+- Estilo compartilhado outlined, sem preenchimento no repouso.
+- Altura mínima 44px, padding 10px 18px, raio 999px, borda escura.
+- Hover, pressionado ou expandido: preenchimento escuro e texto claro.
+- Foco visível: contorno de 2px com afastamento de 4px.
+
+Conteúdo de projeto:
+- Listas usam line-height generoso (1.8) e distância entre itens de até 16px.
+- Galerias e entregáveis usam gap de 24px.
+- Figcaptions usam fundo #EAEAE4, texto #666 e tamanho 0.75rem.
+- Blocos de código: fundo #212427, texto #F7F7F2, padding 20px e raio 4px.
+
+7. RESPONSIVIDADE
+- 1024px: páginas de projeto empilham o card lateral e o conteúdo; o mapa vira
+  navegação compacta; galeria em coluna única.
+- 768px: navegação e layout de conteúdo passam a espaçamentos menores; container
+  usa gutters fluidos.
+- 600px e abaixo: reduzir espaçamentos verticais e densidade de conteúdo.
+- 480px: card de projeto usa padding 20px 16px; ações podem ocupar largura total;
+  grids de dados devem continuar legíveis e sem overflow.
+- 420px: aplicar ajustes específicos de tags/galeria se necessário.
+- Em qualquer breakpoint, evitar reduzir o tamanho do corpo para resolver falta
+  de espaço; preferir empilhar colunas e permitir quebra de texto.
+
+8. MOVIMENTO E INTERAÇÃO
+- Transições comuns: 180–240ms, easing suave.
+- Tags podem transicionar fundo/cor em 180ms quando hover estiver habilitado.
+- Setas e rótulos podem se deslocar 3–4px para indicar interação.
+- Respeitar prefers-reduced-motion: remover transições e deslocamentos não essenciais.
+- Estados hover, foco, ativo, pressionado e expandido devem ter contraste perceptível.
+- Não depender apenas da cor para comunicar estado: manter peso, texto, ícone ou
+  atributo acessível equivalente.
+
+9. ACESSIBILIDADE E CONTRASTE
+- Manter foco de teclado sempre visível, com contorno e afastamento claros.
+- Texto sobre as cores da paleta atualmente é #080808; confirmar contraste para
+  qualquer novo uso, sobretudo sobre rosa, azul e turquesa.
+- Estados selecionados são indicados por aria-selected e por preenchimento visual.
+- Alvos de ação devem ter pelo menos 44px de altura quando forem controles primários.
+- Respeitar redução de movimento do sistema.
+- Não usar cor como único sinal de categoria: manter sempre o nome da área na tag.
+
+10. VARIÁVEIS CSS DE REFERÊNCIA
+Fundamentos e layout:
+--bg-color: #FFFFFF (base; páginas específicas sobrescrevem para #F7F7F3)
+--off-white: #FAFAFA
+--accent-color: #B0D411 (base; pode variar por página)
+--identity-turquoise: #00BFA6
+--text-color: #212427 (base; páginas atuais frequentemente usam #080808)
+--section-spacing: 100px (legado)
+--space-small: 8px
+--space-text: 16px
+--space-group: 24px
+--space-block: clamp(24px, 4vw, 48px)
+--space-section: clamp(48px, 7vw, 96px)
+--page-gutter: clamp(20px, 4vw, 48px)
+--page-width: 1200px
+
+Botões:
+--button-radius: 999px
+--button-ink: #080808
+--button-paper: #F7F7F3
+--button-border: rgba(8, 8, 8, 0.8)
+
+11. NOTAS PARA EVOLUÇÃO DO DESIGN SYSTEM
+- styles.css contém estilos base, estilos específicos por página e camadas mais
+  recentes de composição. Algumas variáveis têm valores diferentes por página.
+- Há regras de identidade repetidas para algumas tags de projetos; consolidar em
+  tokens compartilhados ao refatorar, preservando os escopos .projects-page e
+  .case-page quando houver diferenças visuais intencionais.
+- O ciclo de fontes alternadas e regras marcadas como legado devem ser revisados
+  antes de serem tratados como decisões definitivas de marca.
+- Este documento descreve o estado encontrado no código, não substitui validação
+  de contraste, inspeção visual em todos os breakpoints ou aprovação de marca.

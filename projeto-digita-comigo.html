@@ -85,12 +85,11 @@
 
         .digita-brand-caption {
             grid-column: 1/-1;
-            margin: -.35rem 0 0;
-            padding: 12px 16px;
-            border-radius: 0 0 12px 12px;
-            background: #eaeae4;
+            margin: 0;
+            padding: 0;
             font-size: .9rem;
-            color: var(--text-muted, #aaa)
+            line-height: 1.6;
+            color: #444
         }
 
         @media(max-width:640px) {
@@ -102,9 +101,6 @@
                 min-height: 190px
             }
 
-            .digita-brand-caption {
-                grid-column: auto
-            }
         }
     </style>
 </head>
@@ -222,23 +218,21 @@
                                 aria-hidden="true">01</span><span class="case-tab-label">Visão geral</span><span
                                 class="case-tab-arrow" aria-hidden="true">&#8599;&#65038;</span></a>
                         <a class="case-tab" id="case-tab-1" href="#case-panel-1"><span class="case-tab-number"
-                                aria-hidden="true">02</span><span class="case-tab-label">Contexto e evolução</span><span
+                                aria-hidden="true">02</span><span class="case-tab-label">Contexto e escopo</span><span
                                 class="case-tab-arrow" aria-hidden="true">&#8599;&#65038;</span></a>
                         <a class="case-tab" id="case-tab-2" href="#case-panel-2"><span class="case-tab-number"
-                                aria-hidden="true">03</span><span class="case-tab-label">Identidade e
-                                interface</span><span class="case-tab-arrow"
+                                aria-hidden="true">03</span><span class="case-tab-label">Decisões e processo</span><span class="case-tab-arrow"
                                 aria-hidden="true">&#8599;&#65038;</span></a>
                         <a class="case-tab" id="case-tab-3" href="#case-panel-3"><span class="case-tab-number"
-                                aria-hidden="true">04</span><span class="case-tab-label">Resultados e
-                                aprendizados</span><span class="case-tab-arrow"
+                                aria-hidden="true">04</span><span class="case-tab-label">Entrega</span><span class="case-tab-arrow"
                                 aria-hidden="true">&#8599;&#65038;</span></a>
                     </nav>
                     <div class="case-mobile-navigation" hidden><label for="case-section-select">Seção do
                             projeto</label><select id="case-section-select" aria-controls="case-panels">
                             <option value="0">01 / 04 — Visão geral</option>
-                            <option value="1">02 / 04 — Contexto e evolução</option>
-                            <option value="2">03 / 04 — Identidade e interface</option>
-                            <option value="3">04 / 04 — Resultados e aprendizados</option>
+                            <option value="1">02 / 04 — Contexto e escopo</option>
+                            <option value="2">03 / 04 — Decisões e processo</option>
+                            <option value="3">04 / 04 — Entrega</option>
                         </select></div>
                 </aside>
             </div>
@@ -263,12 +257,12 @@
                             <li>Interface própria apoiada em uma identidade visual para o projeto.</li>
                             <li>Evolução gradual de uma aplicação desktop para uma experiência web.</li>
                         </ul>
-                        <a class="case-section-next" href="#case-panel-1">Continuar: Contexto e evolução <span
+                        <a class="case-section-next" href="#case-panel-1">Continuar: Contexto e escopo <span
                                 aria-hidden="true">&#8594;&#65038;</span></a>
                     </section>
                     <section class="case-panel" id="case-panel-1" aria-labelledby="case-heading-1">
                         <p class="case-panel-step" aria-hidden="true">02 / 04</p>
-                        <h2 id="case-heading-1">Contexto e evolução</h2>
+                        <h2 id="case-heading-1">Contexto e escopo</h2>
                         <p>O projeto foi desenvolvido ao longo de dois momentos da disciplina Projeto de Extensão. A
                             primeira etapa, Projeto de Extensão II, estabeleceu o jogo como uma aplicação nativa em Java
                             e Java Swing. No Projeto de Extensão III, o trabalho avançou para uma aplicação web com
@@ -309,12 +303,12 @@
                                 <figcaption>Versão final (HTML/CSS/JavaScript com Node.js)</figcaption>
                             </figure>
                         </div>
-                        <a class="case-section-next" href="#case-panel-2">Continuar: Identidade e interface <span
+                        <a class="case-section-next" href="#case-panel-2">Continuar: Decisões e processo <span
                                 aria-hidden="true">&#8594;&#65038;</span></a>
                     </section>
                     <section class="case-panel" id="case-panel-2" aria-labelledby="case-heading-2">
                         <p class="case-panel-step" aria-hidden="true">03 / 04</p>
-                        <h2 id="case-heading-2">Identidade e interface</h2>
+                        <h2 id="case-heading-2">Decisões e processo</h2>
                         <p>Na etapa atual, minha contribuição se concentrou no desenvolvimento front-end, na criação das
                             telas da interface e em testes de usabilidade. Também desenvolvi o guia de marca,
                             documentando propósito, cliente ideal e outros fundamentos da identidade do projeto.</p>
@@ -342,7 +336,7 @@
                                 <figcaption>Painel de jogo</figcaption>
                             </figure>
                         </div>
-                        <h3>Da versão nativa à identidade própria</h3>
+                        <h3>Versão nativa e identidade visual</h3>
                         <p>Antes da migração para a web, uma entrega intermediária aproximou visualmente o jogo da
                             experiência atual enquanto ele ainda rodava como aplicação Java Swing.</p>
                         <div class="digita-gallery">
@@ -368,12 +362,12 @@
                                 <figcaption>Primeira versão · jogo</figcaption>
                             </figure>
                         </div>
-                        <a class="case-section-next" href="#case-panel-3">Continuar: Resultados e aprendizados <span
+                        <a class="case-section-next" href="#case-panel-3">Continuar: Entrega <span
                                 aria-hidden="true">&#8594;&#65038;</span></a>
                     </section>
                     <section class="case-panel" id="case-panel-3" aria-labelledby="case-heading-3">
                         <p class="case-panel-step" aria-hidden="true">04 / 04</p>
-                        <h2 id="case-heading-3">Resultados e aprendizados</h2>
+                        <h2 id="case-heading-3">Entrega</h2>
                         <h3>Uma experiência que acompanhou a evolução do projeto</h3>
                         <p>A passagem do Java Swing para a web ampliou a forma de apresentar e acessar o jogo. As
                             entregas registram a evolução da interface e da identidade, desde o protótipo nativo até a
@@ -391,10 +385,10 @@
                 </div>
             </div>
         </div>
-        <nav class="case-pagination" aria-label="Navegação entre projetos"><a href="projeto-dropit.html"><span
-                    class="case-prev-arrow" aria-hidden="true">&#8592;&#65038;</span>Projeto anterior</a><a
-                href="projetos.html">Todos os projetos</a><a href="projeto-dropit.html">Próximo projeto <span
-                    class="case-next-arrow" aria-hidden="true"></span></a></nav>
+                <nav class="case-pagination" aria-label="Navegação entre projetos">
+            <a href="projetos.html">Todos os projetos</a>
+            <a href="projeto-dropit.html">Próximo projeto <span class="case-next-arrow" aria-hidden="true"></span></a>
+        </nav>
     </main>
 </body>
 

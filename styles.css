@@ -4060,7 +4060,7 @@ body .site-button[hidden] { display: none !important; }
 .case-header-facts > .project-categories-row { grid-column: 1 / -1; }
 .case-header-facts .project-categories-row dd { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 4px; }
 .case-header-facts dd { line-height: 1.6; overflow-wrap: anywhere; }
-.case-header-facts > div:last-child { grid-column: auto; }
+.case-header-facts > div:last-child { grid-column: 1 / -1; }
 .case-page .case-header-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .case-page .case-header-actions .action-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 12px 20px; font-size: 0.85rem; text-align: center; }
 .case-page .case-header-actions .action-btn.site-button { border: 1px solid rgba(8, 8, 8, 0.25) !important; }
@@ -4236,6 +4236,34 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
 .case-pagination { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px 24px; border-top: 1px solid #b8b8b2; margin-top: 48px; padding-top: 24px; }
 .case-pagination a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: inherit; text-decoration: none; font-size: 0.8rem; }
 .case-pagination a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Leitura confortável das páginas de projeto */
+.case-tab[aria-selected="true"] {
+    background: transparent;
+    border-left: 3px solid var(--tab-color);
+    color: inherit;
+}
+.case-tab { border-left: 3px solid transparent; }
+.case-tab:is(:hover, :focus-visible) { background: transparent; border-left-color: var(--tab-color); }
+.case-panel h2 { margin-bottom: 32px; padding-bottom: 0; border-bottom: 0; }
+.case-header-facts > div:not(.project-categories-row) {
+    min-width: 0;
+    padding-top: 12px;
+    border-top: 1px solid #d0d3c3;
+}
+.case-facts dt { margin-bottom: 8px; color: #666; font-size: 0.75rem; line-height: 1.4; }
+.case-facts dd { min-width: 0; margin: 0; font-size: 0.9rem; font-weight: 400; line-height: 1.6; overflow-wrap: anywhere; }
+.case-panel p:not(.case-panel-step) + p:not(.case-panel-step) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+@media (max-width: 600px) {
+    .case-panel h2 { margin-bottom: 20px; padding-bottom: 16px; }
+    .case-panel h3 { margin-top: 24px; padding-top: 14px; }
+    .case-panel p:not(.case-panel-step), .case-panel li { font-size: 0.9rem; line-height: 1.7; }
+    .case-mobile-navigation select { background: #eeefe6; }
+}
 /* fim de navegação entre projetos */
 
 /* início de mapa do projeto no celular */
@@ -4247,7 +4275,7 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     .case-enhanced .case-index-label, .case-enhanced .case-tabs { display: none; }
     .case-enhanced .case-mobile-navigation { display: grid; gap: 10px; }
     .case-mobile-navigation label { font-size: 0.75rem; color: #444; }
-    .case-mobile-navigation select { width: 100%; min-width: 0; min-height: 48px; border: 1px solid #b8b8b2; border-radius: 4px; padding: 12px; background: var(--selected-tab-color, #b0d411); color: var(--selected-tab-ink, #080808); font: inherit; font-size: 0.85rem; }
+    .case-mobile-navigation select { width: 100%; min-width: 0; min-height: 48px; border: 1px solid #b8b8b2; border-radius: 4px; padding: 12px; background: #eeefe6; color: #171717; font: inherit; font-size: 0.85rem; }
     .case-mobile-navigation select:focus-visible { outline: 2px solid #212427; outline-offset: 4px; }
     .case-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
     .case-tab { padding: 14px 12px; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; font-size: 0.8rem; }
@@ -4483,7 +4511,7 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
 
 @media (max-width: 480px) {
     .case-project-card { padding: 20px 16px; }
-    .case-header .case-header-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .case-header .case-header-facts { grid-template-columns: minmax(0, 1fr); gap: 16px; }
     .case-page .case-header-actions .action-btn { flex: 1 1 100%; }
     .case-tab { padding: 12px 8px; gap: 6px; }
     .case-tab:is(:hover, :focus-visible) .case-tab-label { transform: none; }
@@ -4492,6 +4520,10 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     .case-comparison { grid-template-columns: minmax(0, 1fr); }
     .case-page .case-panel .skills-grid { grid-template-columns: minmax(0, 1fr); }
     .case-page .case-panel .skill-item { padding: 20px; gap: 16px; }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+    .case-header .case-header-facts { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* início de preferência por movimento reduzido */
