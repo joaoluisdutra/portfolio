@@ -5283,21 +5283,21 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
 .certificates-page .cert-institutions-row:nth-child(2) > :first-child {
     grid-column: 2 / span 2;
 }
-.certificates-page .cert-institutions-row .logo-calarts-colorido { max-width: 160px; }
-.certificates-page .cert-institutions-row .logo-google-colorido { max-width: 100px; }
-.certificates-page .cert-institutions-row .logo-awwwards { max-width: 175px; }
-.certificates-page .cert-institutions-row .logo-pucrs-colorido { max-width: 140px; }
-.certificates-page .cert-institutions-row .logo-tester-colorido { max-width: 170px; }
-.certificates-page .cert-institutions-row .logo-freecodecamp-colorido { max-width: 200px; }
-.certificates-page .cert-institutions-row .logo-unibave-colorido { max-width: 94px; }
-.certificates-page .cert-institutions-row .logo-alura { max-width: 85px; }
-.certificates-page .cert-institutions-row .logo-ebac { max-width: 90px; }
-.certificates-page .cert-institutions-row .logo-acafe-colorido { max-width: 70px; }
+.certificates-page .cert-institutions-row .logo-calarts-colorido { max-width: 128px; }
+.certificates-page .cert-institutions-row .logo-google-colorido { max-width: 80px; }
+.certificates-page .cert-institutions-row .logo-awwwards { max-width: 140px; }
+.certificates-page .cert-institutions-row .logo-pucrs-colorido { max-width: 112px; }
+.certificates-page .cert-institutions-row .logo-tester-colorido { max-width: 136px; }
+.certificates-page .cert-institutions-row .logo-freecodecamp-colorido { max-width: 160px; }
+.certificates-page .cert-institutions-row .logo-unibave-colorido { max-width: 75px; }
+.certificates-page .cert-institutions-row .logo-alura { max-width: 68px; }
+.certificates-page .cert-institutions-row .logo-ebac { max-width: 72px; }
+.certificates-page .cert-institutions-row .logo-acafe-colorido { max-width: 56px; }
 .certificates-page .logo-penn-frame {
     display: block;
     grid-column: span 2;
     justify-self: center;
-    width: min(125px, 100%);
+    width: min(100px, 100%);
     aspect-ratio: 1.5;
     transition: transform 140ms ease;
 }
@@ -5325,7 +5325,7 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
 @media (max-width: 760px) {
     .certificates-page .cert-institutions-grid { gap: 30px 6px; }
     .certificates-page .cert-institutions-row img { max-height: 46px; }
-    .certificates-page .logo-penn-frame { width: min(110px, 100%); }
+    .certificates-page .logo-penn-frame { width: min(88px, 100%); }
 }
 @media (max-width: 420px) {
     .certificates-page .cert-institutions-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
