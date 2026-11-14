@@ -196,7 +196,229 @@
 })();
 
 /* Intera??es inicializadas ap?s o HTML estar dispon?vel. */
+function initializeCertificateSkillsCloud() {
+    const page = document.querySelector('.certificates-page');
+    const section = page?.querySelector('.cert-skills-cloud-section');
+    const cloud = section?.querySelector('.cert-skills-cloud');
+    const toggle = section?.querySelector('.cert-skills-toggle');
+    if (!page || !section || !cloud || !toggle) return;
+
+    const categoryAssignments = {
+        'UI / UX Design Specialization': ['UI & UX Design'],
+        'Professional Certificate Google UX Design': ['UI & UX Design'],
+        'Foundations of User Experience (UX) Design': ['UI & UX Design'],
+        'Start the UX Design Process: Empathize, Define, and Ideate': ['UI & UX Design'],
+        'Build Wireframes and Low-Fidelity Prototypes': ['UI & UX Design'],
+        'Conduct UX Research and Test Early Concepts': ['UI & UX Design'],
+        'Create High-Fidelity Designs and Prototypes in Figma': ['UI & UX Design'],
+        'Build Dynamic User Interfaces (UI) for Websites': ['UI & UX Design', 'Front-End Development'],
+        'Design a User Experience for Social Good & Prepare for Jobs': ['UI & UX Design'],
+        'Visual Elements of User Interface Design': ['UI & UX Design', 'Graphic Design'],
+        'UX Design Fundamentals': ['UI & UX Design'],
+        'Web Design: Strategy and Information Architecture': ['Web Design'],
+        'Web Design: Wireframes to Prototypes': ['Web Design', 'UI & UX Design'],
+        'Gamification': ['UI & UX Design'],
+        'Building Better User Experiences': ['UI & UX Design'],
+        'Introduction to UX Design': ['UI & UX Design'],
+        'Design Centrado no Usuário': ['UI & UX Design'],
+        'Color Theory for Visual Communication': ['Graphic Design'],
+        'História do Design, Estética e Estilos de Design': ['Graphic Design'],
+        'Functional Testing with Tester Work Course': ['Front-End Development'],
+        'HTML, CSS and JS for Beginners': ['Front-End Development', 'Web Design'],
+        'Responsive Web Design': ['Web Design', 'Front-End Development'],
+        'Java': ['Front-End Development'],
+        'Imersão Front-End': ['Front-End Development'],
+        'Imersão Dev + Google Gemini': ['Front-End Development'],
+        'Jornada Design Gráfico': ['Graphic Design']
+    };
+    page.querySelectorAll('.cert-professional-dropdown, .cert-short-courses-dropdown, .cert-events-dropdown')
+        .forEach(group => {
+            group.querySelectorAll('.certificate-row:not(.header)').forEach(row => {
+                const title = row.querySelector(':scope > .col:first-child strong')?.textContent.trim();
+                const categories = categoryAssignments[title] || [];
+                if (!categories.length) return;
+                const list = document.createElement('div');
+                list.className = 'cert-course-categories';
+                list.setAttribute('aria-label', 'Categoria');
+                categories.forEach(category => {
+                    const tag = document.createElement('span');
+                    tag.className = 'project-category';
+                    tag.dataset.category = category;
+                    tag.textContent = category;
+                    list.append(tag);
+                });
+                row.querySelector(':scope > .col:first-child')?.append(list);
+            });
+        });
+
+    const definitions = {
+        'UX Research': 'Pesquisa com pessoas usuárias para entender necessidades, comportamentos e dificuldades que orientam decisões de produto.',
+        'User-centered design': 'Abordagem que coloca as necessidades, o contexto e as capacidades das pessoas no centro das decisões de design.',
+        'Usability': 'Facilidade com que uma pessoa consegue aprender, usar e concluir tarefas em uma interface.',
+        'Empathy mapping': 'Ferramenta que organiza o que uma pessoa pensa, sente, fala e faz para apoiar a compreensão de suas necessidades.',
+        'Problem definition': 'Síntese das evidências de pesquisa em um problema claro, específico e relevante para orientar o projeto.',
+        'Ideation': 'Geração e exploração de diferentes possibilidades de solução antes de escolher uma direção.',
+        'Wireframing': 'Criação de esquemas simples que definem estrutura, conteúdo e hierarquia de uma tela.',
+        'Prototyping': 'Construção de uma representação interativa ou visual para explorar e testar uma solução antes de implementá-la.',
+        'Information architecture': 'Organização de conteúdo, rótulos e caminhos para que as pessoas encontrem o que procuram.',
+        'Usability testing': 'Observação de pessoas usando um produto para identificar obstáculos e avaliar se as tarefas são compreensíveis.',
+        'Research synthesis': 'Organização e interpretação de dados de pesquisa para identificar padrões, necessidades e oportunidades.',
+        'Figma': 'Ferramenta de design colaborativo usada para criar interfaces, protótipos e bibliotecas de componentes.',
+        'UI Design': 'Definição dos elementos visuais e interativos de uma interface, como componentes, cores, tipografia e estados.',
+        'Interaction design': 'Planejamento de como a interface responde às ações das pessoas e comunica o que está acontecendo.',
+        'Web design': 'Planejamento visual e estrutural de páginas e experiências para a web.',
+        'UX Design': 'Projeto da experiência completa de uso, conectando necessidades das pessoas aos objetivos do produto.',
+        'Social impact': 'Consideração dos efeitos de um produto ou serviço sobre pessoas, comunidades e sociedade.',
+        'Career development': 'Planejamento de objetivos e práticas para desenvolver competências e avançar profissionalmente.',
+        'Visual hierarchy': 'Organização de elementos para indicar o que merece atenção primeiro e como o conteúdo deve ser percorrido.',
+        'Color theory': 'Princípios sobre relações entre cores e seus efeitos na percepção, contraste e comunicação visual.',
+        'Content strategy': 'Planejamento da criação, organização e manutenção de conteúdo para atender às necessidades das pessoas.',
+        'Navigation': 'Estrutura de caminhos e controles que ajuda as pessoas a se orientar e acessar áreas de um produto.',
+        'Game Design': 'Planejamento das regras, objetivos, desafios e retornos que estruturam uma experiência de jogo.',
+        'Behavioral Economics': 'Estudo de como fatores psicológicos e contextuais influenciam decisões e comportamentos.',
+        'Motivational Skills': 'Técnicas para apoiar interesse, persistência e envolvimento das pessoas em uma atividade.',
+        '5W1H': 'Método de investigação que organiza perguntas sobre o quê, quem, quando, onde, por quê e como.',
+        'Personas': 'Representações de grupos de usuários baseadas em pesquisa, usadas para comunicar necessidades e comportamentos.',
+        'Jobs to be Done': 'Método que descreve o progresso que uma pessoa busca alcançar em uma situação específica.',
+        'Heurísticas': 'Princípios gerais usados para avaliar a clareza e a consistência de uma interface.',
+        'Desk Research': 'Pesquisa feita a partir de fontes existentes, como estudos, relatórios, artigos e dados públicos.',
+        'Benchmarking': 'Comparação estruturada de produtos ou referências para identificar padrões, oportunidades e diferenças.',
+        'Mapas de Empatia': 'Representação do que um grupo de usuários pensa, sente, fala e faz em determinado contexto.',
+        'Análise de Tarefas (HTA)': 'Decomposição de uma tarefa em etapas e subtarefas para entender como ela é realizada.',
+        'Avaliação Heurística': 'Inspeção especializada de uma interface com base em princípios de usabilidade.',
+        'Teoria da Cor': 'Estudo de combinações, contrastes e significados das cores aplicados à comunicação visual.',
+        'Paletas': 'Conjuntos de cores escolhidos para manter consistência e expressar a identidade de um projeto.',
+        'Impacto Cultural': 'Análise de como referências e decisões visuais são interpretadas em diferentes contextos culturais.',
+        'História do Design': 'Estudo de movimentos, ideias e práticas que influenciaram a evolução do design.',
+        'Estética': 'Estudo da percepção visual e dos princípios que contribuem para a aparência de uma composição.',
+        'Estilos Visuais': 'Características visuais que dão unidade e personalidade a uma peça ou sistema de design.',
+        'Testing': 'Verificação de software para encontrar falhas e confirmar o comportamento esperado.',
+        'QA': 'Práticas de garantia da qualidade que ajudam a prevenir problemas e manter padrões no desenvolvimento.',
+        'Software Quality': 'Conjunto de atributos que avalia se um software é confiável, útil, eficiente e fácil de manter.',
+        'Media Queries': 'Recurso de CSS que aplica estilos conforme características do dispositivo, como largura da tela.',
+        'Node.js': 'Ambiente que permite executar JavaScript fora do navegador, inclusive em aplicações de servidor.',
+        'Build Tools': 'Ferramentas que automatizam tarefas como empacotar, otimizar e preparar arquivos para publicação.',
+        'HTML5': 'Linguagem de marcação usada para estruturar conteúdo e elementos de páginas web.',
+        'CSS3': 'Linguagem de estilos usada para definir apresentação, layout e adaptação de páginas web.',
+        'Flexbox': 'Modelo de layout CSS para alinhar e distribuir elementos em uma dimensão, em linha ou coluna.',
+        'POO': 'Paradigma que organiza programas em objetos com dados e comportamentos relacionados.',
+        'Estrutura de Dados': 'Formas de organizar e relacionar dados para permitir operações eficientes em um programa.',
+        'Lógica Avançada': 'Uso de estruturas e raciocínio computacional para modelar e resolver problemas mais complexos.',
+        'Front-end': 'Parte de uma aplicação web executada no navegador e responsável pela interface com a pessoa usuária.',
+        'Web development': 'Criação e manutenção de sites e aplicações que funcionam por meio da web.',
+        'JavaScript': 'Linguagem de programação usada para criar comportamentos e interações em páginas e aplicações.',
+        'Artificial intelligence': 'Área da computação que desenvolve sistemas capazes de executar tarefas associadas à inteligência.',
+        'Machine learning': 'Métodos que permitem a sistemas identificar padrões em dados e melhorar seu desempenho com exemplos.',
+        'AI applications': 'Aplicação de técnicas de inteligência artificial para resolver tarefas e necessidades concretas.',
+        'Generative AI': 'Sistemas de inteligência artificial que produzem conteúdo novo, como texto, imagens ou código.',
+        'Prompt design': 'Formulação e refinamento de instruções para orientar sistemas de IA generativa a produzir resultados úteis.',
+        'Branding': 'Construção e gestão da identidade e da percepção de uma marca em seus pontos de contato.',
+        'Illustrator': 'Aplicativo de criação e edição de ilustrações e gráficos vetoriais.',
+        'Photoshop': 'Aplicativo de edição e composição de imagens rasterizadas.',
+        'Pesquisa Científica': 'Investigação sistemática que formula perguntas, coleta evidências e comunica resultados.',
+        'Impacto Social': 'Efeitos de uma iniciativa sobre as condições de vida, oportunidades e relações de uma comunidade.',
+        'Era da Informação': 'Período marcado pela produção, circulação e influência ampla de dados e tecnologias digitais.'
+    };
+
+    const skills = new Map();
+    page.querySelectorAll('.certificate-row:not(.header)').forEach(row => {
+        const title = row.querySelector(':scope > .col:first-child strong')?.textContent.trim();
+        const certificateLink = row.querySelector(':scope > .col:nth-child(3) .cert-link');
+        row.querySelectorAll('.cert-skills span').forEach(skillElement => {
+            const name = skillElement.textContent.trim();
+            if (!name) return;
+            if (!skills.has(name)) skills.set(name, { name, sources: [] });
+            const skill = skills.get(name);
+            if (title && !skill.sources.some(source => source.title === title)) {
+                skill.sources.push({ title, href: certificateLink?.href || '' });
+            }
+        });
+    });
+
+    if (!skills.size) return;
+
+    const dialog = document.createElement('dialog');
+    dialog.className = 'cert-skill-dialog';
+    dialog.setAttribute('aria-labelledby', 'cert-skill-dialog-title');
+    dialog.innerHTML = '<div class="cert-skill-dialog-content"><button class="cert-skill-dialog-close" type="button" aria-label="Fechar">×</button><p class="cert-skill-dialog-label">Skill</p><h2 id="cert-skill-dialog-title"></h2><p class="cert-skill-dialog-definition"></p><h3>Onde foi aprendida</h3><ul class="cert-skill-dialog-sources"></ul></div>';
+    document.body.append(dialog);
+
+    const dialogTitle = dialog.querySelector('#cert-skill-dialog-title');
+    const dialogDefinition = dialog.querySelector('.cert-skill-dialog-definition');
+    const dialogSources = dialog.querySelector('.cert-skill-dialog-sources');
+    let activeSkillButton = null;
+    dialog.querySelector('.cert-skill-dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+        if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => activeSkillButton?.focus({ preventScroll: true }));
+
+    [...skills.values()].sort((a, b) => a.name.localeCompare(b.name, 'pt-BR')).forEach(skill => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        const frequencyClass = skill.sources.length >= 3
+            ? ' is-most-frequent'
+            : skill.sources.length >= 2
+                ? ' is-frequent'
+                : '';
+        button.className = `cert-skill-cloud-item${frequencyClass}`;
+        button.textContent = skill.name;
+        button.setAttribute('aria-haspopup', 'dialog');
+        button.addEventListener('click', () => {
+            activeSkillButton = button;
+            dialogTitle.textContent = skill.name;
+            dialogDefinition.textContent = definitions[skill.name] || 'Conhecimento desenvolvido ao longo da formação complementar.';
+            dialogSources.replaceChildren();
+            skill.sources.forEach(source => {
+                const item = document.createElement('li');
+                if (source.href) {
+                    const link = document.createElement('a');
+                    link.href = source.href;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.textContent = source.title;
+                    item.append(link);
+                } else {
+                    item.textContent = source.title;
+                }
+                dialogSources.append(item);
+            });
+            dialog.showModal();
+        });
+        cloud.append(button);
+    });
+
+    const skillButtons = [...cloud.querySelectorAll('.cert-skill-cloud-item')];
+    const initialSkillCount = 20;
+    skillButtons.forEach((button, index) => {
+        button.hidden = index >= initialSkillCount;
+    });
+    toggle.hidden = skillButtons.length <= initialSkillCount;
+    toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(expanded));
+        toggle.textContent = expanded ? 'Mostrar menos' : 'Ver todas as skills';
+        skillButtons.forEach((button, index) => {
+            button.hidden = !expanded && index >= initialSkillCount;
+        });
+    });
+
+    page.querySelectorAll('.cert-skills-column').forEach(column => column.remove());
+    section.hidden = false;
+}
+
 function initializePortfolio() {
+initializeCertificateSkillsCloud();
+const certificateDropdowns = [...document.querySelectorAll('.certificates-page .cert-dropdown')];
+certificateDropdowns.forEach(dropdown => {
+    dropdown.addEventListener('toggle', () => {
+        if (!dropdown.open) return;
+        certificateDropdowns.forEach(other => {
+            if (other !== dropdown) other.open = false;
+        });
+    });
+});
+
 document.querySelectorAll('.case-panel').forEach(panel => {
     const step = panel.querySelector('.case-panel-step')?.textContent.trim().match(/^(\d+)/)?.[1];
     if (!step) return;

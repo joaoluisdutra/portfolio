@@ -3097,6 +3097,11 @@ body .site-button[hidden] { display: none !important; }
     --page-width: 1200px;
 }
 
+/* Espaçamento lateral compartilhado pelas páginas internas; a home mantém seu próprio gutter. */
+.inner-page {
+    --page-gutter: clamp(16px, 3.5vw, 40px);
+}
+
 .case-page, .research-page {
     --bg-color: #f7f7f3;
     --text-color: #080808;
@@ -3335,8 +3340,6 @@ body .site-button[hidden] { display: none !important; }
 .certificates-page .certificate-row strong { font-size: 0.9rem; font-weight: 500; line-height: 1.45; }
 .certificates-page .certificate-row .col img { width: 100px; height: 35px; opacity: 0.88; }
 .certificates-page .category-group .certificate-row:not(.header) > .col:first-child { font-size: 0.9rem; font-weight: 500; line-height: 1.45; }
-.certificates-page .category-group .certificate-row:not(.header) > .col:first-child { border-left: 2px solid #d5d5cf; padding-left: 12px; }
-.certificates-page .category-group .certificate-row:has(.cert-recent-badge) > .col:first-child { border-left-color: var(--identity-blue); }
 .certificates-page .cert-description { font-size: 0.8rem; color: #555; opacity: 1; }
 .certificates-page .cert-detail-label { display: block; margin-top: 6px; color: #666; font-size: 0.72rem; font-weight: 500; }
 .certificates-page .cert-recent-badge { background-color: var(--identity-blue); }
@@ -4847,4 +4850,534 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     .certificates-page .cert-professional-dropdown .certificate-row > .col:nth-child(3) {
         grid-area: 3 / 2 / 4 / 3;
     }
+}
+
+/* Catálogo de certificados: cartões leves, sem a estrutura visual de tabela. */
+.certificates-page .cert-page-container {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: var(--page-gutter);
+}
+.certificates-page .cert-page-header {
+    margin-bottom: 0;
+}
+.certificates-page .cert-page-header .title {
+    font-weight: 900;
+}
+.certificates-page .cert-page-description {
+    max-width: 62ch;
+}
+.certificates-page .cert-overview {
+    margin-top: 24px;
+    margin-bottom: 48px;
+    padding: 0;
+}
+.certificates-page .cert-overview-counts > div {
+    border: 0;
+    border-left: 2px solid #b0d411;
+    padding: 0 0 0 12px;
+}
+.certificates-page .category-group {
+    margin: 0 0 34px;
+    padding: 0;
+}
+.certificates-page .category-group > summary {
+    min-height: 0;
+    padding: 18px 0;
+    border-top: 1px solid #d9d6ce;
+    border-bottom: 0;
+    background: transparent;
+    transform: none;
+}
+.certificates-page .category-group > summary:hover {
+    background: transparent;
+    transform: none;
+}
+.certificates-page .category-group > summary .category-title {
+    margin: 0 !important;
+    padding: 0;
+    border: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+.certificates-page .category-group[open] {
+    padding-bottom: 0;
+    background: transparent;
+}
+.certificates-page .category-group[open] > .certificates-list {
+    padding: 12px 0 0;
+    border: 0;
+}
+.certificates-page .category-group .certificate-row.header {
+    display: none;
+}
+.certificates-page .category-group .certificates-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+.certificates-page .category-group .certificate-row:not(.header) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "title title"
+        "description description"
+        "skills skills"
+        "institution institution"
+        "link link";
+    align-content: start;
+    align-items: start;
+    gap: 12px 16px;
+    min-width: 0;
+    padding: 0 0 18px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    transition: opacity 160ms ease;
+}
+.certificates-page .category-group .certificate-row:not(.header):hover {
+    background: transparent;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col {
+    grid-row: auto;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:first-child {
+    grid-area: title;
+    padding-top: 8px;
+    padding-right: clamp(14px, 2vw, 24px);
+    border-top: 1px solid rgba(8, 8, 8, 0.45);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:first-child strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+.certificates-page .cert-course-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 10px;
+}
+.certificates-page .cert-course-categories .project-category {
+    margin: 0;
+    padding: 3px 8px;
+    border: 0;
+    border-radius: 3px;
+    color: #080808;
+    font-size: 0.66rem;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: normal;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(4) {
+    grid-area: description;
+    grid-column: auto;
+    padding-right: clamp(14px, 2vw, 24px);
+    color: #67645e;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(4) p {
+    margin: 0;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(2) {
+    grid-area: institution;
+    grid-column: 1 / -1;
+    align-self: center;
+    justify-self: start;
+    text-align: left;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(2) img {
+    width: auto;
+    max-width: 112px;
+    height: 30px;
+    margin: 0;
+    object-fit: contain;
+    object-position: left center;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(3) {
+    grid-area: link;
+    grid-column: 1 / -1;
+    align-self: center;
+    justify-self: start;
+    text-align: left;
+}
+.certificates-page .category-group .certificate-row:not(.header) > .cert-skills-column {
+    display: block;
+    grid-area: skills;
+    grid-column: 1 / -1;
+    padding-right: clamp(14px, 2vw, 24px);
+    color: #555;
+    font-size: 0.72rem;
+    line-height: 1.5;
+}
+.certificates-page .category-group .cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0;
+}
+.certificates-page .category-group .cert-skills span {
+    display: inline-flex;
+    width: fit-content;
+    margin: 0;
+    padding: 3px 7px;
+    border: 1px solid rgba(8, 8, 8, 0.18);
+    border-radius: 3px;
+    background: transparent;
+    color: #333;
+    font-size: 0.66rem;
+    line-height: 1.4;
+}
+.certificates-page .category-group .cert-skills span:not(:last-child)::after { content: none; }
+.certificates-page .category-group .certificate-row:not(.header) .cert-link {
+    display: inline;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #080808;
+    font-weight: 600;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    visibility: visible;
+    pointer-events: auto;
+    text-decoration: underline;
+    text-decoration-color: #aaa69c;
+    text-underline-offset: 3px;
+}
+.certificates-page .category-group .certificate-row:not(.header) .cert-link:hover {
+    background: transparent;
+    color: var(--identity-blue);
+    text-decoration-color: currentColor;
+}
+.certificates-page .category-group .certificate-row:nth-child(n):not(.header):is(:hover, :focus-within) .cert-link {
+    width: auto;
+    height: auto;
+    border: 0;
+    background: transparent;
+    color: #080808;
+    visibility: visible;
+    pointer-events: auto;
+}
+@media (max-width: 768px) {
+    .certificates-page .cert-page-header { margin-bottom: 32px; }
+    .certificates-page .cert-overview { margin-bottom: 36px; }
+    .certificates-page .category-group .certificates-list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+    .certificates-page .category-group .certificate-row:not(.header) {
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        gap: 10px 12px;
+        padding: 0 0 18px;
+        text-align: left;
+    }
+    .certificates-page .category-group .certificate-row:not(.header) > .col:first-child {
+        grid-area: title;
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+    .certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(4) {
+        grid-area: description;
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+    .certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(2) {
+        grid-area: institution;
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+    .certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(3) {
+        grid-area: link;
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}
+@media (min-width: 769px) and (max-width: 1199px) {
+    .certificates-page .category-group .certificates-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.certificates-page .cert-skills-cloud-section {
+    margin: 48px 0 64px;
+    width: 100%;
+}
+.certificates-page .cert-skills-cloud-section[hidden] { display: none; }
+.certificates-page .cert-skills-cloud-heading {
+    display: block;
+    margin-bottom: 16px;
+    padding: 0;
+    border: 0;
+}
+.certificates-page .cert-skills-cloud-heading h2 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.certificates-page .cert-skills-cloud {
+    display: block;
+    column-count: 5;
+    column-gap: 22px;
+    width: min(100%, 980px);
+    margin-inline: 0;
+    box-sizing: border-box;
+}
+.certificates-page .cert-skill-cloud-item {
+    appearance: none;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 9px;
+    padding: 3px 0;
+    break-inside: avoid;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #171717;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 400;
+    line-height: 1.45;
+    text-align: left;
+    cursor: pointer;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 140ms ease;
+}
+.certificates-page .cert-skill-cloud-item[hidden] { display: none !important; }
+.certificates-page .cert-skill-cloud-item:is(:hover, :focus-visible) {
+    transform: scale(1.12);
+}
+.certificates-page .cert-skill-cloud-item:focus-visible {
+    outline: 2px solid #171717;
+    outline-offset: 2px;
+}
+.certificates-page .cert-skills-toggle {
+    margin-top: 14px;
+    padding: 6px 0;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: transparent;
+    color: #171717;
+    font: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+}
+.certificates-page .cert-skills-toggle:hover { border-bottom-width: 2px; }
+.certificates-page .cert-skills-toggle:focus-visible {
+    outline: 2px solid #171717;
+    outline-offset: 3px;
+}
+.certificates-page .cert-skills-toggle[hidden] { display: none !important; }
+@media (max-width: 960px) {
+    .certificates-page .cert-skills-cloud { column-count: 3; }
+}
+@media (max-width: 700px) {
+    .certificates-page .cert-skills-cloud {
+        column-count: 2;
+        column-gap: 20px;
+    }
+}
+@media (max-width: 380px) {
+    .certificates-page .cert-skills-cloud { column-count: 1; }
+}
+.cert-skill-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(520px, calc(100% - 32px));
+    max-width: 520px;
+    max-height: min(80vh, 640px);
+    padding: 0;
+    overflow: auto;
+    border: 1px solid #c9c6bd;
+    border-radius: 4px;
+    background: #f7f7f3;
+    color: #080808;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.18);
+}
+.cert-skill-dialog::backdrop { background: rgba(8, 8, 8, 0.42); }
+.cert-skill-dialog-content { position: relative; padding: 32px; }
+.cert-skill-dialog-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #c9c6bd;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.cert-skill-dialog-label {
+    margin: 0 0 8px;
+    color: #666;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.cert-skill-dialog h2 {
+    margin: 0 48px 16px 0;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.15;
+}
+.cert-skill-dialog-definition { margin: 0 0 24px; line-height: 1.65; }
+.cert-skill-dialog h3 {
+    margin: 0 0 10px;
+    padding-top: 14px;
+    border-top: 1px solid #d9d6ce;
+    font-size: 0.85rem;
+}
+.cert-skill-dialog-sources { display: grid; gap: 8px; margin: 0; padding-left: 18px; }
+.cert-skill-dialog-sources a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 600px) {
+    .certificates-page .cert-skills-cloud-section { margin-bottom: 44px; }
+    .cert-skill-dialog-content { padding: 28px 22px; }
+}
+
+/* Grade de logos no encerramento da página de certificações. */
+.certificates-page .cert-page-header {
+    display: block;
+}
+.certificates-page .cert-page-intro { min-width: 0; }
+.certificates-page .cert-institutions {
+    margin: 80px 0 24px;
+}
+.certificates-page .cert-institutions-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+    gap: 40px 8px;
+    width: 100%;
+    max-width: 1120px;
+    margin-inline: auto;
+}
+.certificates-page .cert-institutions-row {
+    display: contents;
+}
+.certificates-page .cert-institutions-row img {
+    display: block;
+    grid-column: span 2;
+    justify-self: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
+    transition: transform 140ms ease;
+}
+.certificates-page .cert-institutions-row:nth-child(2) > :first-child {
+    grid-column: 2 / span 2;
+}
+.certificates-page .cert-institutions-row .logo-calarts-colorido { max-width: 160px; }
+.certificates-page .cert-institutions-row .logo-google-colorido { max-width: 100px; }
+.certificates-page .cert-institutions-row .logo-awwwards { max-width: 175px; }
+.certificates-page .cert-institutions-row .logo-pucrs-colorido { max-width: 140px; }
+.certificates-page .cert-institutions-row .logo-tester-colorido { max-width: 170px; }
+.certificates-page .cert-institutions-row .logo-freecodecamp-colorido { max-width: 200px; }
+.certificates-page .cert-institutions-row .logo-unibave-colorido { max-width: 94px; }
+.certificates-page .cert-institutions-row .logo-alura { max-width: 85px; }
+.certificates-page .cert-institutions-row .logo-ebac { max-width: 90px; }
+.certificates-page .cert-institutions-row .logo-acafe-colorido { max-width: 70px; }
+.certificates-page .logo-penn-frame {
+    display: block;
+    grid-column: span 2;
+    justify-self: center;
+    width: min(125px, 100%);
+    aspect-ratio: 1.5;
+    transition: transform 140ms ease;
+}
+.certificates-page .logo-penn-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.certificates-page .logo-penn-frame:hover {
+    transform: scale(1.06);
+}
+.certificates-page .category-group .certificate-row:not(.header) {
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "title title"
+        "description description"
+        "skills skills"
+        "link link";
+}
+.certificates-page .category-group .certificate-row:not(.header) > .col:nth-child(2) {
+    display: none !important;
+    grid-area: unset;
+}
+@media (max-width: 760px) {
+    .certificates-page .cert-institutions-grid { gap: 30px 6px; }
+    .certificates-page .cert-institutions-row img { max-height: 46px; }
+    .certificates-page .logo-penn-frame { width: min(110px, 100%); }
+}
+@media (max-width: 420px) {
+    .certificates-page .cert-institutions-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+/* Match the education phase dropdowns to the certificate category rows. */
+.education-page .phases-grid { gap: 0; }
+.education-page .phase-card { margin: 0; }
+.education-page .phase-header {
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 18px 0;
+    border-top: 1px solid #d9d6ce;
+    border-bottom: 0;
+    background: transparent;
+    transform: none;
+}
+.education-page .phase-header:hover {
+    background: transparent;
+    transform: none;
+}
+.education-page .phase-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.education-page .phase-header .phase-status {
+    margin-left: auto;
+    padding: 0;
+    background: transparent;
+    color: #666;
+    font-size: 0.72rem;
+    font-weight: 400;
+}
+.education-page .phase-toggle-icon {
+    flex: 0 0 8px;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px 4px 16px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg);
+}
+.education-page .phase-card[open] > .phase-header .phase-toggle-icon {
+    transform: rotate(225deg);
+}
+
+/* Browser zoom at 90% was the preferred scale for all inner pages. */
+html:has(body:not(.home-page)) {
+    zoom: 0.9;
 }
