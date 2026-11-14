@@ -5476,14 +5476,19 @@ html:has(body:not(.home-page)) {
     border: 0;
     border-radius: 0;
     background: transparent;
-    color: inherit;
-    text-decoration: underline;
+    color: #555;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    text-decoration: none;
     text-underline-offset: 3px;
     white-space: nowrap;
 }
 .home-page .certificates-section .certificate-row .cert-link:hover {
     background: transparent;
-    color: inherit;
+    color: #080808;
+    text-decoration: underline;
 }
 
 /* Shared responsive pass for every page type. */
