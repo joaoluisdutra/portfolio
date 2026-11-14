@@ -74,6 +74,17 @@
         return 1;
     }
 
+    function isHomePage() {
+        const filename = location.pathname.split('/').pop();
+        return !filename || filename === 'index.html';
+    }
+
+    function isAnimatedDestination(url) {
+        if (url.href.replace(/\/$/, '') === 'https://joaoluisdutra.github.io/portfolio/projetos.html') return true;
+        const filename = url.pathname.split('/').pop();
+        return url.origin === location.origin && ['certificacoes.html', 'sistemas-de-informacao-unibave.html'].includes(filename);
+    }
+
     function navigationDirection(url) {
         // Breadcrumb ancestors always mean a return, even when skipping a level.
         const ancestors = document.querySelectorAll('.breadcrumb a[href]');
@@ -111,7 +122,7 @@
         frame = requestAnimationFrame(tick);
     }
 
-    const arriving = pending && pending.url === location.href && Date.now() - pending.time < 15000;
+    const arriving = pending && pending.fromHome && pending.url === location.href && Date.now() - pending.time < 15000;
     if (arriving && !reducedMotion.matches) {
         direction = pending.direction === -1 ? -1 : 1;
         shape.setAttribute('stroke', transitionColor);
@@ -133,9 +144,10 @@
         if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || reducedMotion.matches) return;
         if (link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
         const url = new URL(link.href, location.href);
-        if (url.origin !== location.origin || !['http:', 'https:', 'file:'].includes(url.protocol)) return;
+        if (!['http:', 'https:', 'file:'].includes(url.protocol)) return;
+        if (!isHomePage() || !isAnimatedDestination(url)) return;
         if (url.pathname === location.pathname && url.search === location.search) return;
-        if (!url.pathname.endsWith('.html') && !url.pathname.endsWith('/')) return;
+        if (url.origin === location.origin && !url.pathname.endsWith('.html') && !url.pathname.endsWith('/')) return;
         event.preventDefault();
         if (busy) return;
         configurePath();
@@ -147,7 +159,7 @@
         overlay.classList.add('is-active');
         animate(false, () => {
             try {
-                sessionStorage.setItem(key, JSON.stringify({ url: url.href, color, direction, historyIndex: historyIndex + 1, time: Date.now() }));
+                sessionStorage.setItem(key, JSON.stringify({ url: url.href, color, direction, historyIndex: historyIndex + 1, fromHome: true, time: Date.now() }));
             } catch (_) { /* The outgoing animation still works without storage. */ }
             location.assign(url.href);
         });
@@ -185,13 +197,7 @@
         } catch (_) { /* History remains usable without storage. */ }
     });
     window.addEventListener('pageshow', (event) => {
-        const historyNavigation = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
-        if (!event.persisted && (!historyNavigation || arriving)) return;
-        let source = historySource;
-        try {
-            source = sessionStorage.getItem(historyKey) || source;
-        } catch (_) { /* Use the source captured during initialization. */ }
-        animateHistoryNavigation(source);
+        // History navigation and returns stay immediate; only home page links animate.
     });
 })();
 
