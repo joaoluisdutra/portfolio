@@ -237,10 +237,20 @@ function initializeCertificateSkillsCloud() {
         'Imersão Dev + Google Gemini': ['Front-End Development'],
         'Jornada Design Gráfico': ['Graphic Design']
     };
-    page.querySelectorAll('.cert-professional-dropdown, .cert-short-courses-dropdown, .cert-events-dropdown')
+    page.querySelectorAll('.category-group')
         .forEach(group => {
             group.querySelectorAll('.certificate-row:not(.header)').forEach(row => {
-                const title = row.querySelector(':scope > .col:first-child strong')?.textContent.trim();
+                const titleCell = row.querySelector(':scope > .col:first-child');
+                const title = titleCell?.querySelector('strong')?.textContent.trim();
+                if (titleCell && !titleCell.querySelector('.cert-institution-meta')) {
+                    const institution = row.querySelector(':scope > .col:nth-child(2) img')?.alt?.trim();
+                    if (institution) {
+                        const meta = document.createElement('span');
+                        meta.className = 'cert-institution-meta';
+                        meta.textContent = institution.toLocaleUpperCase('pt-BR');
+                        titleCell.insertBefore(meta, titleCell.querySelector('strong') || titleCell.firstChild);
+                    }
+                }
                 const categories = categoryAssignments[title] || [];
                 if (!categories.length) return;
                 const list = document.createElement('div');
@@ -248,7 +258,7 @@ function initializeCertificateSkillsCloud() {
                 list.setAttribute('aria-label', 'Categoria');
                 categories.forEach(category => {
                     const tag = document.createElement('span');
-                    tag.className = 'project-category';
+                    tag.className = 'project-category badge';
                     tag.dataset.category = category;
                     tag.textContent = category;
                     list.append(tag);
@@ -415,6 +425,16 @@ function initializeCertificateSkillsCloud() {
 
 function initializePortfolio() {
 initializeCertificateSkillsCloud();
+document.querySelectorAll('.education-page .phase-card').forEach((phase, index) => {
+    const summary = phase.querySelector(':scope > .phase-header');
+    const panel = phase.querySelector(':scope > .subjects-list');
+    if (!summary || !panel) return;
+    if (!panel.id) panel.id = `phase-subjects-${index + 1}`;
+    summary.setAttribute('aria-controls', panel.id);
+    const syncExpandedState = () => summary.setAttribute('aria-expanded', String(phase.open));
+    syncExpandedState();
+    phase.addEventListener('toggle', syncExpandedState);
+});
 const certificateDropdowns = [...document.querySelectorAll('.certificates-page .cert-dropdown')];
 certificateDropdowns.forEach(dropdown => {
     dropdown.addEventListener('toggle', () => {
@@ -814,6 +834,8 @@ if (skillIcons.length > 0) {
         tabs.forEach((tab, position) => {
             const selected = position === index;
             tab.setAttribute('aria-selected', String(selected));
+            if (selected) tab.setAttribute('aria-current', 'step');
+            else tab.removeAttribute('aria-current');
             tab.tabIndex = selected ? 0 : -1;
             panels[position].hidden = !selected;
             panels[position].querySelectorAll('video').forEach(video => {
@@ -1050,4 +1072,80 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializePortfolio, { once: true });
 } else {
     initializePortfolio();
+}
+
+function initializeCertificateLogoCarousel() {
+    const section = document.querySelector('.certificates-page .cert-institutions');
+    const viewport = section?.querySelector('.cert-logo-viewport');
+    const slides = [...(section?.querySelectorAll('.cert-logo-slide') || [])];
+    const dotsContainer = section?.querySelector('.cert-logo-dots');
+    const previous = section?.querySelector('.cert-logo-prev');
+    const next = section?.querySelector('.cert-logo-next');
+    if (!section || !viewport || !slides.length || !dotsContainer || !previous || !next) return;
+
+    let dots = [];
+    let slideWidth = 0;
+    let maxStart = 0;
+    let activePage = 0;
+
+    const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const scrollToOffset = offset => viewport.scrollTo({
+        left: offset,
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+    });
+    const maxScroll = () => Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+    const pageStart = index => Math.min(index * 2, maxStart) * slideWidth;
+    const renderDots = () => dots.forEach((dot, index) => {
+        if (index === activePage) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+    });
+
+    const updateState = () => {
+        const step = slideWidth * 2;
+        activePage = step ? Math.min(dots.length - 1, Math.round(viewport.scrollLeft / step)) : 0;
+        renderDots();
+    };
+
+    const buildDots = () => {
+        slideWidth = slides[0].getBoundingClientRect().width;
+        const visibleCount = slideWidth ? Math.round(viewport.clientWidth / slideWidth) : slides.length;
+        maxStart = Math.max(0, slides.length - visibleCount);
+        const pageCount = slideWidth ? Math.ceil(maxStart / 2) + 1 : 1;
+        if (dots.length !== pageCount) {
+            dotsContainer.replaceChildren();
+            dots = Array.from({ length: pageCount }, (_, index) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.setAttribute('aria-label', `Mostrar grupo ${index + 1} de logotipos`);
+                dot.addEventListener('click', () => {
+                    activePage = index;
+                    scrollToOffset(Math.min(maxScroll(), pageStart(index)));
+                    renderDots();
+                });
+                dotsContainer.append(dot);
+                return dot;
+            });
+        }
+        updateState();
+    };
+
+    previous.addEventListener('click', () => {
+        activePage = (activePage - 1 + dots.length) % dots.length;
+        scrollToOffset(pageStart(activePage));
+        renderDots();
+    });
+    next.addEventListener('click', () => {
+        activePage = (activePage + 1) % dots.length;
+        scrollToOffset(pageStart(activePage));
+        renderDots();
+    });
+    viewport.addEventListener('scroll', updateState, { passive: true });
+    window.addEventListener('resize', buildDots, { passive: true });
+    buildDots();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeCertificateLogoCarousel, { once: true });
+} else {
+    initializeCertificateLogoCarousel();
 }

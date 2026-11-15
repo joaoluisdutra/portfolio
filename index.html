@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="assets/icon-aba-navegador.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=hero-ideal-layout-20261009">
+    <link rel="stylesheet" href="styles.css?v=footer-clearance-vh-20261114">
     <script src="script.js?v=mobile-course-link-20261009"></script>
     <meta name="description"
         content="Portfólio de João Luís Dutra, com projetos de UI/UX design, design visual e desenvolvimento front-end.">
@@ -723,13 +723,16 @@
                 </div>
                 <form action="https://formspree.io/f/xnjlbdoa" method="POST" class="contact-form">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Seu Nome" required>
+                        <label for="contact-name">Seu Nome</label>
+                        <input id="contact-name" type="text" name="name" placeholder="Seu Nome" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="_replyto" placeholder="Seu E-mail" required>
+                        <label for="contact-email">Seu E-mail</label>
+                        <input id="contact-email" type="email" name="_replyto" placeholder="Seu E-mail" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                        <label for="contact-message">Sua Mensagem</label>
+                        <textarea id="contact-message" name="message" rows="4" placeholder="Sua Mensagem" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn site-button">Enviar Mensagem</button>
                 </form>

@@ -8,8 +8,8 @@
     <link rel="icon" type="image/png" href="assets/logo-digita-comigo.png">
     <meta name="description"
         content="Digita Comigo: projeto de extensão que evoluiu de um jogo educativo em Java Swing para uma aplicação web. Atuei em UI, front-end, testes de usabilidade e identidade de marca.">
-<link rel="stylesheet" href="styles.css?v=page-scale-90-20261114">
-    <script src="script.js?v=minimal-top-20261008"></script>
+<link rel="stylesheet" href="styles.css?v=footer-clearance-vh-20261114">
+    <script src="script.js?v=case-editorial-navigation-20261114" defer></script>
     <style>
         .digita-gallery {
             display: grid;
@@ -42,8 +42,14 @@
         }
 
         .digita-theory-gallery {
-            grid-template-columns: minmax(0, 1fr);
-            max-width: 720px
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            max-width: none;
+            align-items: stretch
+        }
+
+        .digita-interface-gallery {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: stretch
         }
 
         .digita-brand-grid {
@@ -93,6 +99,11 @@
         }
 
         @media(max-width:640px) {
+            .digita-theory-gallery,
+            .digita-interface-gallery {
+                grid-template-columns: 1fr
+            }
+
             .digita-brand-grid {
                 grid-template-columns: 1fr
             }
@@ -197,7 +208,7 @@
                     <dl class="case-facts case-header-facts">
                         <div class="project-categories-row">
                             <dt>Categorias</dt>
-                            <dd><span class="project-category" data-category="UI & UX Design">UI & UX Design</span> <span class="project-category" data-category="Front-End Development">Front-End Development</span></dd>
+                            <dd><span class="project-category badge" data-category="UI & UX Design">UI & UX Design</span> <span class="project-category badge" data-category="Front-End Development">Front-End Development</span></dd>
                         </div>
                         <div>
                             <dt>Tipo</dt>
@@ -284,11 +295,11 @@
                             pesquisa que contextualizam esses problemas.</p>
                         <div class="digita-gallery digita-theory-gallery">
                             <figure><img src="assets/fundamentacao-teorica-digita-comigo-1.png"
-                                    alt="Pesquisa TIC Domicílios 2024: pessoas com 60 anos ou mais apresentam os menores índices de acesso e uso regular de computadores.">
+                                    alt="Cartão de dados da pesquisa TIC Domicílios 2024: a faixa de 60 anos ou mais apresenta os menores índices de acesso e uso regular de computadores, com o número 60 em destaque.">
                                 <figcaption>TIC Domicílios (2024) · acesso e uso de computadores entre pessoas com 60 anos ou mais.</figcaption>
                             </figure>
                             <figure><img src="assets/fundamentacao-teorica-digita-comigo-2.png"
-                                    alt="Pesquisa TIC Domicílios 2024: analfabetismo digital e falta de domínio do computador isolam 34% da população brasileira da autonomia tecnológica.">
+                                    alt="Cartão de dados da pesquisa TIC Domicílios 2024: 34% da população brasileira está isolada da autonomia tecnológica pelo analfabetismo digital e pela falta de domínio do computador.">
                                 <figcaption>TIC Domicílios (2024) · analfabetismo digital e autonomia tecnológica.</figcaption>
                             </figure>
                             <figure><img src="assets/fundamentacao-teorica-digita-comigo-3.png"
@@ -300,7 +311,7 @@
                         <p>A primeira versão nativa deu forma inicial ao jogo. Uma atualização posterior acrescentou uma
                             identidade visual própria, ainda em Java Swing. A etapa atual leva a experiência para a web.
                         </p>
-                        <div class="digita-gallery">
+                        <div class="digita-gallery digita-interface-gallery">
                             <figure><img src="assets/screenshort-digita-comigo-index-v1.png"
                                     alt="Tela inicial da primeira versão nativa do Digita Comigo">
                                 <figcaption>Primeira versão (Java Swing)</figcaption>
@@ -411,9 +422,9 @@
                     <a href="https://wa.me/+5548999925123" class="footer-number">+5548999925123</a>
                 </div>
                 <form action="https://formspree.io/f/xnjlbdoa" method="POST" class="contact-form">
-                    <div class="form-group"><input type="text" name="name" placeholder="Seu Nome" required></div>
-                    <div class="form-group"><input type="email" name="_replyto" placeholder="Seu E-mail" required></div>
-                    <div class="form-group"><textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea></div>
+                    <div class="form-group"><label for="case-contact-name">Seu Nome</label><input id="case-contact-name" type="text" name="name" placeholder="Seu Nome" required></div>
+                    <div class="form-group"><label for="case-contact-email">Seu E-mail</label><input id="case-contact-email" type="email" name="_replyto" placeholder="Seu E-mail" required></div>
+                    <div class="form-group"><label for="case-contact-message">Sua Mensagem</label><textarea id="case-contact-message" name="message" rows="4" placeholder="Sua Mensagem" required></textarea></div>
                     <button type="submit" class="submit-btn site-button">Enviar Mensagem</button>
                 </form>
             </div>

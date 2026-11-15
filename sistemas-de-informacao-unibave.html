@@ -8,8 +8,8 @@
     <link rel="icon" type="image/png" href="assets/teste-hero.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="styles.css?v=page-scale-90-phase-dropdown-20261114">
-    <script src="script.js?v=minimal-top-20261008"></script>
+    <link rel="stylesheet" href="styles.css?v=footer-clearance-vh-20261114">
+    <script src="script.js?v=education-accordion-aria-20261114"></script>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Portfólio Digital | João Luís Dutra">
     <meta property="og:title" content="Sistemas de Informação - Unibave">
@@ -85,7 +85,7 @@
     <main class="si-container">
         <nav class="breadcrumb" aria-label="Caminho de navegação">
             <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><span class="breadcrumb-separator" aria-hidden="true">&gt;</span><span aria-current="page">Sistemas de Informação</span></li>
             </ol>
         </nav>
@@ -276,7 +276,7 @@
             <details class="phase-card" open>
                 <summary class="phase-header">
                     <h3 class="education-phase-title">Sexta Fase <span class="phase-subject-count">5 matérias</span></h3>
-                    <span class="phase-status status-current">Em andamento</span>
+                    <span class="phase-status status-current badge">Em andamento</span>
                     <span class="phase-toggle-icon" aria-hidden="true"></span>
                 </summary>
                 <div class="subjects-list">
@@ -384,13 +384,16 @@
                 </div>
                 <form action="https://formspree.io/f/xnjlbdoa" method="POST" class="contact-form">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Seu Nome" required>
+                        <label for="education-contact-name">Seu Nome</label>
+                        <input id="education-contact-name" type="text" name="name" placeholder="Seu Nome" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="_replyto" placeholder="Seu E-mail" required>
+                        <label for="education-contact-email">Seu E-mail</label>
+                        <input id="education-contact-email" type="email" name="_replyto" placeholder="Seu E-mail" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                        <label for="education-contact-message">Sua Mensagem</label>
+                        <textarea id="education-contact-message" name="message" rows="4" placeholder="Sua Mensagem" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn site-button">Enviar Mensagem</button>
                 </form>
