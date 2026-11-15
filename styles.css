@@ -128,10 +128,12 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
+    bottom: 0;
     left: -100%;
     width: 400px;
     max-width: 90%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     background-color: var(--off-white);
     z-index: 2000;
     padding: 80px 40px;
@@ -202,7 +204,8 @@ body {
 :is(.home-page, .projects-page, .certificates-page, .education-page, .case-page) .sidebar {
     width: 500px;
     max-width: 92vw;
-    height: 100dvh;
+    height: auto;
+    min-height: 100dvh;
     padding: clamp(88px, 14dvh, 120px) clamp(24px, 5vw, 56px) clamp(72px, 12dvh, 112px);
     background: var(--bg-color);
     border-right: 1px solid rgba(8, 8, 8, 0.12);
@@ -5048,8 +5051,8 @@ html:has(.case-image-dialog[open]) { overflow: hidden; }
     border: 0;
     border-radius: 3px;
     color: #080808;
-    font-size: 0.66rem;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 1.5;
     white-space: normal;
 }
@@ -6636,9 +6639,9 @@ body.inner-page .contact-footer .footer-bottom {
 }
 
 .badge[data-category="Front-End Development"] { background: #b0d411; color: #111; }
-.badge[data-category="UI & UX Design"] { background: #4a90e2; color: #fff; }
-.badge[data-category="Web Design"] { background: #ff2d55; color: #fff; }
-.badge[data-category="Graphic Design"] { background: #ff6b00; color: #fff; }
+.badge[data-category="UI & UX Design"] { background: #4a90e2; color: #111; }
+.badge[data-category="Web Design"] { background: #ff2d55; color: #111; }
+.badge[data-category="Graphic Design"] { background: #ff6b00; color: #111; }
 .project-category.badge {
     height: 24px;
     min-height: 24px;
