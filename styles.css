@@ -6722,6 +6722,17 @@ body.inner-page > main:is(.projects-page-container, .cert-page-container, .si-co
     margin-bottom: 0;
 }
 
+/* Give project case studies more room on narrow screens. */
+@media (max-width: 760px) {
+    .case-page .case-container {
+        padding-inline: clamp(24px, 6vw, 36px);
+    }
+
+    body.inner-page.case-page .contact-footer {
+        margin-top: clamp(48px, 10vw, 72px);
+    }
+}
+
 /* Match the education phase dropdowns to the certificates list pattern. */
 .education-page .phases-grid {
     gap: 0;
