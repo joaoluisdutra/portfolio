@@ -1085,41 +1085,48 @@ function initializeCertificateLogoCarousel() {
 
     let dots = [];
     let slideWidth = 0;
-    let maxStart = 0;
+    let pageOffsets = [0];
     let activePage = 0;
 
     const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const scrollToOffset = offset => viewport.scrollTo({
-        left: offset,
-        behavior: prefersReducedMotion() ? 'auto' : 'smooth'
-    });
+    const scrollToOffset = offset => {
+        const target = Math.max(0, Math.min(maxScroll(), offset));
+        viewport.scrollTo({
+            left: target,
+            behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+        });
+    };
     const maxScroll = () => Math.max(0, viewport.scrollWidth - viewport.clientWidth);
-    const pageStart = index => Math.min(index * 2, maxStart) * slideWidth;
     const renderDots = () => dots.forEach((dot, index) => {
         if (index === activePage) dot.setAttribute('aria-current', 'true');
         else dot.removeAttribute('aria-current');
     });
 
     const updateState = () => {
-        const step = slideWidth * 2;
-        activePage = step ? Math.min(dots.length - 1, Math.round(viewport.scrollLeft / step)) : 0;
+        activePage = pageOffsets.reduce((nearest, offset, index) =>
+            Math.abs(offset - viewport.scrollLeft) < Math.abs(pageOffsets[nearest] - viewport.scrollLeft) ? index : nearest, 0);
         renderDots();
     };
 
     const buildDots = () => {
         slideWidth = slides[0].getBoundingClientRect().width;
-        const visibleCount = slideWidth ? Math.round(viewport.clientWidth / slideWidth) : slides.length;
-        maxStart = Math.max(0, slides.length - visibleCount);
-        const pageCount = slideWidth ? Math.ceil(maxStart / 2) + 1 : 1;
-        if (dots.length !== pageCount) {
+        const end = maxScroll();
+        const step = slideWidth * 2;
+        pageOffsets = [0];
+        if (step > 0) {
+            for (let offset = step; offset < end - 1; offset += step) pageOffsets.push(offset);
+            if (end > pageOffsets[pageOffsets.length - 1] + 1) pageOffsets.push(end);
+            else pageOffsets[pageOffsets.length - 1] = end;
+        }
+        if (dots.length !== pageOffsets.length) {
             dotsContainer.replaceChildren();
-            dots = Array.from({ length: pageCount }, (_, index) => {
+            dots = Array.from({ length: pageOffsets.length }, (_, index) => {
                 const dot = document.createElement('button');
                 dot.type = 'button';
                 dot.setAttribute('aria-label', `Mostrar grupo ${index + 1} de logotipos`);
                 dot.addEventListener('click', () => {
                     activePage = index;
-                    scrollToOffset(Math.min(maxScroll(), pageStart(index)));
+                    scrollToOffset(pageOffsets[index]);
                     renderDots();
                 });
                 dotsContainer.append(dot);
@@ -1131,12 +1138,12 @@ function initializeCertificateLogoCarousel() {
 
     previous.addEventListener('click', () => {
         activePage = (activePage - 1 + dots.length) % dots.length;
-        scrollToOffset(pageStart(activePage));
+        scrollToOffset(pageOffsets[activePage]);
         renderDots();
     });
     next.addEventListener('click', () => {
         activePage = (activePage + 1) % dots.length;
-        scrollToOffset(pageStart(activePage));
+        scrollToOffset(pageOffsets[activePage]);
         renderDots();
     });
     viewport.addEventListener('scroll', updateState, { passive: true });
