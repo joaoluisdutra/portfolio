@@ -6964,6 +6964,13 @@ body.inner-page > main:is(.projects-page-container, .cert-page-container, .si-co
 .certificates-page .cert-logo-dots button:nth-child(4n + 3) { background: #4a90e2; }
 .certificates-page .cert-logo-dots button:nth-child(4n) { background: #ff6b00; }
 .certificates-page .cert-logo-dots button[aria-current="true"] { transform: scale(1.2); }
+
+/* Standard mobile gap from the final page content to the footer's top rule. */
+@media (max-width: 760px) {
+    :is(.home-page, body.inner-page:is(.case-page, .projects-page, .certificates-page, .education-page)) .contact-footer {
+        margin-top: 80px;
+    }
+}
 @media (max-width: 640px) {
     .certificates-page .cert-institutions { margin-top: 40px; }
     .certificates-page .cert-logo-carousel {
@@ -6981,4 +6988,104 @@ body.inner-page > main:is(.projects-page-container, .cert-page-container, .si-co
 @media (prefers-reduced-motion: reduce) {
     .certificates-page .cert-logo-arrow { transition: none; }
     .certificates-page .cert-logo-viewport { scroll-behavior: auto; }
+}
+
+/* Keep mobile text sizes consistent across pages; the home hero stays expressive. */
+@media (max-width: 768px) {
+    .home-page .hero-description {
+        margin-top: 14px;
+        margin-bottom: 0;
+    }
+
+    .home-page .hero-cta {
+        margin-top: 26px;
+    }
+
+    .home-page .intro-text {
+        font-size: clamp(1.15rem, 4.8vw, 1.25rem);
+        line-height: 1.5;
+    }
+
+    .home-page .certificates-section .certificate-row .cert-main-title {
+        font-size: 1rem;
+    }
+
+    .home-page .certificate-row .cert-mobile-description {
+        font-size: 0.875rem;
+    }
+
+    .home-page .certificates-section .certificate-row .col img.logo-freecodecamp {
+        width: clamp(112px, 32vw, 138px);
+        height: 40px;
+    }
+
+    .home-page .certificates-section .certificate-row .col img.logo-instituicao[src*="logo-awwwards"] {
+        width: clamp(112px, 32vw, 138px);
+        height: 40px;
+    }
+
+    .home-page .certificates-section .certificate-row:has(img.logo-freecodecamp) > .col:nth-child(2),
+    .home-page .certificates-section .certificate-row:has(img[src*="logo-awwwards"]) > .col:nth-child(2) {
+        flex: 0 0 100%;
+        max-width: none;
+    }
+
+    .home-page .certificates-section .certificate-row .col img.logo-freecodecamp,
+    .home-page .certificates-section .certificate-row .col img.logo-instituicao[src*="logo-awwwards"] {
+        width: clamp(160px, 48vw, 190px);
+        height: 50px;
+        max-width: none;
+    }
+
+    .home-page .certificates-section .certificate-row:has(img[src*="logo-awwwards"]) > .col:nth-child(2) {
+        flex: 0 1 auto;
+        max-width: calc(50% - 12px);
+    }
+
+    .home-page .certificates-section .certificate-row .col img.logo-instituicao[src*="logo-awwwards"] {
+        width: clamp(96px, 28vw, 108px);
+        height: 34px;
+    }
+
+    .home-page .cert-access-minimal-link::before,
+    .home-page .cert-access-minimal-link::after {
+        font-size: 0.875rem;
+    }
+
+    .home-page .certificates-section .certificate-row:not(.header) {
+        position: relative;
+        border-bottom: 0;
+    }
+
+    .home-page .certificates-section .certificate-row:not(.header):not(:last-child)::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: min(34%, 132px);
+        height: 1px;
+        margin-inline: auto;
+        background: rgba(8, 8, 8, 0.14);
+        content: "";
+    }
+
+    :is(.projects-page-description, .cert-page-description, .uni-section p,
+        .case-summary, .case-panel p:not(.case-panel-step), .case-panel li) {
+        font-size: 1rem;
+    }
+
+    .inner-page :is(.projects-page-container, .cert-page-container, .si-container, .case-container) h1 {
+        font-size: clamp(1.6rem, 6vw, 1.9rem);
+        line-height: 1.15;
+    }
+
+    .inner-page :is(.projects-page-container, .cert-page-container, .si-container, .case-container) h2 {
+        font-size: clamp(1.3rem, 5vw, 1.6rem);
+        line-height: 1.25;
+    }
+
+    .inner-page :is(.project-title, .cert-main-title, .phase-header h3, .subject-item h4, .case-panel h3) {
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
 }
