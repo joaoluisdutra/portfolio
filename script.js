@@ -79,12 +79,6 @@
         return !filename || filename === 'index.html';
     }
 
-    function isAnimatedDestination(url) {
-        if (url.href.replace(/\/$/, '') === 'https://joaoluisdutra.github.io/portfolio/projetos.html') return true;
-        const filename = url.pathname.split('/').pop();
-        return url.origin === location.origin && ['certificacoes.html', 'sistemas-de-informacao-unibave.html'].includes(filename);
-    }
-
     function navigationDirection(url) {
         // Breadcrumb ancestors always mean a return, even when skipping a level.
         const ancestors = document.querySelectorAll('.breadcrumb a[href]');
@@ -145,7 +139,9 @@
         if (link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
         const url = new URL(link.href, location.href);
         if (!['http:', 'https:', 'file:'].includes(url.protocol)) return;
-        if (!isHomePage() || !isAnimatedDestination(url)) return;
+        // Todos os links de navegação acionados na index usam a transição,
+        // sem restringir por nome de arquivo ou domínio de destino.
+        if (!isHomePage()) return;
         if (url.pathname === location.pathname && url.search === location.search) return;
         if (url.origin === location.origin && !url.pathname.endsWith('.html') && !url.pathname.endsWith('/')) return;
         event.preventDefault();
@@ -197,7 +193,9 @@
         } catch (_) { /* History remains usable without storage. */ }
     });
     window.addEventListener('pageshow', (event) => {
-        // History navigation and returns stay immediate; only home page links animate.
+        // A página pode voltar do BFCache com o SVG ainda cobrindo a tela,
+        // pois a navegação de saída só acontece depois da animação terminar.
+        if (event.persisted && !arriving) reset();
     });
 })();
 
